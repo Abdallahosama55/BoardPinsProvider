@@ -22,7 +22,7 @@ const areaChartOptions = {
   }
 };
 
-const IncomeAreaChart = ({ slot }) => {
+const ChartDahboard = ({ slot }) => {
   const theme = useTheme();
   const { primary, secondary } = theme.palette.text;
   const line = theme.palette.divider;
@@ -97,8 +97,8 @@ const IncomeAreaChart = ({ slot }) => {
   return <ReactApexChart options={options} series={series} type="area" height={slot === 'month' ? 450 : 300} />;
 };
 
-IncomeAreaChart.propTypes = {
+ChartDahboard.propTypes = {
   slot: PropTypes.string.isRequired
 };
 
-export default IncomeAreaChart;
+export default ChartDahboard;

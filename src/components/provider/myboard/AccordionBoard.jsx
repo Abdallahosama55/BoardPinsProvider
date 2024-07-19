@@ -8,7 +8,7 @@ const AccordionItem = ({ title, content , title_num}) => {
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
-console.log("is =>",title_num)
+
   return (
     <div className="accordion-item ">
       <div

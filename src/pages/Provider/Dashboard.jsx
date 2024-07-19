@@ -3,7 +3,7 @@ import HeaderDashboard from "../../components/provider/Dashboard/HeaderDashboard
 
 function Dashboard() {
   return (
-    <div className=" bg-white rounded-lg p-4 font-poppins">
+    <div className=" bg-white rounded-xl p-4 font-poppins">
     
     <HeaderDashboard/>
     <main className=" py-4">

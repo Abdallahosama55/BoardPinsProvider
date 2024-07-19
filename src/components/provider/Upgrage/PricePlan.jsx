@@ -94,7 +94,7 @@ function PricePlan() {
 
       <main>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-9 mx-4 lg:mx-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-4 mx-0 lg:mx-0">
       <div className="p-4 mt-12">
       {FreePlans.map((plan, index) => (
         <PlanCard

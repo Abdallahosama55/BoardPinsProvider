@@ -14,7 +14,9 @@ import icon_right from '../../assets/icons/Frame.svg';
 import pin1 from '../../assets/icons/pin-1 1.svg';
 import icon_Management from '../../assets/icons/Frame 1171275913.svg';
 import invite from '../../assets/icons/circle-clock--clock-loading-measure-time-circle.svg';
+import icon_brain from '../../assets/icons/brain.svg';
 import icon_setting from '../../assets/images/sidebar/Setting.png';
+import Logo from '../../assets/images/Logo.png';
 import { IoMdExit } from "react-icons/io";
 
 const SidebarProvider = () => {
@@ -34,16 +36,23 @@ const SidebarProvider = () => {
     <>
       <button
         onClick={toggleSidebar}
-        className={`fixed ${isOpen ? 'top-[1%]' : 'top-[10%]'} ${isOpen ? 'left-[48%]' : 'left-[0%]'}  ${isOpen ? 'text-[red]'  :'' }  p-2 rounded-lg z-50 md:hidden bg-white`}
+        className={`fixed ${isOpen ? 'top-[1%]' : 'top-[3%]'} ${isOpen ? 'left-[48%]' : 'left-[5%]'}  ${isOpen ? 'text-[red]'  :'' }  p-2 rounded-lg z-50 md:hidden bg-white`}
       >
         {isOpen ? <IoMdExit /> : <MenuIcon color='#000'/>} 
       </button>
       <div
-        className={`fixed inset-x-0 font-poppins px-4 h-full left-0 md:bg-transparent bg-white text-white w-64 p-0 transform ${
+        className={`fixed inset-x-0 font-poppins px-4 h-full left-0 md:bg-transparent bg-white text-white w-72 p-0 transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } transition-transform duration-300 ease-in-out z-40 md:static md:translate-x-0 py-12 top-0 md:py-0 md:h-full md:w-[18%]`}
+        } transition-transform duration-300 ease-in-out z-40 md:static md:translate-x-0  py-4 top-0 md:py-0 md:h-full md:w-[18%]`}
       >
-        <ul className="space-y-2 poppins-medium">
+        <div className=' flex  justify-between items-center w-full'>
+
+        <img src={Logo} className=' w-[200px] py-6 '/>
+
+        </div>
+
+        <ul className="space-y-2 py-4 mb-12  poppins-medium overflow-y-auto  h-[85%]"  style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
+          
           {menuItems.map((item, index) => (
             <li key={index}>
               <Link to="/" className="block font-[500] text-[#666666] rounded-[30px]">
@@ -110,11 +119,36 @@ const SidebarProvider = () => {
             </Link>
           </li>
           <li>
-            <Link to="/" className="block hover:bg-white hover:text-[#6161FF] hover:font-[500] mt-3 text-[#292D32] p-2 rounded-lg">
-              <div className='flex items-center px-2 py-0'>
-                <img src={icon_chat} alt="My Board" className='icon w-[30px]' />
-                <span className='hover:font-[500] font-[500] text-[14px] px-3'> Chat</span>
-              </div>
+            <Link  className="block hover:text-[#6161FF] hover:bg-white text-[#292D32] rounded-[9px]">
+              <Accordion sx={{ boxShadow: 'none', margin: 0, backgroundColor: "transparent", padding: 0 }} style={{ borderRadius: '9px', padding: "0px", margin: 0, border: '0px solid #ddd', overflow: 'hidden' }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                  sx={{ color: "#292D32", fontSize: "14px", fontWeight: "400", margin: "0px", paddingBottom: 0 }}
+                >
+                  <div className='flex justify-center items-center'>
+                    <img src={icon_chat} alt='workspace' className='w-[30px] ' />
+                    <span className='font-[500] text-[14px] px-3'> AI Chat</span>
+                  </div>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <ul>
+                    <li className='hover:bg-white rounded-[9px] p-3'>
+                      <Link to='/chat' className='flex items-center gap-2 hover:text-[#6262FF]'>
+                        <img className='w-[18px] ' src={icon_chat} alt="pin" />
+                        <span className='font-[500] text-sm'>Chat</span>
+                      </Link>
+                    </li>
+                    <li className='hover:bg-white rounded-[9px] p-3'>
+                      <Link to='/knowledgebase' className='flex items-center gap-2 hover:text-[#6262FF]'>
+                        <img className='w-[20px] ' src={icon_brain} alt="knowledge base"/>
+                        <span className='font-[500] text-sm'>knowledge base</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </AccordionDetails>
+              </Accordion>
               <style>{`
                 .icon {
                   width: 30px;
@@ -126,14 +160,16 @@ const SidebarProvider = () => {
               `}</style>
             </Link>
           </li>
+
+
           <li>
-            <div className="block hover:text-[#6161FF] text-[#292D32]">
+            <div className="block hover:text-[#6161FF] text-[#292D32]  hover:bg-white rounded-xl ">
               <Accordion sx={{ boxShadow: 'none', margin: 0, backgroundColor: "transparent", padding: 0 }} style={{ borderRadius: '9px', padding: "0px", margin: 0, border: '0px solid #ddd', overflow: 'hidden' }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1-content"
                   id="panel1-header"
-                  sx={{ color: "#292D32", fontSize: "14px", fontWeight: "400", margin: "0px", paddingBottom: 0 }}
+                  sx={{ color: "#292D32", fontSize: "12px", fontWeight: "400", margin: "0px", paddingBottom: 0 }}
                 >
                   <div className='flex justify-center items-center'>
                     <img src={icon_Merchants} alt='workspace' className='w-[30px] px-0 m-0 ' />
@@ -145,13 +181,13 @@ const SidebarProvider = () => {
                     <li className='hover:bg-white rounded-[9px] p-3'>
                       <Link to='/merchant' className='flex items-center gap-2 hover:text-[#6262FF]'>
                         <img className='w-[20px] icon' src={icon_right} alt="pin"/>
-                        <span className='font-[500] text-md'>Connected</span>
+                        <span className='font-[500] text-sm'>Connected</span>
                       </Link>
                     </li>
                     <li className='hover:bg-white rounded-[9px] p-3'>
                       <Link to='/merchantPinned' className='flex items-center gap-2 hover:text-[#6262FF]'>
                         <img className='w-[20px] icon' src={pin1} alt="pin"/>
-                        <span className='font-[500] text-md'>Pinned</span>
+                        <span className='font-[500] text-sm'>Pinned</span>
                       </Link>
                     </li>
                   </ul>
@@ -161,7 +197,7 @@ const SidebarProvider = () => {
             </div>
           </li>
           <li>
-            <Link to="/" className="block hover:text-[#6161FF] hover:bg-white text-[#292D32] rounded-[9px]">
+            <Link to="/projectmangement-tasks" className="block hover:text-[#6161FF] hover:bg-white text-[#292D32] rounded-[9px]">
               <Accordion sx={{ boxShadow: 'none', margin: 0, backgroundColor: "transparent", padding: 0 }} style={{ borderRadius: '9px', padding: "0px", margin: 0, border: '0px solid #ddd', overflow: 'hidden' }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -171,7 +207,7 @@ const SidebarProvider = () => {
                 >
                   <div className='flex justify-center items-center'>
                     <img src={icon_Management} alt='workspace' className='w-[30px] icon' />
-                    <span className='font-[500] text-[14px] px-3'> Management</span>
+                    <span className='font-[500] text-[14px] px-3'> Project Management</span>
                   </div>
                 </AccordionSummary>
                 <AccordionDetails>

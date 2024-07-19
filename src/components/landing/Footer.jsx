@@ -7,13 +7,13 @@ import insta from "../../assets/icons/insta.png";
 import face from "../../assets/icons/face.svg";
 function Footers() {
   return (
-    <div>     <section className="footer font-poppins">
+    <div>     <section className="footer">
 
     <div className="text-center mt-12 mb-10 pb-8 border-[#000] border-b-2 xl:mx-36  lg:mx-16 mx-6">
        <p className="text-[#333] text-[2.075rem]  font-[400] font-poppins leading-[2.90988rem]">
           Join Board Pins Today!
        </p>
-       <p className="text-dark opacity-[0.9] text-[2.25rem]  font-[300] font-poppins ">
+       <p className="text-dark opacity-[0.9] text-light text-4xl  font-light ">
           Unlock Opportunities, Expand Your Business
        </p>
        <button className="m-auto relative   block bg-[#6161FF] rounded-[1.71875rem] text-[0.9375rem] text-[#F5F6FA] leading-[2.5rem] py-0 px-5 mt-8">

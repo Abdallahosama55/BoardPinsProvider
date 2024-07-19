@@ -186,7 +186,9 @@ function Section1Home() {
             
             </button>
           </div>
-    
+          <div className='flex justify-center mb-12'>
+            <button className="rounded-3xl bg-[#6161FF] text-[#FFFFFF] py-2 px-7 text-md block flex items-center gap-2">Get Started   <RiArrowRightLine/></button>
+          </div>
           <h2 className='text-center text-[#676879] mb-12'>
             No credit card needed   ✦   Unlimited time on Free plan
           </h2>

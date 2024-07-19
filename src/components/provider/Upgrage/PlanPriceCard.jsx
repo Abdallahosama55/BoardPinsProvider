@@ -3,7 +3,7 @@ import star from '../../../assets/icons/Star 15.svg';
 
 const PlanCard = ({ title, price, buttonText, listItems, borderColor, buttonBgColor, buttonTextColor, viewBadge }) => {
   return (
-    <div className={`w-full rounded-3xl border-[1px]`} style={{ borderColor }}>
+    <div className={`w-full rounded-3xl border-[1px] h-full`} style={{ borderColor }}>
       <div className={`text-center bg-[#6161FF] rounded-t-3xl text-[#F5F6FA] p-3 text-2xl text-[400] ${viewBadge ? 'block' : 'hidden'}`}>
         <h1>Most Popular</h1>
       </div>
