@@ -5,7 +5,7 @@ const ProgressBar = ({ progress, bgColor ,height}) => {
   return (
     <div className="relative w-full sm:w-full">
      
-      <div className={`overflow-hidden h-${height||3} text-xs flex rounded bg-gray-200`}>
+      <div className={`overflow-hidden h-2 text-xs flex rounded bg-gray-200`}>
         <div
           style={{ width: `${progress}%`, backgroundColor: bgColor }}
           className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center"

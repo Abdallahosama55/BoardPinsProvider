@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
-import ItemsColumn from "./itemsColumn";
-import StrictModeDroppable from "./droppable";
+import ItemsColumn from "./kanban/itemsColumn";
+import StrictModeDroppable from "./kanban/droppable";
 import { reorder } from "../../../utils/helpers/helpers";
 import { initialColumnData } from "../../../utils/helpers/constants";
 import toast, { Toaster } from "react-hot-toast";
 
-const TodoList = () => {
+const KanbanTodoList = () => {
   const [columnData, setColumnData] = useState(initialColumnData);
-  const [dragInfo, setDragInfo] = useState({ index: null, status: "", title: "" });
 
   const onDragEnd = (result) => {
     const { source, destination } = result;
 
-    // dropped outside the list
+    // Dropped outside the list
     if (!destination) {
       return;
     }
@@ -21,16 +20,20 @@ const TodoList = () => {
     const sInd = source.droppableId;
     const dInd = destination.droppableId;
 
-    // Log index and status
-    const itemTitle = columnData[sInd].items[source.index].title;
+    // Get item details
+    const item = columnData[sInd].items[source.index];
+    const itemTitle = item.title;
+    const itemId = item.id;
     const newIndex = destination.index;
-    const newStatus = dInd;
+    const destinationColumn = columnData[dInd];
+    const destinationColumnId = destinationColumn.id;
+    const destinationColumnTitle = destinationColumn.title;
 
-    console.log(`Item: ${itemTitle}, New Index: ${newIndex}, New Status: ${newStatus}`);
+    // Log details
+    console.log(`Item ID: ${itemId}, Item Title: ${itemTitle}, New Index: ${newIndex}, Destination Column ID: ${destinationColumnId}, Destination Column Title: ${destinationColumnTitle}`);
 
-    setDragInfo({ index: newIndex, status: newStatus, title: itemTitle });
-
-    toast.success(`Item: ${itemTitle}, New Index: ${newIndex}, New Status: ${newStatus}`);
+    // Display toast
+    toast.success(` Status updated to column  ${destinationColumnTitle}`);
 
     // REORDER: if source and destination droppable ids are same
     if (sInd === dInd) {
@@ -80,18 +83,18 @@ const TodoList = () => {
       <Toaster
         toastOptions={{
           style: {
-            marginLeft: '10px'
-          }
+            marginLeft: '10px',
+          },
         }}
-        position="top-right"
+        position="bottom-left"
       />
-      <div className="grid grid-cols-3 gap-x-4 justify-between">
+      <div className="grid lg:grid-cols-3  grid-cols-1 lg:gap-x-4 justify-between">
         <DragDropContext onDragEnd={onDragEnd}>
           {Object.entries(columnData).map(([id, column]) => (
             <StrictModeDroppable droppableId={id} key={id}>
               {(provided) => (
                 <div {...provided.droppableProps} ref={provided.innerRef}>
-                  <ItemsColumn columnTitle={column.title} items={column.items} />
+                  <ItemsColumn columnTitle={column.title} columnId={column.id} items={column.items} />
                   {provided.placeholder}
                 </div>
               )}
@@ -103,4 +106,4 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+export default KanbanTodoList;

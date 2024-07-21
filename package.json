@@ -44,6 +44,7 @@
     "react-router-dom": "^6.23.1",
     "styled-components": "^6.1.12",
     "sweetalert2": "^11.12.2",
+    "tailwindcss-filters": "^3.0.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {

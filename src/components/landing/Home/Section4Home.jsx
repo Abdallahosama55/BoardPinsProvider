@@ -6,12 +6,12 @@ import task from '../../../assets/images/Landing/image 78.png'
 import Dashboard from '../../../assets/images/Landing/Group 1000001625.png'
 function Section4Home() {
   return (
-    <div className=' bg-[#181B34] px-24 font-poppins'>
+    <div className=' bg-[#181B34] md:px-24  px-12 font-poppins'>
     
     <div className=' grid lg:grid-cols-3 grid-cols-1 gap-12 py-24'>
     
     <div className=' font-[600] text-3xl  text-white'>
-    <h3  className=' leading-[1.5] mx-2'>Your work, your way. The future of your Business growth is here!</h3>
+    <h3  className=' leading-[1.5] lg:mx-2'>Your work, your way. The future of your Business growth is here!</h3>
     
     </div>
     
