@@ -68,9 +68,9 @@ const QuickOverview = () => (
 );
 
 const OverviewCard = ({ title, value, bgColor, borderColor }) => (
-  <div className={`p-5 bg-[${bgColor}] rounded-2xl`}>
+  <div className={`p-5  rounded-2xl`} style={{backgroundColor:bgColor}}>
     <h2  className=' text-[12px]'>{title}</h2>
-    <strong className={`border-l-[5px] px-1 border-[${borderColor}]`}>{value}</strong>
+    <strong className={`border-l-[5px] px-1 border-[${borderColor}]`} style={{borderColor:borderColor}}>{value}</strong>
   </div>
 );
 
@@ -96,7 +96,7 @@ const SidebarProjectManagement = () => {
        </div>
         <div className="flex justify-center items-center">
            
-          <ProgressChart progressPrectage={15} widthcircle={165} heightcircle={165} textSize={'40px'} title="7 task to 15 Today"  colorCircle="#6161FF"  ShadowCustom={true} radiusCircle={68} strokeWidthCircle={13}/>
+          <ProgressChart progressPrectage={15} widthcircle={150} heightcircle={150} textSize={'30px'} title="7 task to 15 Today"  colorCircle="#6161FF"  ShadowCustom={true} radiusCircle={68} strokeWidthCircle={13}/>
         </div>
         <QuickOverview />
       </div>

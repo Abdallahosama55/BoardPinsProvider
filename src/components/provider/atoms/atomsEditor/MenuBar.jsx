@@ -19,8 +19,8 @@ const MenuBar = ({ editor }) => {
   const isActive = (command) => editor.isActive(command);
 
   return (
-    <div id="" className="flex gap-3 text-gray-600 items-center py-5">
-      <div>
+    <div id="" className="grid  grid-cols-8 gap-3 text-gray-600 items-center py-5">
+      
         <button
           onClick={() => handleButtonClick('toggleBold')}
           className={isActive('bold') ? 'is-active' : ''}
@@ -35,8 +35,8 @@ const MenuBar = ({ editor }) => {
         >
           <FiItalic/>
         </button>
-      </div>
-      <div>
+    
+     
         <button
           onClick={() => handleButtonClick('toggleBulletList')}
           className={isActive('bulletList') ? 'is-active' : ''}
@@ -52,7 +52,7 @@ const MenuBar = ({ editor }) => {
          <GrOrderedList/>
 
         </button>
-      </div>
+     
 
       
         <button

@@ -34,7 +34,7 @@ const TaskModalForm = ({
               formik={formik}
             />
             <div className="mb-4">
-              <label htmlFor="description" className="block text-gray-700 font-bold mb-2">
+              <label htmlFor="description" className="block text-gray-700 font-bold mb-1">
                 Description
               </label>
               <EditorFully editor={editor} />
@@ -61,10 +61,10 @@ const TaskModalForm = ({
             </div>
             <PriorityButtons priority={priority} setPriority={setPriority} />
           </div>
-          <div className="lg:col-span-1 col-span-3 py-5 px-5">
+          <div className="lg:col-span-1 col-span-3 py-2 px-5">
             <StatusButtons />
             <div>
-              <h3 className="text-[#6F6F6F] mt-6">Text Editor</h3>
+              <h3 className="text-[#6F6F6F] mt-3">Text Editor</h3>
               <MenuBar editor={editor} />
             </div>
             <AttachmentSection handleLinkClick={handleLinkClick} handlePhotoClick={handlePhotoClick} formik={formik} />
@@ -85,8 +85,8 @@ const TaskModalForm = ({
 
 // Extracted FormField Component
 const FormField = ({ id, name, label, type, formik }) => (
-  <div className="mb-4">
-    <label htmlFor={id} className="block text-gray-700 font-bold mb-2">
+  <div className="mb-1">
+    <label htmlFor={id} className="block text-gray-700 font-bold mb-1">
       {label}
     </label>
     <input
@@ -113,7 +113,7 @@ const ErrorText = ({ children }) => (
 const SubtaskSection = () => (
   <div className="mb-4 ">
     <label className="block text-gray-700 font-bold mb-2">
-      <h2 className="text-sm  mb-5 ">Subtask</h2>
+      <h2 className="text-sm  mb-2 ">Subtask</h2>
       <div className="px-5 py-0 flex gap-2 items-center shadow-custom">
         <input
           type="radio"
@@ -122,11 +122,11 @@ const SubtaskSection = () => (
           className="mr-2 leading-tight rounded-full border-[3px] border-blue-500"
         />
         <div className="flex-grow py-2 px-1 font-poppins">
-          <h2 className="font-bold text-dark text-sm">Sub Task 1</h2>
-          <p className="font-light text-sm">
+          <h2 className="font-bold text-dark text-xs">Sub Task 1</h2>
+          <p className="font-light text-[9px]">
             Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
           </p>
-          <div className="flex gap- items-center py-2">
+          <div className="flex gap-4 items-center py-1 font-normal">
             <div className="flex items-center gap-2 text-gray-500 text-xs">
               <PiClock />
               <span>1/2/2024, 07:00 AM</span>
@@ -148,10 +148,10 @@ const StatusButtons = () => (
   <div>
     <h2 className="text-[#6F6F6F] pb-3">Pick a Status</h2>
     <div className="flex gap-5 items-center">
-      <button className="text-[#FB5607] rounded-3xl bg-[#FB56071A] flex items-center ps-2 pe-5 text-sm font-medium py-1" type="button">
+      <button className="text-[#FB5607] rounded-3xl bg-[#FB56071A] flex items-center ps-2 pe-5 font-medium text-[15px] min-w-[100px] py-1" type="button">
         <IoMdArrowDropright color="#FB5607" size={25} /> To do
       </button>
-      <button className="text-[#292D32] rounded-3xl gap-2 flex items-center ps-2 pe-5 text-sm font-medium py-1" type="button">
+      <button className="text-[#292D32] rounded-3xl gap-2 flex items-center ps-2 pe-5 text-sm font-medium py-1 min-w-[130px]" type="button">
         <GoClock color="#292D32" size={18} /> Remind Me
       </button>
     </div>
