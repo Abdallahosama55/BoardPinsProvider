@@ -144,11 +144,12 @@ function Section1Home() {
       <div className="grid lg:grid-cols-4 grid-cols-1 py-12 gap-2">
         <div className="col-span-1 md:order-1 order-3"></div>
         <div className="mx-5 lg:mx-0 lg:col-span-2 col-span-4 py-5 md:order-2  order-2">
-          <h1 className="font-[700] text-center leading-[4rem] text-[54px] text-[#333333] ">
-            Discover, Connect, and Manage in One Platform
+          <h1 className="font-[700] text-center leading-[4rem] text-[48px] text-[#333333] ">
+
+            Grow Your Service Business with Our All-in-One Platform
           </h1>
-          <p className="text-xl text-center py-3 mt-5">
-            Find the perfect service providers, manage tasks, get instant help with our friendly AI assistant in one platform
+          <p className="text-md text-center py-3 mt-5">
+          Connect with E-Commerce Merchants and Collaborate Effortlessly on Exciting Projects
           </p>
 
           <div className="bg-white rounded py-3 px-5 m-5 flex">

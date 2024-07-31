@@ -9,12 +9,10 @@ function PricePlan() {
       price: 'EGP 0',
       buttonText: 'Start Now',
       listItems: [
-        'Limited access to service provider directory',
-        'Search on the service providers is limited to 3 times only per day',
-        'One Category in Board',
-        '3 pins only',
-        'Manage basic projects with to-do lists and task assignments ',
-        'web app'
+        'Get a basic listing in the directory to showcase your skills and experience to potential clients.',
+        'Receive a limited number of connection requests: Get discovered by high-growth e-commerce businesses. 5 connections only (To be editable)',
+        'Freemium Project Management: Collaborate with connected merchants on basic project tasks ( Limited to one project)',
+  
       ],
       borderColor: '#1E1E1E',
       buttonBgColor: 'transparent',
@@ -30,13 +28,13 @@ function PricePlan() {
       price: 'EGP 299',
       buttonText: 'Subscribe Now',
       listItems: [
-        'Unlimited search per day (Editable)',
-        'Unlimited connection requests Find the PERFECT service provider for every need.',
-        'Unlimited Categories in Board',
+        'Everything in the Free Plan',
+        'Stand Out from the Crowd',
+        'Unlimited Connection Requests',
         'Create Pins Collection',
-        'Project Management Powerhouse Collaborate seamlessly with advanced tools like shared boards, file sharing, and in-app messaging.',
+        'Lead Generation Machine',
         'Basic reporting and analytics',
-        'Exclusive Discounts: Get special offers from select service providers on the platform (limited time only!).'
+        'Get featured in our weekly client spotlight newsletter (limited slots available!)'
       ],
       borderColor: '#6161FF',
       buttonBgColor: '#6161FF',
@@ -53,12 +51,10 @@ function PricePlan() {
       price: 'EGP 399',
       buttonText: 'Start Now',
       listItems: [
-        'All features of Standard Plan',
-        'Unlimited search per day',
-        'Unlimited Categories in Board',
-        'Create Pins Collection Dedicated account manager for support and onboarding Pre-negotiated discounted rates with some service providers',
-        'Invite your service provider ',
-        'Collaborate with your service provider through shared projects and tasks',
+        'Everything in the Premium Plan',
+        'Dominate Directory Searches',
+        'Your Personal Growth Partnerd',
+
 
 
       ],
@@ -94,7 +90,7 @@ function PricePlan() {
 
       <main>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-4 mx-0 lg:mx-0">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-16 gap-8 mx-0 lg:mx-0">
       <div className="p-4 mt-12">
       {FreePlans.map((plan, index) => (
         <PlanCard

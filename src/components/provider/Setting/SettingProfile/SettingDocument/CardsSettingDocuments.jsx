@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { MdOutlineDeleteOutline, MdOutlineModeEditOutline } from 'react-icons/md';
 import { PiDotsThreeOutlineFill } from 'react-icons/pi';
-import csv from '../../../assets/icons/csv.svg';
-import pdf from '../../../assets/icons/pdf.svg';
-import doc from '../../../assets/icons/doc.svg';
+import csv from '../../../../../assets/icons/csv.svg';
+import pdf from '../../../../../assets/icons/pdf.svg';
+import doc from '../../../../../assets/icons/doc.svg';
 import { RiUploadCloud2Line } from 'react-icons/ri';
 
 const items = [
@@ -25,7 +25,7 @@ const items = [
   },
 ];
 
-function CardsKnowledgeBase() {
+function CardsSettingDocuments() {
   const [dropdownOpen, setDropdownOpen] = useState(null);
 
   const toggleDropdown = (index) => {
@@ -41,7 +41,7 @@ function CardsKnowledgeBase() {
 
   return (
     <div>
-      <div className="grid h-full overflow-y-auto py-6 mt-6 lg:mx-16 mx-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-center">
+      <div className="grid h-full overflow-y-auto py-6 mt-6   xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 justify-center">
         {items.map((item, index) => (
           <div key={index} className="pt-4 pb-0 rounded-xl bg-[#E7E7E7] relative">
             <div className="flex px-5 justify-end text-gray-500 text-md gap-2">
@@ -109,4 +109,4 @@ function CardsKnowledgeBase() {
   );
 }
 
-export default CardsKnowledgeBase;
+export default CardsSettingDocuments;

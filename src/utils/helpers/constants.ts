@@ -184,3 +184,11 @@ export const views = [
   { key: 'calendar', label: 'Calendar', icon: calendarIcon },
 ];
 
+export const viewsSetting = [
+  { key: 'overview', label: 'overview'},
+  { key: 'About', label: 'About'},
+  { key: 'Services', label: 'Services' },
+  { key: 'Photos', label: 'Photos' },
+  { key: 'Documents', label: 'Documents' },
+
+];

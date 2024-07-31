@@ -22,6 +22,10 @@ import ChatWelcome from './components/provider/Chat/ChatWelcome';
 import ChatMessages from './components/provider/Chat/ChatMessages';
 import KnowledgeBase from './pages/Provider/KnowledgeBase';
 import ProjectmangementTasks from './pages/Provider/ProjectmangementTasks';
+import SharedProjects from './pages/Provider/SharedProjects';
+import SettingProfile from './pages/Provider/SettingProfile';
+import SettingBilling from './pages/Provider/SettingBilling';
+import OrderBilling from './pages/Provider/OrderBilling';
 
 
 const App = () => {
@@ -56,10 +60,18 @@ const App = () => {
           <Route path="chat" element={<ChatWelcome />} />
           <Route path="chatmessages" element={<ChatMessages/>} />
         </Route>
+        <Route path="/projectmangement-SharedProjects" element={<SharedProjects/>} />
         <Route path="/projectmangement-tasks" element={<ProjectmangementTasks />} />
           <Route path="/upgrade" element={<Upgrade/>} />
+          <Route path="/setting-profile" element={<SettingProfile/>} />
+          <Route path="/Setting-billing" element={< SettingBilling/>} />
+
+         
+          
           
         </Route>
+        <Route path="/ordering-billing" element={< OrderBilling/>} />
+
       </Routes>
     </Router>
   );

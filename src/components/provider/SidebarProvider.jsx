@@ -18,8 +18,11 @@ import icon_brain from '../../assets/icons/brain.svg';
 import icon_setting from '../../assets/images/sidebar/Setting.png';
 import Logo from '../../assets/images/Logo.png';
 import { IoMdExit } from "react-icons/io";
+import Invite from './Invite/Invite';
+import { CgProfile } from 'react-icons/cg';
+import { MdOutlinePayment } from 'react-icons/md';
 
-const SidebarProvider = () => {
+const SidebarProvider = ({handleIsopen}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -197,7 +200,7 @@ const SidebarProvider = () => {
             </div>
           </li>
           <li>
-            <Link to="/projectmangement-tasks" className="block hover:text-[#6161FF] hover:bg-white text-[#292D32] rounded-[9px]">
+            <Link className="block hover:text-[#6161FF] hover:bg-white text-[#292D32] rounded-[9px]">
               <Accordion sx={{ boxShadow: 'none', margin: 0, backgroundColor: "transparent", padding: 0 }} style={{ borderRadius: '9px', padding: "0px", margin: 0, border: '0px solid #ddd', overflow: 'hidden' }}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -207,21 +210,21 @@ const SidebarProvider = () => {
                 >
                   <div className='flex justify-center items-center'>
                     <img src={icon_Management} alt='workspace' className='w-[30px] icon' />
-                    <span className='font-[500] text-[14px] px-3'> Project Management</span>
+                    <span className='font-[500] text-[14px] px-3'> Project Manage</span>
                   </div>
                 </AccordionSummary>
                 <AccordionDetails>
                   <ul>
                     <li className='hover:bg-white rounded-[9px] p-3'>
-                      <Link to='/' className='flex items-center gap-2 hover:text-[#6262FF]'>
+                      <Link to='/projectmangement-tasks' className='flex items-center gap-2 hover:text-[#6262FF]'>
                         <img className='w-[20px]' src={pin1} alt="pin"/>
-                        <span className='font-[500] text-md'>Pending</span>
+                        <span className='font-[500] text-md'>Tasks</span>
                       </Link>
                     </li>
                     <li className='hover:bg-white rounded-[9px] p-3'>
-                      <Link to='/' className='flex items-center gap-2 hover:text-[#6262FF]'>
+                      <Link to='/projectmangement-SharedProjects' className='flex items-center gap-2 hover:text-[#6262FF]'>
                         <img className='w-[20px]' src={pin1} alt="pin"/>
-                        <span className='font-[500] text-md'>Created</span>
+                        <span className='font-[500] text-md'>Shared Projects</span>
                       </Link>
                     </li>
                   </ul>
@@ -242,14 +245,50 @@ const SidebarProvider = () => {
           <li>
       
           <p className='text-[#292D32] px-5 py-3 '>ACCOUNT</p>
-        <Link to="/" className="block hover:bg-white  hover:text-[#6161FF] hover:font-[500]  mt-3 text-[#292D32] p-2 rounded-lg">
-     
-        <div className=' flex items-center px-2 py-0'>
-        
-          <img src={icon_setting} alt="My Board" className=' w-[20px]  text-[#292D32]' />
-          <span className=' hover:font-[500] font-[500] text-[14px] px-3'> Settings</span>
-        </div>
-      </Link>
+      
+
+      <li>
+            <Link className="block hover:text-[#6161FF] hover:bg-white text-[#292D32] rounded-[9px]">
+              <Accordion sx={{ boxShadow: 'none', margin: 0, backgroundColor: "transparent", padding: 0 }} style={{ borderRadius: '9px', padding: "0px", margin: 0, border: '0px solid #ddd', overflow: 'hidden' }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                  sx={{ color: "#292D32", fontSize: "14px", fontWeight: "400", margin: "0px", paddingBottom: 0 }}
+                >
+                  <div className='flex justify-center items-center'>
+                    <img src={icon_setting} alt='workspace' className='w-[15px] p-1 icon' />
+                    <span className='font-[500] text-[14px] px-3'> Setting</span>
+                  </div>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <ul>
+                    <li className='hover:bg-white rounded-[9px] p-3'>
+                      <Link to='/setting-profile' className='flex items-center gap-2 hover:text-[#6262FF]'>
+                      <CgProfile  />
+                        <span className='font-[500] text-md'>Profile</span>
+                      </Link>
+                    </li>
+                    <li className='hover:bg-white rounded-[9px] p-3'>
+                      <Link to='/setting-billing' className='flex items-center gap-2 hover:text-[#6262FF]'>
+             <MdOutlinePayment/>
+                        <span className='font-[500] text-md'>Billing</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </AccordionDetails>
+              </Accordion>
+              <style>{`
+                .icon {
+                  width: 30px;
+                  height: 30px;
+                }
+                .block:hover .icon {
+                  filter: brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(565%) hue-rotate(200deg) brightness(97%) contrast(102%);
+                }
+              `}</style>
+            </Link>
+          </li>
           </li>
     
     <li>
@@ -265,14 +304,15 @@ const SidebarProvider = () => {
     
     <li>
         
-    <Link to="/" className="block hover:bg-white  hover:text-[#6161FF] hover:font-[500]  mt-3 text-[#292D32] p-2 rounded-lg">
+    <Link  className="block hover:bg-white  hover:text-[#6161FF] hover:font-[500]  mt-3 text-[#292D32] p-2 rounded-lg">
     
-    <div className=' flex items-center px-2 py-0'>
+    <div className=' flex items-center px-2 py-0' onClick={()=>handleIsopen()}>
     
     <img src={invite} alt="My Board" className=' w-[20px]  text-[#292D32]' />
     <span className=' hover:font-[500] font-[500] text-[14px] px-3'> Invite</span>
     </div>
     </Link>
+  
     </li>
     
         </ul>
