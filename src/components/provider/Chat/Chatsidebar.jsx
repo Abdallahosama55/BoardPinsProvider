@@ -4,7 +4,7 @@ import ButtonaddChat from '../atoms/atomsChat/atomsChatSidebar/ButtonaddChat'
 
 function Chatsidebar() {
   return (
-    <div className='  h-100  flex flex-col gap-3'>
+    <div className='  h-full  flex flex-col gap-3'>
 
 
 

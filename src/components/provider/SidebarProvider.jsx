@@ -21,7 +21,10 @@ import { IoMdExit } from "react-icons/io";
 import Invite from './Invite/Invite';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlinePayment } from 'react-icons/md';
-
+import Bidding from '../../assets/icons/Bidding.svg';
+import discover from '../../assets/icons/discover.svg';
+import mybids from '../../assets/icons/mybids.svg';
+import Saved from '../../assets/icons/savedd.svg';
 const SidebarProvider = ({handleIsopen}) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -241,7 +244,55 @@ const SidebarProvider = ({handleIsopen}) => {
               `}</style>
             </Link>
           </li>
-  
+          <li>
+            <Link className="block hover:text-[#6161FF] hover:bg-white text-[#292D32] rounded-[9px]">
+              <Accordion sx={{ boxShadow: 'none', margin: 0, backgroundColor: "transparent", padding: 0 }} style={{ borderRadius: '9px', padding: "0px", margin: 0, border: '0px solid #ddd', overflow: 'hidden' }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                  sx={{ color: "#292D32", fontSize: "14px", fontWeight: "400", margin: "0px", paddingBottom: 0 }}
+                >
+                  <div className='flex justify-center hover:text-[#6161FF]  items-center'>
+                    <img src={Bidding} alt='workspace' className='w-[30px] icon' />
+                    <span className='font-[500] text-[14px] px-3'> Bidding Projects</span>
+                  </div>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <ul>
+                    <li className='hover:bg-white rounded-[9px] p-3'>
+                      <Link to='/bidding-project' className='flex items-center gap-2 hover:text-[#6262FF]'>
+                        <img className='w-[20px]' src={discover} alt="pin"/>
+                        <span className='font-[500] text-md'>Discover Projects</span>
+                      </Link>
+                    </li>
+                    <li className='hover:bg-white rounded-[9px] p-3'>
+                      <Link to='/mybids' className='flex items-center gap-2 hover:text-[#6262FF]'>
+                        <img className='w-[20px]' src={mybids} alt="pin"/>
+                        <span className='font-[500] text-md'>My Bids</span>
+                      </Link>
+                    </li>
+
+                    <li className='hover:bg-white rounded-[9px] p-3'>
+                      <Link to='/saved-BiddingProject' className='flex items-center gap-2 hover:text-[#6262FF]'>
+                        <img className='w-[20px]' src={Saved} alt="pin"/>
+                        <span className='font-[500] text-md'>Saved Projects</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </AccordionDetails>
+              </Accordion>
+              <style>{`
+                .icon {
+                  width: 30px;
+                  height: 30px;
+                }
+                .block:hover .icon {
+                  filter: brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(565%) hue-rotate(200deg) brightness(97%) contrast(102%);
+                }
+              `}</style>
+            </Link>
+          </li>
           <li>
       
           <p className='text-[#292D32] px-5 py-3 '>ACCOUNT</p>

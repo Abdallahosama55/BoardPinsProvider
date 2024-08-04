@@ -8,7 +8,7 @@ import { useState } from "react";
 import NotificationList from "./NavbarProvider/NotificationList";
 import PersionalList from "./NavbarProvider/PersionalList";
 
-const NavbarProvider = () => {
+const NavbarProvider = ({handleIsopen}) => {
   const [show, setshow] = useState(false);
   const [showNotification, setShownotification] = useState(false);
   return (

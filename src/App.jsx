@@ -26,6 +26,11 @@ import SharedProjects from './pages/Provider/SharedProjects';
 import SettingProfile from './pages/Provider/SettingProfile';
 import SettingBilling from './pages/Provider/SettingBilling';
 import OrderBilling from './pages/Provider/OrderBilling';
+import BiddingProject from './pages/Provider/BiddingProject';
+import MyBids from './pages/Provider/MyBids';
+import SavedBiddingProjectCards from './components/provider/BiddingProject/SavedBiddingProjectCards';
+import SavedBiddingProject from './pages/Provider/SavedBiddingProject';
+import BiddingProjectDetails from './pages/Provider/BiddingProjectDetails';
 
 
 const App = () => {
@@ -62,16 +67,22 @@ const App = () => {
         </Route>
         <Route path="/projectmangement-SharedProjects" element={<SharedProjects/>} />
         <Route path="/projectmangement-tasks" element={<ProjectmangementTasks />} />
+        <Route path="/bidding-project" element={< BiddingProject/>} />
+        <Route path="/mybids" element={<MyBids/>} />
+        <Route path="/saved-BiddingProject" element={< SavedBiddingProject/>} />
+        <Route path="/bidding-project/:id" element={< BiddingProjectDetails/>} />
+       
           <Route path="/upgrade" element={<Upgrade/>} />
           <Route path="/setting-profile" element={<SettingProfile/>} />
           <Route path="/Setting-billing" element={< SettingBilling/>} />
+
 
          
           
           
         </Route>
         <Route path="/ordering-billing" element={< OrderBilling/>} />
-
+    
       </Routes>
     </Router>
   );
