@@ -11,8 +11,8 @@ import img_merchant from "../../../assets/icons/Rectangle 541 (1).png";
 import rounded from "../../../assets/icons/rounded.png";
 
 const buttons = [
-  { src: icon_edit, alt: 'Edit', className: 'w-[25px]' },
-  { src: icon_setting, alt: 'Settings', className: 'w-[25px]' },
+  { src: icon_edit, alt: 'Edit', className: 'w-[25px] ' },
+  { src: icon_setting, alt: 'Settings', className: 'w-[25px] ' },
 
 
 ];
@@ -47,12 +47,12 @@ function Recents() {
           ))}
         </div>
       </div>
-      <div className='mx-2 my-6 grid grid-cols-12 gap-5 items-center'>
+      <div className='mx-2 my-6  w-full '>
         {items.map((item, index) => (
-          <React.Fragment key={index}>
-            <img src={item.src} className='w-[20px] col-span-1' alt={item.text} />
-            <span className='col-span-11'>{item.text}</span>
-          </React.Fragment>
+          <div className='mx-2 my-6 flex  w-full gap-5 items-center' key={index}>
+            <img src={item.src} className='w-[20px] ' alt={item.text} />
+            <span className=' flex-grow'>{item.text}</span>
+          </div>
         ))}
       </div>
     </div>

@@ -76,7 +76,7 @@ function ProjectTsks() {
             </div>
             
 </div>
-            <div className='  items-center flex md:col-span-4 flex  col-span-12 gap-4 justify-center  '>
+            <div className='  items-center flex md:col-span-4 flex  z-50 col-span-12 gap-4 justify-center  '>
             <CustomSelectButton options={options}  onSelect={handleSelect}  defaultText="Assigned to me"/>
             <CustomSelectButton options={options}  onSelect={handleSelect}  defaultText="sort"/>
             </div>

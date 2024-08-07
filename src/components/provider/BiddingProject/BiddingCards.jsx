@@ -4,8 +4,10 @@ import { GoDotFill } from "react-icons/go";
 import { IoBookmarkOutline } from "react-icons/io5";
 import { MdWorkOutline } from "react-icons/md";
 import { RiMoneyEuroCircleLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
-export const Card = ({ title, person, applied, timeAgo, price ,isbuttonApply ,status}) => {
+export const Card = ({ title, person, applied, timeAgo, price ,isbuttonApply ,status,id}) => {
+  const Navgate=useNavigate()
   return (
     <div className="rounded-xl bg-[#F8F8F8] w-full">
       <header className="flex flex-col lg:flex-row">
@@ -32,7 +34,7 @@ export const Card = ({ title, person, applied, timeAgo, price ,isbuttonApply ,st
         </div>
         {isbuttonApply ? (
           <div className="flex justify-end mt-5 lg:mt-1 items-center gap-2 px-5 lg:order-2 order-1">
-            <button className="bg-[#6161FF] rounded-xl text-center text-white px-6 py-2">
+            <button className="bg-[#6161FF] rounded-xl text-center text-white px-6 py-2" onClick={()=>Navgate(`/bidding-project/${id}`)}>
               Apply
             </button>
             <button className="rounded-xl text-center bg-white text-[#6161FF] px-2 py-2">

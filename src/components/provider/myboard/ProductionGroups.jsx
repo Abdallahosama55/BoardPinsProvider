@@ -27,7 +27,7 @@ const merchants = [
 ];
 
 const Header = () => (
-  <header className="py-5 items-center gap-2 flex flex-col md:flex-row relative">
+  <header className="py-5 items-center gap-2 flex  flex-row relative">
     <div className="p-3 bg-[#D9D9D9] rounded-xl">
       <GrGroup size={22} />
     </div>
@@ -97,7 +97,7 @@ const ProjectActions = () => (
 
 function ProductionGroups() {
   return (
-    <div className="p-4">
+    <div className="p-4 font-poppins">
       <Header />
       <main>
         <div className="py-6 grid grid-cols-12 gap-4 max-w-full overflow-x-auto">

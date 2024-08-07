@@ -49,7 +49,7 @@ const SidebardBiddingProject = ({
   };
 
   const getClassNames = () =>
-    `col-span-2 font-poppins h-full bg-[#F8F8F8] rounded-xl lg:static lg:col-span-2 transition-transform duration-300 ease-in-out ${
+    `col-span-2 font-poppins  h-full bg-[#F8F8F8] rounded-xl lg:static lg:col-span-2 transition-transform duration-300 ease-in-out ${
       isSidebarOpen
         ? "fixed z-50 top-0 left-0 lg:w-full w-72 h-full transform translate-x-0"
         : "fixed z-50 top-0 -left-full lg:w-full w-72 h-full transform -translate-x-full lg:translate-x-0"

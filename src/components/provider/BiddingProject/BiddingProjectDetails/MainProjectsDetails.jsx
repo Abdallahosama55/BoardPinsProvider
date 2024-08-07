@@ -7,9 +7,12 @@ import { BsClock } from "react-icons/bs";
 import { HiOutlineCurrencyDollar } from "react-icons/hi2";
 import { BiSolidFilePdf } from "react-icons/bi";
 import { IoCloudDownloadOutline } from 'react-icons/io5';
-import React from "react";
+import React, { useState } from "react";
+import Modal from "../../atoms/commonatoms/Modal";
+import BiddingProjectInfoModal from "./BiddingProjectInfoModal";
+import ModalDelete from "../../atoms/commonatoms/ModalDelete";
 const ProjectDescription = ({openAttachmentModal}) => (
-  <div className="border border-[#0000001A] rounded-2xl p-4">
+  <div className="border border-[#0000001A] bg-[#FBFBFF] rounded-2xl p-4">
     <h1 className="border-b-[1px] border-[#D0D0D0] text-[#404040] py-4 mb-5 font-bold">
       Project Description
     </h1>
@@ -41,7 +44,7 @@ const AttachmentButton = ({ icon, label ,openAttachmentModal }) => (
 const SkillsNeeded = () => {
   const skills = ["React", "Django", "Deep learning"];
   return (
-    <div className="border border-[#0000001A] rounded-2xl p-4">
+    <div className="border border-[#0000001A] bg-[#FBFBFF] rounded-2xl p-4">
       <h1 className="border-b-[1px] border-[#D0D0D0] text-[#404040] py-4 mb-5 font-bold">Skills Needed</h1>
       <div className="text-center flex flex-wrap gap-3 py-3 text-sm">
         {skills.map(skill => (
@@ -58,15 +61,15 @@ const SkillBadge = ({ skill }) => (
   </span>
 );
 
-const Proposal = () => (
-  <div className="border border-[#0000001A] rounded-2xl p-4">
+const Proposal = ({handleOpenModalEdit,handleOpenModalDelete}) => (
+  <div className="border border-[#0000001A] bg-[#FBFBFF] rounded-2xl p-4">
     <div className="lg:flex items-center border-b-[1px] py-3 px-3 border-[#D0D0D0]">
       <div className="flex-grow">
         <h1 className="text-[#404040] text-lg font-bold lg:pb-1 pb-4">Your Proposal</h1>
       </div>
       <div className="flex  justify-end gap-4 text-sm px-3">
-        <ProposalButton icon={<MdEdit />} label="Edit" />
-        <ProposalButton icon={<MdDelete />} label="Delete" additionalClasses="text-[#FF111199]" />
+        <ProposalButton icon={<MdEdit />} label="Edit"  handleAction={handleOpenModalEdit} />
+        <ProposalButton icon={<MdDelete />} label="Delete" additionalClasses="text-[#FF111199]" handleAction={handleOpenModalDelete} />
       </div>
     </div>
     <main>
@@ -103,8 +106,8 @@ const Proposal = () => (
   </div>
 );
 
-const ProposalButton = ({ icon, label, additionalClasses = "text-dark" }) => (
-  <button className={`flex gap-2 items-center px-3 ${additionalClasses}`}>
+const ProposalButton = ({ icon, label, additionalClasses = "text-dark" ,handleAction}) => (
+  <button className={`flex gap-2 items-center px-3 ${additionalClasses}`} onClick={()=>handleAction()}>
     {icon} {label}
   </button>
 );
@@ -129,11 +132,30 @@ const ProposalDetail = ({ icon, label, subLabel, extraSubLabel = "" }) => (
 );
 
 function MainProjectsDetails({openAttachmentModal}) {
+const [OpenModalEdit, setOpenModalEdit] = useState(false)
+const [OpenModalDelete, setOpenModalDelete] = useState(false)
+
+  const handleOpenModalEdit=()=>{
+    setOpenModalEdit(true)
+  }
+
+  const handleCloseModalEdit = () => {
+    setOpenModalEdit(false);
+  };
+  const handleOpenModalDelete = () => {
+    setOpenModalDelete(true);
+  };
+  const handleCloseModalDelete = () => {
+    setOpenModalDelete(false);
+  };
+  
   return (
     <div className="flex flex-col gap-4">
       <ProjectDescription openAttachmentModal={openAttachmentModal}/>
       <SkillsNeeded />
-      <Proposal />
+      <Proposal handleOpenModalEdit={handleOpenModalEdit} handleOpenModalDelete={handleOpenModalDelete} />
+    <BiddingProjectInfoModal OpenModalEdit={OpenModalEdit} handleCloseModalEdit={handleCloseModalEdit}/>
+    <ModalDelete OpenModalDelete={OpenModalDelete} handleCloseModalDelete={handleCloseModalDelete} title={"Proposel"}/>
     </div>
   );
 }

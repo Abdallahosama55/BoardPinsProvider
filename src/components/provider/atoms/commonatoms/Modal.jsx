@@ -1,14 +1,14 @@
 import React from "react";
 import { IoClose } from "react-icons/io5";
 
-const Modal = ({ isOpen, onClose, title, children,smallModal }) => {
+const Modal = ({ isOpen, onClose, title, children,smallModal ,className }) => {
 console.log(smallModal)
     if (!isOpen) return null;
 
   return (
     <div className={`fixed top-0 left-0 w-full h-full flex items-center  justify-center bg-gray-800 bg-opacity-50 z-50`}>
       <div
-        className={`bg-white p-8 rounded-lg shadow-lg   ${smallModal ? 'min-h-[60%] overflow-y-hidden' :'min-h-[95%] overflow-y-auto'}`}
+        className={`bg-white p-8 rounded-lg shadow-lg   ${smallModal ? 'min-h-[40%] overflow-y-hidden' :'min-h-[95%] overflow-y-auto'} ${className?className:""} `}
         style={{
       
     

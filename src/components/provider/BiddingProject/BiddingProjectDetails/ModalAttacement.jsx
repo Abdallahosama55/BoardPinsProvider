@@ -49,13 +49,13 @@ const [knowloadgebase, setknowloadgebase] = useState(false)
         className="rounded-xl flex items-center justify-center   w-[300px] h-[250px] bg-white"
         onClick={stopPropagation}
       >
-        <dev className="text-center">
-          <dev className="flex items-center justify-center w-full">
+        <div className="text-center">
+          <div className="flex items-center justify-center w-full">
             <LuBrain size="40" />
-          </dev>
+          </div>
           <h2 className=" text-sm font-bold">From Knowledgebase</h2>
           <h2 className=" mt-4  text-[#565656]">Manage Your <span className="  underline" onClick={()=>setknowloadgebase(true)}> Knowledge base</span></h2>
-        </dev>
+        </div>
       </div></>:<ModalKnowloageBase  stopPropagation={stopPropagation} setknowloadgebase={setknowloadgebase}/>}
     </div>
   );

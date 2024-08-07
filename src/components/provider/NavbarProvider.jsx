@@ -7,10 +7,12 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import { useState } from "react";
 import NotificationList from "./NavbarProvider/NotificationList";
 import PersionalList from "./NavbarProvider/PersionalList";
+import { useNavigate } from "react-router-dom";
 
 const NavbarProvider = ({handleIsopen}) => {
   const [show, setshow] = useState(false);
   const [showNotification, setShownotification] = useState(false);
+  const Navgate=useNavigate()
   return (
     <nav className="justify-end items-center lg:justify-start md:justify-start flex   mt-2 md:ms-4 mb-1 text-white  ">
       
@@ -30,7 +32,7 @@ const NavbarProvider = ({handleIsopen}) => {
         </form>
       </div>
       <div className="flex items-center gap-2">
-        <button className="md:flex hidden bg-[#6161FF] md:px-5 md:py-4 md:rounded-[12px] rounded-[8px] py-2 px-3 flex items-center ms-5">
+        <button className="md:flex hidden bg-[#6161FF] md:px-5 md:py-4 md:rounded-[12px] rounded-[8px] py-2 px-3 flex items-center ms-5" onClick={()=>Navgate('chat')}>
           <img src={chat} width={25} />
           <span className="px-3">chat</span>
         </button>
@@ -64,7 +66,7 @@ const NavbarProvider = ({handleIsopen}) => {
               show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
             }`}
           >
-<PersionalList/>
+<PersionalList Navgate={Navgate}/>
           </div>
         </div>
       </div>

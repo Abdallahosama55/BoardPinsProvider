@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MainProjectsDetails from "../../components/provider/BiddingProject/BiddingProjectDetails/MainProjectsDetails";
 import HeaderBiddingProjectDetails from "../../components/provider/BiddingProject/BiddingProjectDetails/HeaderBiddingProjectDetails";
 import ModalAttacement from "../../components/provider/BiddingProject/BiddingProjectDetails/ModalAttacement";
+import SidebarProjectDetails from "../../components/provider/BiddingProject/BiddingProjectDetails/SidebarProjectDetails";
 
 
 function BiddingProjectDetails() {
@@ -17,9 +18,12 @@ function BiddingProjectDetails() {
         <ModalAttacement isOpen={modalIsOpen} onClose={closeAttachmentModal}/>
       <HeaderBiddingProjectDetails />
       <div className="mt-3 grid lg:grid-cols-3 grid-cols-1 gap-3">
-        <dev className="col-span-2">
+        <div className="col-span-2">
         <MainProjectsDetails openAttachmentModal={openAttachmentModal}/>
-        </dev>
+        </div>
+        <div className="col-span-1">
+    <SidebarProjectDetails/>
+        </div>
 
       </div>
     </div>

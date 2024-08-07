@@ -28,7 +28,7 @@ function HeaderBiddingProject({ toggleSidebar ,title }) {
               className=" text-[#A2A2A2] items-center flex justify-center gap-2  text-sm py-2  px-3 border border-[#404040] rounded-lg"
               onClick={toggleDropdown}
             >
-              <dev className="flex-grow">Sort by</dev>
+              <div className="flex-grow">Sort by</div>
               <MdKeyboardArrowDown color="#404040" size={25} />
             </button>
             {isOpen && (
