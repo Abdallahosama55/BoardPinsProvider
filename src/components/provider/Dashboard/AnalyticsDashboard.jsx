@@ -143,11 +143,11 @@ const MonthlyTargetandRevenues = ({ header, start_value, end_value }) => {
       <div className="lg:flex gap-4 sm:items-center">
         <h3 className="font-bold flex-grow py-3 text-md text-lg ">{header}</h3>
         <button className="text-[#6161FF] mb-2 sm:mb-0 sm:ml-4 lg:w-auto w-full">Edit</button>
-        <div className=' justify-center flex gap-4'>
-          <button className="bg-[#6161FF] font-[500] lg:text-sm  px-1 text-[12px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
+        <div className=' justify-center flex gap-1'>
+          <button className="bg-[#6161FF] font-[500] lg:text-sm  px-4 text-[12px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
             + Add Annual Target
           </button>
-          <button className="bg-[#6161FF] font-[500] lg:text-sm  px-1 text-[12px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
+          <button className="bg-[#6161FF] font-[500] lg:text-sm  px-4 text-[12px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
             + Add Monthly Target
           </button>
         </div>

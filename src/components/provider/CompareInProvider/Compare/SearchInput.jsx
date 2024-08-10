@@ -90,12 +90,16 @@ function SearchInput() {
           </div>
         )
       ))}
-      <div className="flex items-center w-full py-2">
-        <div className="flex items-center justify-center h-full">
+      <div className="flex lg:flex-row flex-col  items-center w-full py-2">
+  <div className=" flex items-center gap-2 w-full px-4">
+
+
+  <div className="flex items-center justify-center h-full">
           <div className="vs-line px-2 text-xs font-bold text-gray-600 flex flex-col items-center">
             <span className="vs-text">VS</span>
           </div>
         </div>
+
         <div className="flex flex-grow px-5 bg-white items-center rounded-lg">
           <input
             type="text"
@@ -105,8 +109,10 @@ function SearchInput() {
           />
           <IoSearchOutline size={20} className="search-icon" />
         </div>
+  </div>
+      
         <button
-          className="flex justify-center text-center gap-1 items-center px-4 bg-[#6161FF] text-white font-medium text-sm py-3 rounded-lg ml-2"
+          className="flex lg:mt-1 mt-6  min-w-[140px] justify-center text-center gap-1 items-center px-2 bg-[#6161FF] text-white font-medium text-sm py-3 rounded-lg ml-2"
           onClick={handleSubmit}
         >
           <MdAddCircleOutline size={18} /> Compare Now

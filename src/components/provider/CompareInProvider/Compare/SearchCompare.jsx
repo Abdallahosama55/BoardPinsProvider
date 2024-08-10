@@ -10,7 +10,6 @@ function SearchCompare() {
 
   <SearchInput/>
 
-  
 </div>
 
 

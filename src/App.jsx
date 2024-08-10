@@ -32,6 +32,9 @@ import SavedBiddingProject from "./pages/Provider/SavedBiddingProject";
 import BiddingProjectDetails from "./pages/Provider/BiddingProjectDetails";
 import { Compare } from "@mui/icons-material";
 import CompareInProvider from "./pages/Provider/CompareInProvider";
+import CompareBetween from "./pages/Provider/CompareBetween";
+import CompareSaved from "./pages/Provider/CompareSaved";
+import CompareForms from "./pages/Provider/CompareForms";
 
 const App = () => {
   return (
@@ -74,13 +77,18 @@ const App = () => {
           />
           <Route path="/bidding-project" element={<BiddingProject />} />
           <Route path="/mybids" element={<MyBids />} />
-          <Route path="/saved-BiddingProject" element={<SavedBiddingProject />}   />
+          <Route
+            path="/saved-BiddingProject"
+            element={<SavedBiddingProject />}
+          />
           <Route
             path="/bidding-project/:id"
             element={<BiddingProjectDetails />}
           />
-              <Route path="/Compare" element={<CompareInProvider/>}   />
-
+          <Route path="/compare" element={<CompareInProvider />} />
+          <Route path="/compare/saved" element={<CompareSaved/>} />
+          <Route path="/compare/forms" element={<CompareForms/>} />
+          <Route path="/compare-between" element={<CompareBetween />} />
           <Route path="/upgrade" element={<Upgrade />} />
           <Route path="/setting-profile" element={<SettingProfile />} />
           <Route path="/Setting-billing" element={<SettingBilling />} />
