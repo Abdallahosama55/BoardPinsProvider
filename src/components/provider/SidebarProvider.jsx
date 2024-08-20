@@ -26,11 +26,13 @@ import Logo from "../../assets/images/Logo.png";
 import { IoMdExit } from "react-icons/io";
 import Invite from "./Invite/Invite";
 import { CgProfile } from "react-icons/cg";
-import { MdOutlinePayment } from "react-icons/md";
+import { MdGroups2, MdOutlinePayment } from "react-icons/md";
 import Bidding from "../../assets/icons/Bidding.svg";
 import discover from "../../assets/icons/discover.svg";
 import mybids from "../../assets/icons/mybids.svg";
 import Saved from "../../assets/icons/savedd.svg";
+import compares from '../../assets/icons/compare.png';
+
 const SidebarProvider = ({ handleIsopen }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -465,6 +467,120 @@ const SidebarProvider = ({ handleIsopen }) => {
                   </ul>
                 </AccordionDetails>
               </Accordion>
+              <style>{`
+                .icon {
+                  width: 30px;
+                  height: 30px;
+                }
+                .block:hover .icon {
+                  filter: brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(565%) hue-rotate(200deg) brightness(97%) contrast(102%);
+                }
+              `}</style>
+            </Link>
+          </li>
+          <li>
+            <Link to="compare" className="block hover:text-[#6161FF] hover:bg-white text-[#292D32] rounded-[9px]">
+              <Accordion
+                sx={{
+                  boxShadow: "none",
+                  margin: 0,
+                  backgroundColor: "transparent",
+                  padding: 0,
+                }}
+                style={{
+                  borderRadius: "9px",
+                  padding: "0px",
+                  margin: 0,
+                  border: "0px solid #ddd",
+                  overflow: "hidden",
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                  sx={{
+                    color: "#292D32",
+                    fontSize: "14px",
+                    fontWeight: "400",
+                    margin: "0px",
+                    paddingBottom: 0,
+                  }}
+                >
+                  <div className="flex justify-center hover:text-[#6161FF]  items-center">
+                    <img
+                      src={compares}
+                      alt="workspace"
+                      className="w-[30px] icon"
+                    />
+                    <span className="font-[500] text-[14px] px-3">
+                      {" "}
+                  Compare
+                    </span>
+                  </div>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <ul>
+                    <li className="hover:bg-white rounded-[9px] p-3">
+                      <Link
+                        to="/compare-between"
+                        className="flex items-center gap-2 hover:text-[#6262FF]"
+                      >
+                        <img className="w-[20px]" src={discover} alt="pin" />
+                        <span className="font-[500] text-md">
+                        Compare
+                        </span>
+                      </Link>
+                    </li>
+                    <li className="hover:bg-white rounded-[9px] p-3">
+                      <Link
+                        to="/compare/saved"
+                        className="flex items-center gap-2 hover:text-[#6262FF]"
+                      >
+                        <img className="w-[20px]" src={Saved} alt="pin" />
+                        <span className="font-[500] text-md">saved</span>
+                      </Link>
+                    </li>
+
+                    <li className="hover:bg-white rounded-[9px] p-3">
+                      <Link
+                        to="/compare/forms"
+                        className="flex items-center gap-2 hover:text-[#6262FF]"
+                      >
+                        <img className="w-[20px]" src={Saved} alt="pin" />
+                        <span className="font-[500] text-md">
+                         form
+                        </span>
+                      </Link>
+                    </li>
+                  </ul>
+                </AccordionDetails>
+              </Accordion>
+              <style>{`
+                .icon {
+                  width: 30px;
+                  height: 30px;
+                }
+                .block:hover .icon {
+                  filter: brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(565%) hue-rotate(200deg) brightness(97%) contrast(102%);
+                }
+              `}</style>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/production-group"
+              onClick={()=>handleItemClick ('Dashboard')}
+              className={`block hover:bg-white ${selectedItem==='Dashboard'?"text-[#6161FF]  rounded shadow-custom bg-white mx-2":""} hover:text-[#6161FF] hover:font-[500] font-[500] mt-3 text-[#292D32] p-2 rounded-lg`}
+            >
+              <div className="flex items-center px-2 py-0">
+           
+                <MdGroups2   className="icon w-[30px]" />
+                <span className="hover:font-[500] font-[500] text-[14px] px-3">
+                  {" "}
+                Production Group
+                </span>
+              </div>
               <style>{`
                 .icon {
                   width: 30px;

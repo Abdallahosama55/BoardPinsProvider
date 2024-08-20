@@ -273,3 +273,59 @@ export const Savedprojects = [
   },
 
 ];
+
+
+export const cardDataGroupProduction = [
+  {
+    target: { current: 500, total: 1000 },
+    merchantsApply: 3,
+    category: "Footwear",
+    merchants: [
+      {
+        name: "Merchant name",
+        applyFor: 300,
+        imgSrc: "https://via.placeholder.com/100",
+      },
+      {
+        name: "Merchant name",
+        applyFor: 300,
+        imgSrc: "https://via.placeholder.com/100",
+      },
+      {
+        name: "Merchant name",
+        applyFor: 300,
+        imgSrc: "https://via.placeholder.com/100",
+      },
+    ],
+    showMoreText: "Show 3 Merchants",
+    updatedInfo: "5 Merchants | Updated on 1/2/2024",
+    Status: "Waiting",
+    groupName: "Merchant Name",
+  },
+  {
+    target: { current: 900, total: 5000 },
+    merchantsApply: 12,
+    category: "manwear",
+    merchants: [
+      {
+        name: "Merchant name",
+        applyFor: 900,
+        imgSrc: "https://via.placeholder.com/100",
+      },
+      {
+        name: "Merchant name",
+        applyFor: 1200,
+        imgSrc: "https://via.placeholder.com/100",
+      },
+      {
+        name: "Merchant name",
+        applyFor: 900,
+        imgSrc: "https://via.placeholder.com/100",
+      },
+    ],
+    showMoreText: "Show 3 Merchants",
+    updatedInfo: "3 Merchants | Updated on 1/2/2024",
+    Status: "Ready to start",
+    groupName: "Merchant Name",
+  },
+];

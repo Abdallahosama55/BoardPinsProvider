@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
         'sans-serif': ['sans-serif'],
+        'poppins-thin':[]
       
       },
       boxShadow: {

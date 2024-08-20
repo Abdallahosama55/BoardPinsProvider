@@ -35,6 +35,8 @@ import CompareInProvider from "./pages/Provider/CompareInProvider";
 import CompareBetween from "./pages/Provider/CompareBetween";
 import CompareSaved from "./pages/Provider/CompareSaved";
 import CompareForms from "./pages/Provider/CompareForms";
+import ProductionGroup from "./pages/Provider/ProductionGroup";
+import ProductionGroupDetails from "./pages/Provider/ProductionGroupDetails";
 
 const App = () => {
   return (
@@ -89,6 +91,8 @@ const App = () => {
           <Route path="/compare/saved" element={<CompareSaved/>} />
           <Route path="/compare/forms" element={<CompareForms/>} />
           <Route path="/compare-between" element={<CompareBetween />} />
+          <Route path="/production-group" element={<ProductionGroup/>} />
+          <Route path="/production-group/:id" element={<ProductionGroupDetails />} />
           <Route path="/upgrade" element={<Upgrade />} />
           <Route path="/setting-profile" element={<SettingProfile />} />
           <Route path="/Setting-billing" element={<SettingBilling />} />

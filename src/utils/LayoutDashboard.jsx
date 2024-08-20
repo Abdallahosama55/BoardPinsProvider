@@ -20,7 +20,7 @@ setIsOpen(false)
       <div className="flex flex-col flex-1">
         <Invite isOpen={IsOpen} handleIsclose={handleIsclose} />
         <Navbar className="z-20"  />
-        <div className="flex-1 lg:h-[83vh] rounded-2xl mx-6 bg-[#F5F6FA] font-poppins overflow-y-auto"  style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
+        <div className="flex-1 lg:h-[83vh] outline-0 rounded-2xl mx-6 bg-[#F5F6FA] font-poppins overflow-y-auto"  style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
           <Outlet />
         </div>
       </div>
