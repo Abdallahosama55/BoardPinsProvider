@@ -19,9 +19,7 @@ export default {
         'custom3': '0px 4px 16px 0px rgba(0, 0, 0, 0.1)',
 
       },
-      filter: {
-        'blue-500': 'invert(32%) sepia(92%) saturate(6203%) hue-rotate(183deg) brightness(96%) contrast(104%)',
-      },
+
       colors: {
         primary: '#6161FF',
         dark:"#26222B"
@@ -31,11 +29,7 @@ export default {
       }
     },
   },
-  variants: {
-    filter: ['responsive', 'hover', 'focus'],
-  },
 
-  plugins: [
-    require('tailwindcss-filters'),
-  ],
+
+
 }
