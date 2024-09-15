@@ -45,7 +45,7 @@ function Section6Home() {
   };
 
   const { i18n,t } = useTranslation();
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language ||'en';
 const currentItems=items[currentLanguage]
 
 

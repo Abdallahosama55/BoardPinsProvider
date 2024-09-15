@@ -6,7 +6,7 @@ import { plans } from "../../../utils/helpers/constants";
 
 function Section2Price() {
   const { i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language ||'en';
 
   const [selectedPlan, setSelectedPlan] = useState("Monthly");
   const [selectedPlanType, setSelectedPlanType] = useState("Business");

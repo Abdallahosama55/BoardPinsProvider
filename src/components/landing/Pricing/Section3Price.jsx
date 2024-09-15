@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 function Section3Price() {
   const { i18n } = useTranslation(); // Access the i18n instance
-  const currentLanguage = i18n.language; // Get the current language from i18n
+  const currentLanguage = i18n.language ||'en'; // Get the current language from i18n
 
   // Define sections with both English and Arabic content
   const sections = {

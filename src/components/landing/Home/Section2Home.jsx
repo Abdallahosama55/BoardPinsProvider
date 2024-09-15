@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 function Section2Home() {
   const { i18n } = useTranslation(); // Access the i18n instance
-  const currentLanguage = i18n.language; // Get the current language from i18n
+  const currentLanguage = i18n.language ||'en'; // Get the current language from i18n
 
   // Define the text content based on the current language
   const textContent = currentLanguage === 'ar'

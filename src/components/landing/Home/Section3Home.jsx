@@ -80,7 +80,7 @@ const SectionCard = ({ icon, title, subtitle, features, buttonColor, imgSrc, img
 
 function Section3Home() {
   const { i18n, t } = useTranslation(); // Access the i18n instance
-  const currentLanguage = i18n.language; // Get the current language from i18n
+  const currentLanguage = i18n.language ||'en'; // Get the current language from i18n
   
   const features1ToShow = featuresList1[currentLanguage];
   const features2ToShow = featuresList2[currentLanguage];

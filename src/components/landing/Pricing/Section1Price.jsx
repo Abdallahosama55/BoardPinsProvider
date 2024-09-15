@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function Section1Price() {
   const { i18n, t } = useTranslation(); // Access the i18n instance
-  const currentLanguage = i18n.language; // Get the current language from i18n
+  const currentLanguage = i18n.language ||'en'; // Get the current language from i18n
   return (
     <div
       className={`flex items-center justify-center w-full pt-12 pb-3 px-12 lg:px-1 ${

@@ -66,7 +66,7 @@ function Section1Home() {
 
   // Example of using the data based on the current language
   
-  const currentLanguage = i18n.language; // Get the current language from i18n
+  const currentLanguage = i18n.language ||'en'; // Get the current language from i18n
   const featuresToShow = serviceFeatures[currentLanguage];
 
   // Function to show more cards

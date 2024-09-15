@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function Section4Home() {
   const { i18n, t } = useTranslation();
-  const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language ||'en';
 
   return (
     <div className={`bg-[#181B34] md:px-24 px-12 ${currentLanguage === 'ar' ? 'font-cairo' : 'font-poppins'}`} dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}>
