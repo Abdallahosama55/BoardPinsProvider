@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Layout from "./utils/LayoutDashboard";
 import Dashboard from "./pages/Provider/Dashboard";
 import MyBoardPins from "./pages/Provider/MyBoardPins";
