@@ -8,7 +8,7 @@ function CustomGoagleBtn({nameBtn ,path}) {
         
         <img src={goagle} className=' w-[25px]'/>
         
-       {nameBtn|| "Goagle"}   
+       {nameBtn|| "Google "}   
         
         
         </Link>

@@ -18,13 +18,13 @@ function Section1Home() {
   const serviceFeatures = {
     en: [
       {
-        title: 'Access to Verified Service Providers',
-        description: 'Find a comprehensive list of verified service providers in one centralized platform, saving you time and effort in searching for reliable partners.',
+        title: 'Quality Client Leads',
+        description: 'Gain access to a network of e-commerce merchants in need of your services.',
         src: right
       },
       {
-        title: 'Streamlined vendor selection process',
-        description: 'Easily compare different service providers and their offerings, allowing you to make informed decisions for your e-commerce business.',
+        title: 'Robust Project Management Tools',
+        description: 'Simplify your workflow with our comprehensive project management features.',
         src: right
       },
       {
@@ -33,10 +33,21 @@ function Section1Home() {
         src: right
       },
       {
-        title: 'Quality assurance',
-        description: 'Our verification process ensures that all service providers listed meet specific quality standards, providing you with peace of mind.',
+        title: 'Enhanced Visibility',
+        description: 'Build a strong profile showcasing your skills, experience, and portfolio',
         src: right
       },
+      {
+        title: 'Access to Verified Service Providers',
+        description: 'Find a comprehensive list of verified service providers in one centralized platform, saving you time and effort in searching for reliable partners.',
+        src: right
+      },
+      {
+        title: 'Streamlined Collaboration',
+        description: 'Work with clients in a unified workspace, ensuring smooth communication and project execution.',
+        src: right
+      },
+      
       // Add more features as needed
     ],
     ar: [

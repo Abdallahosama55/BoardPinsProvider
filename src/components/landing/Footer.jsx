@@ -19,14 +19,14 @@ function Footers() {
       becomePartner: "Become a Partner 🠚",
       menu: [
         { text: "Home", link: "/#home" },
-        { text: "Explore all Benefits", link: "/#benefits" },
-        { text: "About Us", link: "/#about" },
-        { text: "How It Works", link: "/#how-it-works" },
+        { text: "Explore all Benefits",link: "/home#benefits" },
+        { text: "About Us",  link: "/about#about" },
+        { text: "How It Works",link: "/home#howUsage" },
       ],
       contact: {
         heading: "Contact Us",
         phone: "(+20) 1555871500",
-        email: "info@baggr.org",
+        email: "info@boardpins.com",
       },
       policies: {
         privacy: "Privacy Policy",
@@ -119,7 +119,7 @@ function Footers() {
                   href="https://www.facebook.com/share/bFgxZv43avVrNcGi/?mibextid=qi2Omg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="col-span-1 bg-[#ECECEC] p-2 rounded-lg mx-2"
+                  className="col-span-1 bg-[#ECECEC] p-2 rounded-lg mx-1"
                 >
                   <LazyLoadImage src={face} alt="Facebook" />
                 </a>
@@ -127,7 +127,7 @@ function Footers() {
                   href="https://www.instagram.com/boardpins"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="col-span-1 bg-[#ECECEC] p-2 rounded-lg mx-2"
+                  className="col-span-1 bg-[#ECECEC] p-2 rounded-lg mx-1"
                 >
                   <LazyLoadImage src={insta} alt="Instagram" />
                 </a>
@@ -135,9 +135,9 @@ function Footers() {
                   href="https://www.linkedin.com/company/board-pins/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="col-span-1 flex items-center justify-center bg-[#ECECEC] p-2 rounded-lg mx-2"
+                  className="col-span-1 flex items-center justify-center bg-[#ECECEC] p-2 rounded-lg mx-1"
                 >
-                  <ImLinkedin color="#0A66C2" />
+                  <ImLinkedin color="#0A66C2"  size={30}/>
                 </a>
               </div>
               <div className="flex text-dark flex-wrap underline text-sm gap-5 flex-row">
