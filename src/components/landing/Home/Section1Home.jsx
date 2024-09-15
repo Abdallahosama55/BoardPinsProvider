@@ -107,7 +107,7 @@ function Section1Home() {
 
       {/* Section 2 - Service Features */}
       <div className="grid lg:grid-cols-4 grid-cols-1 py-4 gap-6 justify-center">
-        {featuresToShow.slice(0, showCardsCount).map((feature, index) => (
+        {featuresToShow?.slice(0, showCardsCount)?.map((feature, index) => (
           <div key={index} className="flex rounded-3xl bg-white p-3 gap-3">
             <div className='flex items-start gap-3'>
               <img src={feature.src} alt="Right Icon" className='w-[100px]' />

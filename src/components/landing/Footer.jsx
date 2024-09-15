@@ -8,7 +8,8 @@ import face from "../../assets/icons/face.svg";
 import { useTranslation } from "react-i18next";
 import { ImLinkedin } from "react-icons/im";
 import { BsUniversalAccessCircle } from "react-icons/bs";
-import { CgNotes } from "react-icons/cg";
+import { PiTextAlignRightFill } from "react-icons/pi";
+import { CgNotes } from 'react-icons/cg';
 
 function Footers() {
   const footerContent = {
@@ -55,8 +56,10 @@ function Footers() {
   };
 
   const { i18n, t } = useTranslation();
-  const currentLanguage = i18n.language;
-  const { joinText, unlockText, becomePartner, menu, contact, policies } = footerContent[currentLanguage];
+  const currentLanguage = i18n.language || 'en'; // Fallback to 'en' if undefined
+  const content = footerContent[currentLanguage] || footerContent['en']; // Fallback content
+
+  const { joinText, unlockText, becomePartner, menu, contact, policies } = content || {}; // Destructure content safely
 
   return (
     <div
@@ -82,7 +85,7 @@ function Footers() {
         <div className="xl:w-10/12 lg:w-11/12 w-full mx-auto px-10">
           <ul className="flex lg:flex-row  gap-3 flex-col">
             <ul className="flex-1">
-              {menu.map((item, index) => (
+              {menu?.map((item, index) => (
                 <li key={index} className="underline my-2 text-[#000] text-[1rem] font-[400] ">
                   <HashLink to={item.link} smooth>
                     {item.text}
@@ -92,18 +95,18 @@ function Footers() {
             </ul>
             <ul className="flex-1">
               <li className="text-[#000] text-[1rem] my-3 font-[400] ">
-                {contact.heading}
+                {contact?.heading}
               </li>
               <li className="text-[#000] text-[1rem] mb-3 font-[300] ">
                 <LazyLoadImage src={call} className="inline-block w-5 me-1" />{" "}
-                <a href={`tel:${contact.phone}`} className="underline">
-                  {contact.phone}
+                <a href={`tel:${contact?.phone}`} className="underline">
+                  {contact?.phone}
                 </a>
               </li>
               <li className="text-[#000] text-[1rem] font-[300] ">
                 <LazyLoadImage src={bank} className="inline-block w-5 me-1" />{" "}
-                <a href={`mailto:${contact.email}`} className="underline">
-                  {contact.email}
+                <a href={`mailto:${contact?.email}`} className="underline">
+                  {contact?.email}
                 </a>
               </li>
             </ul>
@@ -139,20 +142,20 @@ function Footers() {
               </div>
               <div className="flex text-dark flex-wrap underline text-sm gap-5 flex-row">
                 <a
-                  href="/PrivacyPolicy.docx" // Corrected file path
+                  href="/PrivacyPolicy.docx"
                   className="underline flex gap-3 items-center"
                   download
                 >
                   <BsUniversalAccessCircle />
-                  <h3>{policies.privacy}</h3>
+                  <h3>{policies?.privacy}</h3>
                 </a>
                 <a
-                  href="/TermsAndConditions.docx" // Corrected file path
+                  href="/TermsAndConditions.docx"
                   className="underline flex items-center gap-2"
                   download
                 >
-                <CgNotes />
-                  <h3>{policies.terms}</h3>
+                  <CgNotes />
+                  <h3>{policies?.terms}</h3>
                 </a>
               </div>
             </div>

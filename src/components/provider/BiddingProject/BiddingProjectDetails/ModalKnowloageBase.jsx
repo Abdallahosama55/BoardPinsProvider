@@ -54,7 +54,7 @@ function ModalKnowloageBase({ stopPropagation, setknowloadgebase }) {
       <main className=" flex flex-col gap-2">
         <div className=" flex-grow ">
           <div className="grid h-full overflow-y-auto py-6 mt-6 lg:mx-16 mx-4 xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 justify-center">
-            {items.map((item, index) => (
+            {items?.map((item, index) => (
               <div
                 key={index}
                 className="pt-4 pb-0 rounded-xl bg-[#E7E7E7] relative"

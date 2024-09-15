@@ -91,7 +91,7 @@ function TableProjectTasks() {
           </tr>
         </thead>
         <tbody>
-          {data.map((item, index) => (
+          {data?.map((item, index) => (
             <tr key={index} className="bg-white border-b-[1px] border-blue hover:bg-gray-50">
               <td className="w-4 p-4">
                 <div className="flex items-center">

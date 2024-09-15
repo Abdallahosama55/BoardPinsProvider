@@ -9,7 +9,7 @@ const OverviewCard = ({ title, items }) => (
   <div className="OverviewCard shadow-custom rounded-lg p-6 mb-3">
     <h3 className="font-bold text-lg py-3">{title}</h3>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 py-6">
-      {items.map((item, index) => (
+      {items?.map((item, index) => (
         <div key={index} className="flex gap-2">
           <img src={item.image} className="w-[60px] h-[60px]" alt="icon" />
           <div>
@@ -70,7 +70,7 @@ const ProjectCard = ({ items }) => (
   <div className="OverviewCard shadow-custom rounded-lg p-6 mb-3">
     <h3 className="font-bold text-lg py-3">Projects Overview</h3>
     <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 py-6">
-      {items.map((item, index) => (
+      {items?.map((item, index) => (
         <div key={index} className="flex gap-2 my-3">
           <img src={item.image} className="lg:w-[90px] lg:h-[90px] w-[50px] h-[50px]" alt="icon" />
           <div>
@@ -87,7 +87,7 @@ const ProductionGroups = ({ items }) => (
   <div className=" shadow-custom rounded-lg p-4 mb-3">
     <h3 className="font-bold text-lg">Production Groups Overview</h3>
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-6">
-      {items.map((item, index) => (
+      {items?.map((item, index) => (
         <div key={index} className="flex gap-2">
           <img src={item.image} className="lg:w-[80px] lg:h-[70px] w-[50px] h-[50px]" alt="icon" />
           <div>

@@ -56,7 +56,7 @@ const CloseModalEdit=()=>{
   ];
   return (
     <div>
-      {items.map((item,index)=>(
+      {items?.map((item,index)=>(
       <div className=" lg:flex" key={index}>
       <div className=" flex flex-grow gap-2 py-6 lg:w-[70%]">
         <img

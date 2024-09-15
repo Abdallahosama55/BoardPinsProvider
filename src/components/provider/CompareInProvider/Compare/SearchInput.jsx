@@ -20,7 +20,7 @@ function SearchInput() {
     const newValue = event.target.value;
 
     setInputs((prevInputs) => {
-      const newInputs = prevInputs.map((input) => {
+      const newInputs = prevInputs?.map((input) => {
         if (input.id === id) {
           return { ...input, value: newValue };
         }
@@ -45,7 +45,7 @@ function SearchInput() {
   };
 
   const handleSubmit = () => {
-    const searchValues = inputs.map((input) => input.value).filter((value) => value !== "");
+    const searchValues = inputs?.map((input) => input.value).filter((value) => value !== "");
     console.log("Search values:", searchValues);
     // Perform search with searchValues
   };
@@ -61,7 +61,7 @@ function SearchInput() {
 
   return (
     <div className="flex flex-col items-center py-6">
-      {inputs.map((input, index) => (
+      {inputs?.map((input, index) => (
         input.value !== "" && ( // Only render if value is not empty
           <div key={input.id} className="flex items-center w-full py-2">
             <div className="flex items-center justify-center h-full">

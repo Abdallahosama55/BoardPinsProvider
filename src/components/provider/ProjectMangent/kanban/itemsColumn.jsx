@@ -33,7 +33,7 @@ const ItemsColumn = ({ columnTitle, items, columnId }) => {
       >
         {items &&
           items.length > 0 &&
-          items.map((item, index) => (
+          items?.map((item, index) => (
             <Card
               key={item.id}
               draggableId={item.id.toString()}

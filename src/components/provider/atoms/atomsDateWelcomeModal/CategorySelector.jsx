@@ -24,7 +24,7 @@ const CategorySelector = ({ setFieldValue, categories }) => {
       {showCategories && (
         <div className="bg-[#F5F5F5] p-4 rounded-xl mt-2 max-h-[200px] overflow-y-auto">
           <label className="block mb-2">Select categories</label>
-          {Object.keys(categories).map((category) => (
+          {Object.keys(categories)?.map((category) => (
             <div key={category}>
               <label>
                 <Field

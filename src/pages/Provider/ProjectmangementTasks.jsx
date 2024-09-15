@@ -54,7 +54,7 @@ const ProjectMangementTasks = () => {
         <DatePicker />
         <div className="grid lg:grid-cols-2 items-center justify-center bg-[#F5F6FA] rounded-xl py-3">
           <ul className="items-center flex gap-6 px-5 font-poppins">
-            {views.map(view => (
+            {views?.map(view => (
               <NavigationItem
                 key={view.key}
                 label={view.label}

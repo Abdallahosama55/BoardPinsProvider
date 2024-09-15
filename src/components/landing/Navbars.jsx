@@ -44,7 +44,7 @@ const Navbar = () => {
             </NavLink>
             <HashLink 
               to="/home#howUsage" 
-              className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
+                  className=' text-[#8E8E8E] hover:text-[#6161FF]'
               scroll={smoothScroll}
             >
               {t('howItWorks')}
@@ -75,8 +75,8 @@ const Navbar = () => {
           </button>
         </div>
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-gray-300 hover:text-[#8E8E8E] focus:outline-none">
-            <svg
+          <button onClick={toggleMenu} className="text-gray-800 hover:text-[#8E8E8E] focus:outline-none">
+          <svg
               className="w-6 h-6"
               fill="none"
               stroke="currentColor"
@@ -94,7 +94,7 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden py-6">
           <NavLink 
             to="/" 
             className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
@@ -115,7 +115,7 @@ const Navbar = () => {
           </NavLink>
              <HashLink
             to="/home#howUsage" 
-            className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
+          className=' text-gray-300 hover:text-[#6161FF]'
         smooth={smoothScroll}
         >
             {t('howItWorks')}

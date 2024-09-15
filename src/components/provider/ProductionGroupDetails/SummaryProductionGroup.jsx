@@ -26,7 +26,7 @@ function SummaryProductionGroup() {
     <div className="bg-[#F5F6FA] rounded-xl p-6 mx-4 font-poppins">
       <div className="lg:flex justify-center">
         <div className="grid lg:grid-cols-3 grid-cols-1 flex-grow gap-5">
-          {items.map((item, index) => (
+          {items?.map((item, index) => (
             <div key={index} className="flex items-center gap-2">
               {item.icon}
               <div>

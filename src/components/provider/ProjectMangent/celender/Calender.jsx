@@ -48,7 +48,7 @@ const Calendar = () => {
     <div className="p-4 px-0 overflow-auto ">
       <h3 className=' font-bold text-lg text-[#585757] pb-5'>February 2024</h3>
       <div className="grid grid-cols-7 gap-0 text-center bg-[#F5F6FA] text-gray-500  ">
-        {daysOfWeek.map((day, index) => (
+        {daysOfWeek?.map((day, index) => (
           <div key={index} className='border text-sm border-gray-100 py-2'>{day}</div>
         ))}
       </div>

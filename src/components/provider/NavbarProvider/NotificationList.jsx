@@ -14,7 +14,7 @@ const NotificationList = () => {
   ];
 
   const renderTabs = () => {
-    return tabs.map((tab) => (
+    return tabs?.map((tab) => (
       <span
         key={tab}
         className={`cursor-pointer ${selected === tab ? 'border-blue-500 border-b-[3px]' : ''}`}
@@ -35,7 +35,7 @@ const NotificationList = () => {
   };
 
   const renderNotifications = () => {
-    return notifications.map((notification) => (
+    return notifications?.map((notification) => (
       <div key={notification.id} className=''>
         <div className='flex gap-2 items-center'>
           <input type='checkbox' />

@@ -52,7 +52,7 @@ const currentItems=items[currentLanguage]
   return (
     <div className={`bg-[#E6ECF9] py-12  ${currentLanguage === 'ar' ? 'font-cairo' : 'font-poppins'}`}  dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'} id='benefits'>
       <div className='grid lg:grid-cols-3 grid-cols-1 gap-5 lg:mx-64 mx-6 '>
-        {currentItems.map((item, key) => (
+        {currentItems?.map((item, key) => (
           <div key={key}>
             <div className='p-6 h-full bg-white shadow-custom rounded-lg'>
               <img src={item.src} alt={item.title}  className=' w-[60px]' />

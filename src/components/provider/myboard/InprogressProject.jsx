@@ -46,7 +46,7 @@ function InprogressProject() {
         </div>
       </div>
 
-      {['Merchant Name 1', 'Merchant Name 2', 'Merchant Name 3', 'Merchant Name 4' ,'Merchant Name 4'].map((merchant, index) => (
+      {['Merchant Name 1', 'Merchant Name 2', 'Merchant Name 3', 'Merchant Name 4' ,'Merchant Name 4']?.map((merchant, index) => (
         <div key={index} className='mb-3 pb-5 md:pb-0 px-3 bg-[#F5F6FA] rounded-lg grid grid-cols-12 gap-2'>
           <div className='col-span-3 flex items-center justify-center'>
             <img src={img_merchant} className='md:w-[100px] md:h-auto md:p-3 h-[70px]' />

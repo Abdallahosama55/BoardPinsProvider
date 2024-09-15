@@ -36,7 +36,7 @@ function SidebarProjectDetails() {
               </span>
             </div>
           </div>
-          {projectDetails.map((detail, index) => (
+          {projectDetails?.map((detail, index) => (
             <div key={index} className="mb-2 text-[#000000AD] flex w-full">
               <div className="flex gap-2 w-1/2 items-center">
                 {detail.icon}

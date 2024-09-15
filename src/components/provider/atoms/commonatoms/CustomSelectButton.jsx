@@ -33,7 +33,7 @@ const CustomSelectButton = ({ options, onSelect, defaultText }) => {
       {isOpen && (
         <div className="absolute mt-2 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-            {options.map((option, index) => (
+            {options?.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleOptionClick(option)}

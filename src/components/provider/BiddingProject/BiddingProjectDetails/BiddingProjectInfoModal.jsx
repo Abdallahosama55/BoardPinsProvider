@@ -92,7 +92,7 @@ function BiddingProjectInfoModal({ OpenModalEdit  ,handleCloseModalEdit}) {
           {({ isSubmitting }) => (
             <Form>
               <div className="grid grid-cols-2 gap-4">
-                {formFields.slice(0, 2).map((field) => (
+                {formFields.slice(0, 2)?.map((field) => (
                   <div key={field.name}>
                     <label
                       htmlFor={field.name}

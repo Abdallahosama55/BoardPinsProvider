@@ -44,7 +44,7 @@ function CardsInfo({ title, role, phone, imgSrc, status, itemsCategories }) {
       </div>
 
       <div className="grid grid-cols-2 gap-7">
-        {itemsCategories.map((item, key) => (
+        {itemsCategories?.map((item, key) => (
           <div key={key} className="py-2">
             <span className="px-3 border-[1px] border-[#6161FF] text-[#6161FF] rounded-3xl flex">
               {item}

@@ -77,7 +77,7 @@ const SidebarProvider = ({ handleIsopen }) => {
             scrollbarColor: "#4B5563 ##1E1E1EBF",
           }}
         >
-          {menuItems.map((item, index) => (
+          {menuItems?.map((item, index) => (
             <li key={index}>
               <Link
                 to="/"

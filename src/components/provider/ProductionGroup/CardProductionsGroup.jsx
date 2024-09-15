@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 function CardProductionsGroup() {
   return (
     <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 md:gap-6 gap-12  p-0">
-      {cardDataGroupProduction.map((card, index) => (
+      {cardDataGroupProduction?.map((card, index) => (
         <Link
         to={`/production-group/${index}`}
           key={index}
@@ -61,7 +61,7 @@ function CardProductionsGroup() {
           </div>
 
           <div className="grid grid-cols-2 gap-2 mx-3">
-            {card.merchants.map((merchant, idx) => (
+            {card.merchants?.map((merchant, idx) => (
               <div
                 key={idx}
                 className="px-2 bg-[#F5F6FA] rounded-lg flex justify-center items-center"
@@ -81,7 +81,7 @@ function CardProductionsGroup() {
             <div className="px-2 bg-[#F5F6FA] rounded-lg flex justify-center items-center">
               <div>
                 <div className="grid grid-cols-2 gap-1">
-                  {[...Array(3)].map((_, idx) => (
+                  {[...Array(3)]?.map((_, idx) => (
                     <div
                       key={idx}
                       className="rounded bg-gray-300 w-[30px] h-[25px]"

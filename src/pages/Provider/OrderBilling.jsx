@@ -60,7 +60,7 @@ const UserPlanComponent = () => {
     <div className="py-6">
       <h2 className="text-center text-primary font-bold text-3xl">Standard</h2>
       <ul className="p-8 flex flex-col gap-2">
-        {features.map((item, index) => (
+        {features?.map((item, index) => (
           <li key={index} className="grid grid-cols-[auto,1fr] py-1 gap-2 items-start text-sm">
             <GoNorthStar color="#6161FF" size={18} />
             <span>{item}</span>

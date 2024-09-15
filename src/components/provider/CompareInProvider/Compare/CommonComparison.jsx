@@ -63,11 +63,11 @@ function CommonComparison() {
 
       <main>
         <div className="grid grid-cols-3 gap-3 mt-12">
-          {cardData.map((card) => (
+          {cardData?.map((card) => (
             <div className="card " key={card.id} >
               <h5 className="text-[#404040]">{card.title}</h5>
               <div className="flex items-center justify-center   bg-[#F9F9F9] py-8 rounded-xl p-4">
-                {card.items.map((item, index) => (
+                {card?.items?.map((item, index) => (
                   <React.Fragment key={item.id}>
                     <div className="max-w-[100px] max-h-[100px] rounded-full bg-white flex items-center justify-center overflow-hidden">
                       <img

@@ -30,7 +30,7 @@ function CompareBetween() {
         <div className="flex w-full justify-center items-center">
           <div className="flex flex-col flex-wrap lg:flex-row items-center gap-6">
             {/* Display comparison images dynamically */}
-            {selectedItems.map((item, index) => (
+            {selectedItems?.map((item, index) => (
               <div className=" flex items-center" key={`${index}`}>
                 {/* Spacer with 'vs' between items */}
                 {index !== 0 && (
@@ -73,7 +73,7 @@ function CompareBetween() {
             ))}
 
             {/* Display empty slots */}
-            {Array.from({ length: 1 - selectedItems.length }).map(
+            {Array.from({ length: 1 - selectedItems.length })?.map(
               (_, index) => (
                 <div className=" flex items-center" key={`empty-${index}`}>
                   {/* Spacer with 'vs' between images */}

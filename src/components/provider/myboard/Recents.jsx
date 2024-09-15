@@ -40,7 +40,7 @@ function Recents() {
           <p>lorem ipsum...</p>
         </div>
         <div className='absolute md:left-[85%] gap-2 left-[80%] flex items-center justify-center'>
-          {buttons.map((button, index) => (
+          {buttons?.map((button, index) => (
             <button key={index}>
               <img src={button.src} alt={button.alt} className={button.className} />
             </button>
@@ -48,7 +48,7 @@ function Recents() {
         </div>
       </div>
       <div className='mx-2 my-6  w-full '>
-        {items.map((item, index) => (
+        {items?.map((item, index) => (
           <div className='mx-2 my-6 flex  w-full gap-5 items-center' key={index}>
             <img src={item.src} className='w-[20px] ' alt={item.text} />
             <span className=' flex-grow'>{item.text}</span>

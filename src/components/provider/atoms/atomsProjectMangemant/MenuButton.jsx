@@ -34,7 +34,7 @@ const MenuButton = ({ icon, menuItems, onItemSelect, title }) => {
         style={{ transformOrigin: 'top right' }}
       >
         <ul>
-          {menuItems.map((item) => (
+          {menuItems?.map((item) => (
             <li
               key={item.key}
               className="px-4 py-2 hover:bg-gray-200 cursor-pointer flex items-center"

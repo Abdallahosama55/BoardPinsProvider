@@ -103,7 +103,7 @@ function ListProjectMangementTable() {
                 </tr>
               </thead>
               <tbody>
-                {items.map((item, index) => (
+                {items?.map((item, index) => (
                   <Draggable key={item.id} draggableId={item.id} index={index}>
                     {(provided) => (
                       <tr

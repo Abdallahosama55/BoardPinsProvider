@@ -63,14 +63,14 @@ function CompareSaved() {
 
       <main>
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-3 mt-12">
-          {cardData.map((card) => (
+          {cardData?.map((card) => (
             <div className="card " key={card.id} >
               <h5 className="text-[#404040] py-2">{card.title}</h5>
               <div className="   bg-[#F9F9F9] px-2 rounded-xl min-h-[200px]">
             <div className='flex w-full justify-end text-[#FFC226] py-5'><Bookmark color='#FFC226'/></div>
             <div className='flex items-center justify-center'>
 
-            {card.items.map((item, index) => (
+            {card?.items?.map((item, index) => (
                   <React.Fragment key={item.id}>
                     
                     <div className="max-w-[100px] max-h-[100px] rounded-full bg-white flex items-center justify-center overflow-hidden">

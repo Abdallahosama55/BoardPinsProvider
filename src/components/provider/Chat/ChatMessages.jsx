@@ -55,7 +55,7 @@ const messages = [
 
 const ChatMessages = () => (
   <div className="flex flex-col gap-8 p-4 h-full overflow-y-auto md:max-h-[60vh] max-h-[50vh]"  style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
-    {messages.map((message, index) => (
+    {messages?.map((message, index) => (
       <Message key={index} {...message} />
     ))}
   </div>

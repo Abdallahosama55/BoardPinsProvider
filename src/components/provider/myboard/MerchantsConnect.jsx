@@ -33,7 +33,7 @@ function MerchantsConnect() {
 
       <main>
         <div className="">
-          {merchants.map((merchant, index) => (
+          {merchants?.map((merchant, index) => (
             <div key={index} className="w-full max-h-[70vh] overflow-y-auto gap-4 grid grid-cols-12 mb-5">
               <div className=" md:col-span-6 col-span-12  flex" >
                 <div className="items-center flex">

@@ -28,7 +28,7 @@ function SelectCompare({ isModalOpen, handleCloseModal, onApply }) {
   const handleApply = () => {
     const selectedItems = itemsCard
       .filter((item) => selectedCards.includes(item.id))
-      .map((item) => item);
+      ?.map((item) => item);
     onApply(selectedItems); // Pass the array of selected images
   };
 
@@ -60,7 +60,7 @@ function SelectCompare({ isModalOpen, handleCloseModal, onApply }) {
             </button>
           </div>
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 justify-center px-4">
-            {itemsCard.map((item) => (
+            {itemsCard?.map((item) => (
               <div
                 key={item.id}
                 className={`rounded-lg p-5 flex flex-col gap-2 ${

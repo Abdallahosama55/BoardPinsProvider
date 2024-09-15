@@ -61,7 +61,7 @@ const MerchantInfo = ({ name, rating, role, timeAgo, isSelected, handleCheckboxC
           <div className="flex gap-4 items-center">
             <h2 className="text-md font-[500]">{name}</h2>
             <div className="flex rating">
-              {[...Array(5)].map((_, i) => (
+              {[...Array(5)]?.map((_, i) => (
                 <FaStar key={i} color={i < rating ? "#FFC229" : "#D9D9D9"} />
               ))}
             </div>
@@ -104,13 +104,13 @@ const ProjectActions = () => (
 
 function AppliedMerchantsDetails() {
   const [selectedMerchants, setSelectedMerchants] = useState(
-    merchants.map(() => false)
+    merchants?.map(() => false)
   );
 
   const handleSelectAll = () => {
     const newSelection = selectedMerchants.every((selected) => selected)
-      ? selectedMerchants.map(() => false)
-      : selectedMerchants.map(() => true);
+      ? selectedMerchants?.map(() => false)
+      : selectedMerchants?.map(() => true);
     setSelectedMerchants(newSelection);
   };
 
@@ -128,7 +128,7 @@ function AppliedMerchantsDetails() {
       />
       <main>
         <div className="py-6 grid grid-cols-12 gap-4 max-w-full overflow-x-auto">
-          {merchants.map((merchant, index) => (
+          {merchants?.map((merchant, index) => (
             <React.Fragment key={index}>
               <MerchantInfo
                 {...merchant}

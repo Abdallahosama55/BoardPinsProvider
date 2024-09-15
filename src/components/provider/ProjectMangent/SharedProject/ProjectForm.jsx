@@ -105,7 +105,7 @@ const FormField = ({ name, label, type, placeholder, options, errors, touched })
     <label className="block text-gray-700">{label}</label>
     {type === "radio" ? (
       <div className="flex items-center mt-1">
-        {options.map(({ value, label }) => (
+        {options?.map(({ value, label }) => (
           <label key={value} className="flex items-center ml-4">
             <Field type={type} name={name} value={value} />
             <span className="ml-2 text-dark">{label}</span>
@@ -161,7 +161,7 @@ const DropdownField = ({
       }}
     >
       <ul className="flex flex-col gap-2">
-        {options.map((option) => (
+        {options?.map((option) => (
           <li
             key={option}
             className="flex items-center gap-2 cursor-pointer hover:bg-gray-200 p-2 rounded"

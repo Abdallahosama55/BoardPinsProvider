@@ -144,7 +144,7 @@ export default function VerifyMail() {
               </div>
               <div className="text-center mt-12">Enter Your Code</div>
               <div className="flex justify-center py-5 space-x-4">
-                {inputRefs.map((inputRef, index) => (
+                {inputRefs?.map((inputRef, index) => (
                   <Field
                     key={index}
                     innerRef={inputRef}

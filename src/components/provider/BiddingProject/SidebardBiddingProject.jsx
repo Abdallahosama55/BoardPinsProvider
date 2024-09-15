@@ -90,7 +90,7 @@ const SidebardBiddingProject = ({
         <div className="py-2">
           <h1 className="text-dark py-1 text-sm font-semibold">{headers.status}</h1>
           <ul className="px-3">
-            {statusItems.map((item) => (
+            {statusItems?.map((item) => (
               <Checkbox
                 key={item.value}
                 id={item.value}
@@ -109,7 +109,7 @@ const SidebardBiddingProject = ({
           <div className="py-2">
             {selectedSkills.length > 0 && (
               <div className="flex gap-2 flex-wrap rounded-xl bg-white text-xs p-4">
-                {selectedSkills.map((skill) => (
+                {selectedSkills?.map((skill) => (
                   <span
                     key={skill}
                     className="px-2 py-1 rounded-2xl border border-[#6161FF] text-[#6161FF] flex items-center gap-1"
@@ -125,7 +125,7 @@ const SidebardBiddingProject = ({
             )}
           </div>
           <ul className="bg-white rounded-xl p-2 px-3">
-            {skillsItems.map((item) => (
+            {skillsItems?.map((item) => (
               <Checkbox
                 key={item.value}
                 id={item.value}
@@ -142,7 +142,7 @@ const SidebardBiddingProject = ({
         <div className="py-2">
           <h1 className="text-dark py-1 text-sm font-semibold">{headers.deadline}</h1>
           <ul className="px-3">
-            {deadlineItems.map((item) => (
+            {deadlineItems?.map((item) => (
               <Checkbox
                 key={item.value}
                 id={item.value}

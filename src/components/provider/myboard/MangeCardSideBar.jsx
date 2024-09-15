@@ -21,7 +21,7 @@ const ManageCardSideBar = ({ isOpenMangeCard, toggleSidebar }) => {
         </button>
       </div>
       <div className="p-4 space-y-4 overflow-y-auto font-poppins">
-        {cards.map((card, index) => (
+        {cards?.map((card, index) => (
           <div key={index} className="p-4 pt-6 bg-[#F7F7F7] border text-white rounded-lg items-start space-x-4">
             <div className={`w-10 h-10 mb-5 ${card.bgColorIcon} text-white rounded-lg flex items-center justify-center`}>
               <span>{card.icon}</span>

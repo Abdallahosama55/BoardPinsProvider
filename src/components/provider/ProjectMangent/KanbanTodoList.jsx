@@ -90,7 +90,7 @@ const KanbanTodoList = () => {
       />
       <div className="grid lg:grid-cols-3  grid-cols-1 lg:gap-x-4 justify-between">
         <DragDropContext onDragEnd={onDragEnd}>
-          {Object.entries(columnData).map(([id, column]) => (
+          {Object.entries(columnData)?.map(([id, column]) => (
             <StrictModeDroppable droppableId={id} key={id}>
               {(provided) => (
                 <div {...provided.droppableProps} ref={provided.innerRef}>

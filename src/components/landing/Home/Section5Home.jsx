@@ -177,7 +177,7 @@ function Section5Home() {
 
       <div className="w-full flex justify-center">
         <div className="grid lg:grid-cols-7 grid-cols-4 mt-2 lg:gap-6 shadow-custom pt-3 text-[#0F1048] bg-[#FFFFFF01]">
-          {stepperItems.map((step) => (
+          {stepperItems?.map((step) => (
             <div
               key={step.title}
               className={`px-6 flex lg:my-0  my-4 flex-col items-center cursor-pointer ${
@@ -201,7 +201,7 @@ function Section5Home() {
       </div>
 
       <div>
-        {stepContentsItem.map(
+        {stepContentsItem?.map(
           (content) =>
             selectedStep === content.step && (
               <div

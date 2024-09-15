@@ -99,7 +99,7 @@ const SettingOverview = () => {
         <div className="mt-4 grid grid-cols-1 gap-5">
           <div className="block w-full">
             <label>Social Media URLs</label>
-            {socialFields.map((field, index) => {
+            {socialFields?.map((field, index) => {
               const platform = socialPlatforms.find(p => p.name === field);
               return (
                 <SocialMediaInput

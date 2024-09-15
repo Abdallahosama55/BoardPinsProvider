@@ -104,7 +104,7 @@ function Section2Price() {
                 ref={formRef}
                 className="bg-white flex flex-col gap-1 font-semibold shadow-custom rounded-lg min-h-[160px] px-4 py-2 mt-1 text-[10px] absolute z-50 min-w-[150px]"
               >
-                {categoriesBussinessplan[currentLanguage].map((label, index) => (
+                {categoriesBussinessplan[currentLanguage]?.map((label, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <input
                       type="radio"
@@ -159,7 +159,7 @@ function Section2Price() {
 
       <main>
         <div className="flex lg:flex-row flex-col items-end mt-16 gap-9 mx-4 lg:mx-16">
-          {currentPlans.Free.map((plan, index) => (
+          {currentPlans?.Free?.map((plan, index) => (
             <PlanCard
               key={index}
               title={plan.title}
@@ -171,7 +171,7 @@ function Section2Price() {
               buttonTextColor={plan.buttonTextColor}
             />
           ))}
-          {currentPlans.Standard.map((plan, index) => (
+          {currentPlans?.Standard?.map((plan, index) => (
             <PlanCard
               key={index}
               title={plan.title}
@@ -185,7 +185,7 @@ function Section2Price() {
               currentLanguage={currentLanguage}
             />
           ))}
-          {currentPlans.Premium.map((plan, index) => (
+          {currentPlans?.Premium?.map((plan, index) => (
             <PlanCard
               key={index}
               title={plan.title}

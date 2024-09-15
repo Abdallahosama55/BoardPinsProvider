@@ -60,7 +60,7 @@ const SectionCard = ({ icon, title, subtitle, features, buttonColor, imgSrc, img
     <h2 className='text-[#333333] font-[600] my-3'>{subtitle}</h2>
     <hr className='bg-grey-500 my-5' />
     <ul>
-      {features.map((feature, index) => (
+      {features?.map((feature, index) => (
         <li key={index} className='flex items-center gap-2 p-1 text-dark'>
           <FaCheck className='rounded-full bg-[#1F1F20] text-white' />
           {feature}
@@ -103,7 +103,7 @@ function Section3Home() {
             <hr className='bg-grey-500 my-5' />
             <h3 className='text-dark text-lg p-4'>{currentLanguage === 'ar' ? 'أهم الميزات' : 'Top features'}</h3>
             <ul>
-              {features1ToShow.map((feature, index) => (
+              {features1ToShow?.map((feature, index) => (
                 <li key={index} className='flex items-center gap-2 p-1 text-dark'>
                   <FaCheck className='rounded-full bg-[#6161FF] text-white' />
                   {feature}

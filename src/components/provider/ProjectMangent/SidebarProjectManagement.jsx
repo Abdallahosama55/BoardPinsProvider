@@ -17,7 +17,7 @@ const Dropdown = ({ isOpen, toggleDropdown }) => (
     </button>
     {isOpen && (
       <div className="absolute mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-50">
-        {['Option 1', 'Option 2', 'Option 3'].map((option, index) => (
+        {['Option 1', 'Option 2', 'Option 3']?.map((option, index) => (
           <a 
             key={index}
             href="#"

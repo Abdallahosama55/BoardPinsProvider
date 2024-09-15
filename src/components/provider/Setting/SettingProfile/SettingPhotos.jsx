@@ -41,7 +41,7 @@ function SettingPhotos() {
           <img src={selectedImage} className='rounded-xl w-full' alt='Selected' />
         </div>
         <div className=' justify-center lg:h-full dev-side lg:flex lg:flex-col lg:items-center grid grid-cols-4 grid-rows-4 gap-2 '> {/* Set a specific height */}
-          {thumbnails.map((thumbnail, index) => (
+          {thumbnails?.map((thumbnail, index) => (
             <img
               key={index}
               src={thumbnail}

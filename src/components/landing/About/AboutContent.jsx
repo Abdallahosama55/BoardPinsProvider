@@ -44,7 +44,7 @@ function AboutContent({ currentLanguage }) {
       <div className='pb-24'>
         <h2 className='font-bold text-3xl text-dark py-12'>{title}</h2>
         <p className='text-lg'>
-          {paragraph.split('\n').map((line, index) => (
+          {paragraph.split('\n')?.map((line, index) => (
             <React.Fragment key={index}>
               {line}
               <br />

@@ -42,7 +42,7 @@ function SettingProfile() {
 
 <div  className=' lg:flex '>
 <ul className="items-center flex-grow flex gap-6  font-poppins">
-            {viewsSetting.map(view => (
+            {viewsSetting?.map(view => (
               <NavigationItem
                 key={view.key}
                 label={view.label}

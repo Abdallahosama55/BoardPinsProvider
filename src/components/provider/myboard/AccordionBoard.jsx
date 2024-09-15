@@ -35,7 +35,7 @@ const AccordionItem = ({ title, content , title_num}) => {
 const AccordionBoard = ({ items }) => {
   return (
     <div className="accordion">
-      {items.map((item, index) => (
+      {items?.map((item, index) => (
         <AccordionItem key={index} title={item.title} content={item.content} title_num={item.title_num} />
       ))}
     </div>

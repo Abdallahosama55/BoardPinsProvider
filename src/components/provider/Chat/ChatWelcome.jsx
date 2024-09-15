@@ -37,7 +37,7 @@ function ChatWelcome() {
         </p>
 
         <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-3 pt-12 mx-6'>
-          {items.map((item, key) => (
+          {items?.map((item, key) => (
             <AtomsTextCardChatWelcome text={item} key={key} />
           ))}
         </div>
@@ -51,7 +51,7 @@ function ChatWelcome() {
         </section>
 
         <div className='grid lg:grid-cols-4 md:grid-cols-4 grid-cols-2 gap-3 mx-6'>
-          {itemsPrompt.map((item, key) => (
+          {itemsPrompt?.map((item, key) => (
             <PromptButton text={item} key={key} />
           ))}
         </div>

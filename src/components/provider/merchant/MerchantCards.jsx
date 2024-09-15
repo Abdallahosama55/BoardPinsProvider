@@ -19,7 +19,7 @@ function MerchantCards() {
 
   return (
     <div className=" grid grid-cols-12 gap-5">
-      {cardsData.map((card, index) => (
+      {cardsData?.map((card, index) => (
         <div key={index} className="lg:col-span-3 col-span-12 ">
           <CardsInfo 
             title={card.title} 

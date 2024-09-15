@@ -54,7 +54,7 @@ const MerchantInfo = ({ name, rating, role, timeAgo }) => (
           <div className="flex gap-4 items-center">
             <h2 className="text-md font-[500]">{name}</h2>
             <div className="flex rating">
-              {[...Array(5)].map((_, i) => (
+              {[...Array(5)]?.map((_, i) => (
                 <FaStar key={i} color={i < rating ? "#FFC229" : "#D9D9D9"} />
               ))}
             </div>
@@ -101,7 +101,7 @@ function ProductionGroups() {
       <Header />
       <main>
         <div className="">
-          {merchants.map((merchant, index) => (
+          {merchants?.map((merchant, index) => (
             <div className="py-2 grid grid-cols-12 gap-4 max-w-full overflow-x-auto" key={index}>
               <MerchantInfo {...merchant} />
               <Actions />

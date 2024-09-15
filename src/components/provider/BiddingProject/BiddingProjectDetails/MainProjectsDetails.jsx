@@ -47,7 +47,7 @@ const SkillsNeeded = () => {
     <div className="border border-[#0000001A] bg-[#FBFBFF] rounded-2xl p-4">
       <h1 className="border-b-[1px] border-[#D0D0D0] text-[#404040] py-4 mb-5 font-bold">Skills Needed</h1>
       <div className="text-center flex flex-wrap gap-3 py-3 text-sm">
-        {skills.map(skill => (
+        {skills?.map(skill => (
           <SkillBadge key={skill} skill={skill} />
         ))}
       </div>
