@@ -115,7 +115,7 @@ const Navbar = () => {
           </NavLink>
              <HashLink
             to="/home#howUsage" 
-          className=' text-gray-300 hover:text-[#6161FF]'
+          className=' text-gray-300 hover:text-[#6161FF] px-2 py-1'
         smooth={smoothScroll}
         >
             {t('howItWorks')}
@@ -132,6 +132,10 @@ const Navbar = () => {
           >
          {t('getStarted')}
           </NavLink>
+            {/* Language Toggle Button */}
+            <button onClick={toggleLanguage} className="text-[#6161FF] px-2 py-1 ">
+            {i18n.language === 'en' ? 'AR' : 'EN'}
+          </button>
         </div>
       )}
     </nav>
