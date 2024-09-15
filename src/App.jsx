@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Layout from "./utils/LayoutDashboard";
 import Dashboard from "./pages/Provider/Dashboard";
 import MyBoardPins from "./pages/Provider/MyBoardPins";
@@ -27,10 +27,8 @@ import SettingBilling from "./pages/Provider/SettingBilling";
 import OrderBilling from "./pages/Provider/OrderBilling";
 import BiddingProject from "./pages/Provider/BiddingProject";
 import MyBids from "./pages/Provider/MyBids";
-import SavedBiddingProjectCards from "./components/provider/BiddingProject/SavedBiddingProjectCards";
 import SavedBiddingProject from "./pages/Provider/SavedBiddingProject";
 import BiddingProjectDetails from "./pages/Provider/BiddingProjectDetails";
-import { Compare } from "@mui/icons-material";
 import CompareInProvider from "./pages/Provider/CompareInProvider";
 import CompareBetween from "./pages/Provider/CompareBetween";
 import CompareSaved from "./pages/Provider/CompareSaved";

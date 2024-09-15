@@ -100,13 +100,13 @@ function ProductionGroups() {
     <div className="p-4 font-poppins">
       <Header />
       <main>
-        <div className="py-6 grid grid-cols-12 gap-4 max-w-full overflow-x-auto">
+        <div className="">
           {merchants.map((merchant, index) => (
-            <>
+            <div className="py-2 grid grid-cols-12 gap-4 max-w-full overflow-x-auto" key={index}>
               <MerchantInfo {...merchant} />
               <Actions />
               <ProjectActions />
-            </>
+            </div>
           ))}
         </div>
       </main>

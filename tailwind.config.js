@@ -7,9 +7,13 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'cairo': ['Cairo', 'sans-serif'],
+      },
+      fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],
         'sans-serif': ['sans-serif'],
-        'poppins-thin':[]
+        'cairo': ['Cairo', 'sans-serif'],
+        'poppins-thin':[],
       
       },
       boxShadow: {

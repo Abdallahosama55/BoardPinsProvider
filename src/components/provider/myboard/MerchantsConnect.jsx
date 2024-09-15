@@ -32,10 +32,10 @@ function MerchantsConnect() {
       </header>
 
       <main>
-        <div className="w-full max-h-[70vh] overflow-y-auto gap-4 grid grid-cols-12 mb-5">
+        <div className="">
           {merchants.map((merchant, index) => (
-            <>
-              <div className=" md:col-span-6 col-span-12  flex">
+            <div key={index} className="w-full max-h-[70vh] overflow-y-auto gap-4 grid grid-cols-12 mb-5">
+              <div className=" md:col-span-6 col-span-12  flex" >
                 <div className="items-center flex">
                   <img src={gray} className="w-[70px] h-[70px]" alt="Merchant Avatar" />
                   <div className="ps-3 block">
@@ -58,7 +58,7 @@ function MerchantsConnect() {
                   </button>
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </main>

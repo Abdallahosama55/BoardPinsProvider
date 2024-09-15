@@ -329,3 +329,234 @@ export const cardDataGroupProduction = [
     groupName: "Merchant Name",
   },
 ];
+
+
+
+
+  // Define plans with both English and Arabic content
+  export const plans = {
+    en: {
+      Business: {
+        Free: [
+          {
+            title: "Free",
+            monthlyPrice: "EGP 0",
+            annualPrice: "EGP 0",
+            buttonText: "Start Now",
+            listItems: [
+              "Get a basic listing in the directory to showcase your skills and experience to potential clients.",
+              "Receive a limited number of connection requests: Get discovered by high-growth e-commerce businesses. 5 connections only (To be editable)",
+              "Freemium Project Management: Collaborate with connected merchants on basic project tasks ( Limited to one project)",
+            ],
+            borderColor: "#1E1E1E",
+            buttonBgColor: "transparent",
+            buttonTextColor: "#6161FF",
+          },
+        ],
+        Standard: [
+          {
+            title: "Pro Plan",
+            monthlyPrice: "EGP 299",
+            annualPrice: "EGP 2999",
+            buttonText: "Subscribe Now",
+            listItems: [
+              "Everything in the Free Plan",
+              "Stand Out from the Crowd",
+              "Unlimited Connection Requests",
+              "Create Pins Collection",
+              "Lead Generation Machine",
+              "Basic reporting and analytics",
+              "Get featured in our weekly client spotlight newsletter (limited slots available!).",
+            ],
+            borderColor: "#6161FF",
+            buttonBgColor: "#6161FF",
+            buttonTextColor: "#F5F6FA",
+            viewBadge: true,
+          },
+        ],
+        Premium: [
+          {
+            title: "Enterprise Plan",
+            monthlyPrice: "EGP 399",
+            annualPrice: "EGP 3999",
+            buttonText: "Start Now",
+            listItems: [
+              "Everything in the Pro Plan",
+              "Dominate Directory Searches",
+              "Your Personal Growth Partner",
+            ],
+            borderColor: "#1E1E1E",
+            buttonBgColor: "transparent",
+            buttonTextColor: "#6161FF",
+          },
+        ],
+      },
+      Influencer: {
+        Free: [
+          {
+            title: "Free",
+            monthlyPrice: "EGP 0",
+            annualPrice: "EGP 0",
+            buttonText: "Start Now",
+            listItems: [
+              "Showcase your talents and experience to potential clients.",
+              "Receive a limited number of connection requests: Get discovered by high-growth e-commerce businesses. 5 connections only (To be editable)",
+              "Freemium Project Management: Collaborate with connected merchants on basic project tasks ( Limited to one project)",
+            ],
+            borderColor: "#1E1E1E",
+            buttonBgColor: "transparent",
+            buttonTextColor: "#6161FF",
+          },
+        ],
+        Standard: [
+          {
+            title: "Pro Plan",
+            monthlyPrice: "EGP 299",
+            annualPrice: "EGP 2999",
+            buttonText: "Subscribe Now",
+            listItems: [
+              "Everything in the Free Plan",
+              "Stand Out from the Crowd",
+              "Unlimited Connection Requests",
+              "Create Content Collections",
+              "Lead Generation Machine",
+              "Basic reporting and analytics",
+              "Get featured in our weekly client spotlight newsletter (limited slots available!).",
+            ],
+            borderColor: "#6161FF",
+            buttonBgColor: "#6161FF",
+            buttonTextColor: "#F5F6FA",
+            viewBadge: true,
+          },
+        ],
+        Premium: [
+          {
+            title: "Enterprise Plan",
+            monthlyPrice: "EGP 399",
+            annualPrice: "EGP 3999",
+            buttonText: "Start Now",
+            listItems: [
+              "Everything in the Pro Plan",
+              "Dominate Directory Searches",
+              "Your Personal Growth Partner",
+            ],
+            borderColor: "#1E1E1E",
+            buttonBgColor: "transparent",
+            buttonTextColor: "#6161FF",
+          },
+        ],
+      },
+    },
+    ar: {
+      Business: {
+        Free: [
+          {
+            title: "مجاني",
+            monthlyPrice: "EGP 0",
+            annualPrice: "EGP 0",
+            buttonText: "ابدأ الآن",
+            listItems: [
+              "احصل على إدراج أساسي في الدليل لعرض مهاراتك وتجربتك للعملاء المحتملين.",
+              "تلقي عدد محدود من طلبات الاتصال: اكتشافك من قبل الشركات الناشئة في التجارة الإلكترونية. 5 اتصالات فقط (قابلة للتعديل)",
+              "إدارة المشاريع المجانية: التعاون مع التجار المتصلين في المهام الأساسية للمشروع (محدود بمشروع واحد)",
+            ],
+            borderColor: "#1E1E1E",
+            buttonBgColor: "transparent",
+            buttonTextColor: "#6161FF",
+          },
+        ],
+        Standard: [
+          {
+            title: "باقة الإحترافيه",
+            monthlyPrice: "EGP 299",
+            annualPrice: "EGP 2999",
+            buttonText: "اشترك الآن",
+            listItems: [
+              "كل شيء في خطة مجانية",
+              "تمييزك عن الآخرين",
+              "طلبات اتصال غير محدودة",
+              "إنشاء مجموعات الدبابيس",
+              "آلة توليد العملاء المحتملين",
+              "التقارير والتحليلات الأساسية",
+              "الظهور في نشرتنا الأسبوعية للعملاء (المقاعد محدودة!)",
+            ],
+            borderColor: "#6161FF",
+            buttonBgColor: "#6161FF",
+            buttonTextColor: "#F5F6FA",
+            viewBadge: true,
+          },
+        ],
+        Premium: [
+          {
+            title: "باقة المؤسسة",
+            monthlyPrice: "EGP 399",
+            annualPrice: "EGP 3999",
+            buttonText: "ابدأ الآن",
+            listItems: [
+              "كل شيء في خطة برو",
+              "السيطرة على عمليات البحث في الدليل",
+              "شريك نموك الشخصي",
+            ],
+            borderColor: "#1E1E1E",
+            buttonBgColor: "transparent",
+            buttonTextColor: "#6161FF",
+          },
+        ],
+      },
+      Influencer: {
+        Free: [
+          {
+            title: "مجاني",
+            monthlyPrice: "EGP 0",
+            annualPrice: "EGP 0",
+            buttonText: "ابدأ الآن",
+            listItems: [
+              "عرض مواهبك وتجربتك للعملاء المحتملين.",
+              "تلقي عدد محدود من طلبات الاتصال: اكتشافك من قبل الشركات الناشئة في التجارة الإلكترونية. 5 اتصالات فقط (قابلة للتعديل)",
+              "إدارة المشاريع المجانية: التعاون مع التجار المتصلين في المهام الأساسية للمشروع (محدود بمشروع واحد)",
+            ],
+            borderColor: "#1E1E1E",
+            buttonBgColor: "transparent",
+            buttonTextColor: "#6161FF",
+          },
+        ],
+        Standard: [
+          {
+            title: "الباقة الإحترافيه",
+            monthlyPrice: "EGP 299",
+            annualPrice: "EGP 2999",
+            buttonText: "اشترك الآن",
+            listItems: [
+              "كل شيء في خطة مجانية",
+              "تمييزك عن الآخرين",
+              "طلبات اتصال غير محدودة",
+              "إنشاء مجموعات المحتوى",
+              "آلة توليد العملاء المحتملين",
+              "التقارير والتحليلات الأساسية",
+              "الظهور في نشرتنا الأسبوعية للعملاء (المقاعد محدودة!)",
+            ],
+            borderColor: "#6161FF",
+            buttonBgColor: "#6161FF",
+            buttonTextColor: "#F5F6FA",
+            viewBadge: true,
+          },
+        ],
+        Premium: [
+          {
+            title: "باقة المؤسسة",
+            monthlyPrice: "EGP 399",
+            annualPrice: "EGP 3999",
+            buttonText: "ابدأ الآن",
+            listItems: [
+              "كل شيء في خطة برو",
+              "السيطرة على عمليات البحث في الدليل",
+              "شريك نموك الشخصي",
+            ],
+            borderColor: "#1E1E1E",
+            buttonBgColor: "transparent",
+            buttonTextColor: "#6161FF",
+          },
+        ],
+      },
+    },
+  };

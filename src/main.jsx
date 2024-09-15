@@ -5,6 +5,7 @@ import './index.css';
 import { Toaster } from 'react-hot-toast';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
+import './i18n'; // Import i18n config
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>

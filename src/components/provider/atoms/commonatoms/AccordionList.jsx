@@ -9,7 +9,7 @@ const AccordionList = ({ sections }) => {
   };
 
   return (
-    <div className="p-4  font-poppins">
+    <div className="p-4  ">
       {sections.map((section, index) => (
         <div className="space-y-2" key={index}>
           <div
@@ -17,7 +17,7 @@ const AccordionList = ({ sections }) => {
             onClick={() => handleClick(index)}
           >
             <div>
-              <h3 className='text-xl font-poppins text-[#404040] opacity-[50] font-[700] py-2'>{section.title}</h3>
+              <h3 className='text-xl  text-[#404040] opacity-[50] font-[700] py-2'>{section.title}</h3>
             </div>
             <div>{activeIndex === index ? <IoIosArrowUp /> : <IoIosArrowDown />}</div>
           </div>
