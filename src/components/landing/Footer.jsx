@@ -8,6 +8,7 @@ import { ImLinkedin } from "react-icons/im";
 import { BsFacebook, BsInstagram, BsYoutube, BsTiktok, BsUniversalAccessCircle } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
 import { facebookSvg, instagramSvg, linkedinSvg, tiktokSvg, youtubeSvg } from "../../assets/CustomIcon/SocialIcon";
+import { FaCircle } from "react-icons/fa";
 
 function Footers() {
   const footerContent = {
@@ -103,8 +104,8 @@ function Footers() {
               </li>
             </ul>
             <div className="flex-1">
-              <p className="text-[#000] xl:text-[2.67106rem] lg:text-[2.2rem] text-[2rem] font-[600]">
-                Board Pins<span className="text-[#6161FF]">.</span>
+              <p className="text-[#000] xl:text-[2.67106rem] flex items-center lg:text-[2.2rem] gap-1 text-[2rem] font-[600]">
+                Board Pins<span className="text-[#6161FF]"><FaCircle size={8} className=" mt-4" /></span>
               </p>
               <div className="flex flex-row items-center p-6 pt-2">
               <a href="https://www.linkedin.com/company/board-pins/" target="_blank" rel="noopener noreferrer">
