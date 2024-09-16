@@ -10,43 +10,44 @@ function Section6Home() {
   const items = {
     en: [
       {
-        title: 'Effortless Discovery',
-        description: 'Our advanced search engine allows you to swiftly discover verified service providers, making your search process seamless and efficient.',
+        title: 'Increased Visibility',
+        description: 'Get discovered by e-commerce SMEs actively seeking your services.',
         src: imgicon1,
       },
       {
-        title: 'Tailored Categories',
-        description: 'Explore a range of meticulously curated service categories tailored to meet the specific needs of e-commerce businesses.',
+        title: 'Simplified Project Management',
+        description: 'Manage projects efficiently with built-in collaboration tools.',
         src: imgicon2,
       },
       {
-        title: 'Your Service Shortlist',
-        description: 'Create personalized boards to save and organize your preferred service providers, streamlining your vendor selection process.',
+        title: 'Secure Communication',
+        description: 'Communicate with clients securely within the platform.',
         src: imgicon3,
       },
     ],
     ar: [
       {
-        title: 'اكتشاف سهل',
-        description: 'يتيح لك محرك البحث المتقدم لدينا اكتشاف مزودي الخدمات الموثوقين بسرعة، مما يجعل عملية البحث سلسة وفعالة.',
+        title: 'زيادة الظهور',
+        description: 'اجعل الشركات الصغيرة والمتوسطة التجارية الإلكترونية تكتشف خدماتك بسهولة.',
         src: imgicon1,
       },
       {
-        title: 'فئات مخصصة',
-        description: 'استكشف مجموعة من فئات الخدمات التي تم تنسيقها بدقة لتلبية احتياجات الأعمال التجارية الإلكترونية.',
+        title: 'إدارة المشاريع المبسطة',
+        description: 'إدارة المشاريع بكفاءة باستخدام أدوات التعاون المدمجة.',
         src: imgicon2,
       },
       {
-        title: 'قائمة خدماتك المفضلة',
-        description: 'أنشئ لوحات مخصصة لحفظ وتنظيم مزودي الخدمات المفضلين لديك، مما يسهل عليك عملية اختيار الموردين.',
+        title: 'اتصال آمن',
+        description: 'تواصل بأمان مع العملاء من خلال المنصة.',
         src: imgicon3,
       },
     ],
   };
 
+
   const { i18n,t } = useTranslation();
   const currentLanguage = i18n.language ||'en';
-const currentItems=items[currentLanguage]
+const currentItems=items[currentLanguage] || items.en
 
 
   return (

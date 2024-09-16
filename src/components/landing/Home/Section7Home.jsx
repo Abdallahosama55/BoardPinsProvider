@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Section7Home() {
   const { i18n,t } = useTranslation();
-const currentLanguage=i18n.language
+const currentLanguage=i18n.language || 'en'
   return (
     <div className={`bg-[#181B34] flex justify-center items-center ${currentLanguage === 'ar' ? 'font-cairo' : 'font-poppins'}`} dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}>
       <div className='text-white text-center my-12'>

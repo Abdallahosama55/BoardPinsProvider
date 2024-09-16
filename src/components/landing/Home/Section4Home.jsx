@@ -24,11 +24,14 @@ function Section4Home() {
           <span className='font-light font-thin'>
             {currentLanguage === 'ar' ? "عزز مواءمة عملك وكفاءته وإنتاجيته من خلال Board Pins." : "Boost your Business alignment, efficiency, and productivity through Board Pins."}
           </span>
-          <Link to={"/signup"} className='shadow-gray flex w-[100px] border-[1px] border-[#FFFFFF] rounded-3xl px-4 py-2 items-center text-white text-sm gap-2 my-5' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+         <div className="flex">
+         <Link to={"/signup"} className='shadow-gray flex border-[1px] border-[#FFFFFF] rounded-3xl px-4 py-2 items-center text-white text-sm gap-2 my-5' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             {t('getStarted')}
             
             <RiArrowRightLine />
           </Link>
+
+         </div>
         </div>
       </div>
 

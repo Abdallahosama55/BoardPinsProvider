@@ -7,8 +7,8 @@ function Section2Home() {
 
   // Define the text content based on the current language
   const textContent = currentLanguage === 'ar'
-    ? "بناء فريق أحلامك. ابحث عن أفضل مزودي الخدمة على <span class='text-[#6161FF]'>Board Pins</span> لتعزيز نمو عملك"
-    : "Build your dream team. Find the best service providers on <span class='text-[#6161FF]'>Board Pins</span> to elevate your business growth";
+  ? "انضم الآن وابدأ في توسيع قاعدة عملائك على <span class='text-[#6161FF]'>Board Pins</span>!"
+  : "Join Now and Start Growing Your Client Base on <span class='text-[#6161FF]'>Board Pins</span>!";
 
   return (
     <div 
@@ -16,7 +16,7 @@ function Section2Home() {
       dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}
     >
       <p 
-        className='text-[#333333] text-[36px] font-[700] text-center lg:mx-24 mx-6 py-12'
+        className='text-[#333333] text-[36px] font-[700] text-center  lg:mx-32 mx-6 lg:px-48 py-16'
         dangerouslySetInnerHTML={{ __html: textContent }}
       />
     </div>

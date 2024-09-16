@@ -82,9 +82,9 @@ function Section3Home() {
   const { i18n, t } = useTranslation(); // Access the i18n instance
   const currentLanguage = i18n.language ||'en'; // Get the current language from i18n
   
-  const features1ToShow = featuresList1[currentLanguage];
-  const features2ToShow = featuresList2[currentLanguage];
-  const features3ToShow = featuresList3[currentLanguage];
+  const features1ToShow = featuresList1[currentLanguage] || featuresList1.en;
+  const features2ToShow = featuresList2[currentLanguage] ||featuresList2.en;
+  const features3ToShow = featuresList3[currentLanguage] ||featuresList3.en;;
 
   return (
     <>

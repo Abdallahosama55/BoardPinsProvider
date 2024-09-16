@@ -37,7 +37,7 @@ function AboutContent({ currentLanguage }) {
     },
   };
 
-  const { title, paragraph } = content[currentLanguage];
+  const { title, paragraph } = content[currentLanguage] ||content['en'];
 
   return (
     <div className={`flex items-center justify-center  ${currentLanguage === "ar" ? 'font-cairo' : 'font-poppins'}`} dir= {currentLanguage === "ar" ? 'rtl' : 'ltr'}>

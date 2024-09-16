@@ -157,7 +157,7 @@ function Section5Home() {
   const { i18n, t } = useTranslation(); // Access the i18n instance
   // Example of using the data based on the current language
   const currentLanguage = i18n.language ||'en'; // Get the current language from i18n
-  const stepContentsItem = stepContents[currentLanguage];
+  const stepContentsItem = stepContents[currentLanguage] || stepContents.en ;
 
   return (
     <div
