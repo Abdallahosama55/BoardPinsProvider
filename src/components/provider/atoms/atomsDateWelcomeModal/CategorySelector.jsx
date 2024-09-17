@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Field } from "formik";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-const CategorySelector = ({ setFieldValue, categories }) => {
+const CategorySelector = ({ setFieldValue, categories  ,title}) => {
   const [showCategories, setShowCategories] = useState(false);
 
   return (
-    <div className="mb-4">
-      <label className="block mb-2">Business category</label>
+    <div className="mb-4 font-poppins">
+      <label className="block mb-2">{title}</label>
       <div className="flex items-center bg-[#F5F5F5] rounded-xl p-3"    onClick={() => setShowCategories(!showCategories)}>
         <div className="flex-grow">
           <button
@@ -23,9 +23,9 @@ const CategorySelector = ({ setFieldValue, categories }) => {
 
       {showCategories && (
         <div className="bg-[#F5F5F5] p-4 rounded-xl mt-2 max-h-[200px] overflow-y-auto">
-          <label className="block mb-2">Select categories</label>
+  
           {Object.keys(categories)?.map((category) => (
-            <div key={category}>
+            <div key={category} className=" font-poppins text-sm py-1">
               <label>
                 <Field
                   type="checkbox"

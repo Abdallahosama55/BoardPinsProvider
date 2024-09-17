@@ -217,33 +217,45 @@ function StepThree({ setFieldValue }) {
         </div>
       ) : (
         <div className="   ">
-        <label className="block text-gray-700 text-sm mt-2">
-          Upload Your National Id
-        </label>
-        <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
-          <input
-            type="file"
-            id="nationalId"
-            name="nationalId"
-            className="hidden"
-            onChange={(event) =>
-              setFieldValue("nationalId", event.currentTarget.files[0])
-            }
-          />
-          <label
-            htmlFor="nationalId"
-            className="text-blue-500 cursor-pointer"
-          >
-            Drag and drop or <span className="underline">Browse files</span>
+          <label className="block text-gray-700 text-sm mt-2">
+            Upload Your National Id
           </label>
+          <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
+            <input
+              type="file"
+              id="nationalId"
+              name="nationalId"
+              className="hidden"
+              onChange={(event) =>
+                setFieldValue("nationalId", event.currentTarget.files[0])
+              }
+            />
+            <label
+              htmlFor="nationalId"
+              className="text-blue-500 cursor-pointer"
+            >
+              Drag and drop or <span className="underline">Browse files</span>
+            </label>
+          </div>
+          {/* Display error message for nationalId */}
+          <ErrorMessage
+            name="nationalId"
+            component="div"
+            className="text-red-500 text-sm mt-1"
+          />
         </div>
-        {/* Display error message for nationalId */}
-        <ErrorMessage
-          name="nationalId"
-          component="div"
-          className="text-red-500 text-sm mt-1"
-        />
-      </div>
+      )}
+
+      {accountType === "freelancer" ? (
+        <button
+          type="button"
+          className={`bg-[#6161FF] mt-5 text-white w-full p-2 rounded-xl  cursor-pointer`}
+          onClick={() => setFieldValue("step", 4)} // Move to Step 3 only if form is valid
+        >
+          Next Step
+        </button>
+      ) : (
+        ""
       )}
     </div>
   );

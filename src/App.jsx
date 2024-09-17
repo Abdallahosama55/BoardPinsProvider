@@ -36,6 +36,8 @@ import CompareForms from "./pages/Provider/CompareForms";
 import ProductionGroup from "./pages/Provider/ProductionGroup";
 import ProductionGroupDetails from "./pages/Provider/ProductionGroupDetails";
 import PrivateRoute from "./utils/PrivateRoute";
+import './gtm'; // Import the GTM initialization file
+
 
 const App = () => {
   const accessToken = localStorage.getItem('accessToken');

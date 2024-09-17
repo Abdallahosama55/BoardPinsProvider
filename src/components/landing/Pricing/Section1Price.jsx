@@ -26,7 +26,7 @@ function Section1Price() {
         </p>
 
         <div className="flex justify-center mb-5">
-          <Link to={"/signup"} className="rounded-3xl bg-[#6161FF] text-[#FFFFFF] py-3 px-7 text-md block flex items-center gap-2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >
+          <Link to={"/signup"} className="rounded-3xl bg-[#6161FF] text-[#FFFFFF] py-3 px-7 text-md  flex items-center gap-2" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} >
             {t("getStarted")} <RiArrowRightLine />
           </Link>
         </div>

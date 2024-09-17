@@ -63,7 +63,9 @@ function Section2Price() {
   }, [formRef, buttonRef]);
 
   const currentPlans =
-    plans[currentLanguage][selectedPlanType] || plans.en[selectedPlanType];
+  plans[currentLanguage] && plans[currentLanguage][selectedPlanType]
+    ? plans[currentLanguage][selectedPlanType]
+    : plans.en[selectedPlanType] || {};
 
   const getPrice = (plan) => {
     return selectedPlan === "Monthly" ? plan.monthlyPrice : plan.annualPrice;

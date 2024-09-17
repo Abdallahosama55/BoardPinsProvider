@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import logo from '../../assets/images/Logo.png';
 import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom';
+import logo from '../../assets/images/Logo.png';
+import TagManager from 'react-gtm-module';
+
+
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -16,54 +18,72 @@ const Navbar = () => {
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'en' ? 'ar' : 'en');
   };
+
   const smoothScroll = (el) => {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+  const tagManagerArgs = {
+    gtmId: 'G-47G2XH7T8L'
+  };
+  TagManager.initialize(tagManagerArgs);
+  const handleLoginClick = () => {
+    console.log('Login click event triggered');
+    TagManager.dataLayer({
+      dataLayer: {
+        event: 'login_click',
+      },
+      
+    });
+    console.log('Login click event triggered');
+  };
+  
   return (
     <nav
       dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
-      className={`bg-[#F5F6FA] lg:mx-24 p-4  ${i18n.language === 'ar' ? 'font-cairo' : 'font-poppins'}`}
+      className={`bg-[#F5F6FA] lg:mx-24 p-4 ${i18n.language === 'ar' ? 'font-cairo' : 'font-poppins'}`}
     >
       <div className="mx-auto flex items-center">
         <div className="flex flex-grow gap-12 items-center">
           <Link to={"/"} className="text-[#8E8E8E] text-xl font-bold cursor-pointer">
-            <img src={logo} className="w-[200px]" alt="Logo"/>
+            <img src={logo} className="w-[200px]" alt="Logo" />
           </Link>
-          <div className="hidden md:flex gap-6 ">
-            <NavLink 
-              to="/" 
+          <div className="hidden md:flex gap-6">
+            <NavLink
+              to="/"
               className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
             >
               {t('home')}
             </NavLink>
-            <NavLink 
-              to="/about" 
+            <NavLink
+              to="/about"
               className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
             >
               {t('about')}
             </NavLink>
-            <HashLink 
-              to="/home#howUsage" 
-                  className=' text-[#8E8E8E] hover:text-[#6161FF]'
+            <HashLink
+              to="/home#howUsage"
+              className='text-[#8E8E8E] hover:text-[#6161FF]'
               scroll={smoothScroll}
             >
               {t('howItWorks')}
             </HashLink>
           </div>
         </div>
-        <div className="hidden md:flex  gap-6 items-center">
-          <NavLink 
-            to="/pricing" 
+        <div className="hidden md:flex gap-6 items-center">
+          <NavLink
+            to="/pricing"
             className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
           >
             {t('pricing')}
           </NavLink>
-          <NavLink 
-            to="/login" 
+          <NavLink
+            to="/login"
             className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
           >
-            {t('login')}
-          </NavLink >
+            <button onClick={handleLoginClick} className="text-[#6161FF]">
+              {t('login')}
+            </button>
+          </NavLink>
           <NavLink to="/signup">
             <button className="text-white hover:text-[#ffffff] hover:bg-[#5555e0] bg-[#6161FF] rounded-3xl py-3 px-5">
               {t('getStarted')}
@@ -76,7 +96,7 @@ const Navbar = () => {
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-800 hover:text-[#8E8E8E] focus:outline-none">
-          <svg
+            <svg
               className="w-6 h-6"
               fill="none"
               stroke="currentColor"
@@ -95,45 +115,45 @@ const Navbar = () => {
       </div>
       {isOpen && (
         <div className="md:hidden py-6">
-          <NavLink 
-            to="/" 
+          <NavLink
+            to="/"
             className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
           >
             {t('home')}
           </NavLink>
-          <NavLink 
-            to="/about" 
+          <NavLink
+            to="/about"
             className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
           >
             {t('about')}
           </NavLink>
-          <NavLink 
-            to="/pricing" 
+          <NavLink
+            to="/pricing"
             className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
           >
             {t('pricing')}
           </NavLink>
-             <HashLink
-            to="/home#howUsage" 
-          className=' text-gray-300 hover:text-[#6161FF] px-2 py-1'
-        smooth={smoothScroll}
-        >
+          <HashLink
+            to="/home#howUsage"
+            className='text-gray-300 hover:text-[#6161FF] px-2 py-1'
+            smooth={smoothScroll}
+          >
             {t('howItWorks')}
           </HashLink>
-          <NavLink 
-            to="/login" 
+          <NavLink
+            to="/login"
             className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
           >
-         {t('login')}
+            {t('login')}
           </NavLink>
-          <NavLink 
-            to="/signup" 
+          <NavLink
+            to="/signup"
             className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF] hover:text-white' : 'block px-2 py-1 text-gray-300 hover:text-white'}
           >
-         {t('getStarted')}
+            {t('getStarted')}
           </NavLink>
-            {/* Language Toggle Button */}
-            <button onClick={toggleLanguage} className="text-[#6161FF] px-2 py-1 ">
+          {/* Language Toggle Button */}
+          <button onClick={toggleLanguage} className="text-[#6161FF] px-2 py-1">
             {i18n.language === 'en' ? 'AR' : 'EN'}
           </button>
         </div>

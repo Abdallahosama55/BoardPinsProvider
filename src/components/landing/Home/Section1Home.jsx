@@ -60,7 +60,7 @@ function Section1Home() {
           </div>
         </div>
 
-        <div className={`flex justify-center lg:max-w-[300px] items-center w-full md:order-3 order-1 ${currentLanguage === "ar" ? "md:order-1" : ""}`}>
+        <div className={`flex justify-center lg:max-w-[300px] items-center w-full  order-1 ${currentLanguage === "ar" ? "md:order-1" : "md:order-3"}`}>
           <img src={illustration} alt="Illustration" className={currentLanguage === "ar" ? `md:w-auto w-[200px] ` : `md:w-auto w-[200px]`} />
         </div>
       </div>
@@ -84,7 +84,7 @@ function Section1Home() {
       <div className='text-center flex justify-center w-full'>
         <div className='w-full'>
           <div className='flex justify-center'>
-            <button onClick={toggleShowAllCards} className='text-[#6161FF] block px-7 my-6 text-lg flex gap-2 items-center'>
+            <button onClick={toggleShowAllCards} className='text-[#6161FF]  px-7 my-6 text-lg flex gap-2 items-center'>
               {showCardsCount === 4 ? (currentLanguage === "ar" ? "عرض المزيد" : "Show more") : (currentLanguage === "ar" ? "عرض أقل" : "Show less")}
               {showCardsCount === 4 ? <FaChevronDown /> : <FaChevronUp />}
             </button>
@@ -92,7 +92,7 @@ function Section1Home() {
           <div className='flex justify-center mb-12'>
             <Link
               to="/signup"
-              className="rounded-3xl bg-[#6161FF] text-[#FFFFFF] py-2 px-7 text-md block flex items-center gap-2"
+              className="rounded-3xl bg-[#6161FF] text-[#FFFFFF] py-2 px-7 text-md  flex items-center gap-2"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               {currentLanguage === "ar" ? "ابدأ الآن" : "Get Started"} <RiArrowRightLine />

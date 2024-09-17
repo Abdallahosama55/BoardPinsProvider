@@ -55,7 +55,7 @@ export const StepOne = () => {
         />
       </div>
 
-      <CategorySelector setFieldValue={setFieldValue} categories={{ factory: false, marketingAgency: false }} />
+      <CategorySelector setFieldValue={setFieldValue} title={"Business category"} categories={{ factory: false, marketingAgency: false }} />
 
       <button
         type="button"
