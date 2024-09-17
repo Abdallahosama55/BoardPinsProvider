@@ -84,7 +84,7 @@ function Section3Home() {
   
   const features1ToShow = featuresList1[currentLanguage] || featuresList1.en;
   const features2ToShow = featuresList2[currentLanguage] ||featuresList2.en;
-  const features3ToShow = featuresList3[currentLanguage] ||featuresList3.en;;
+  const features3ToShow = featuresList3[currentLanguage] ||featuresList3.en;
 
   return (
     <>
