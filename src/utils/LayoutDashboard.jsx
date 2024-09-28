@@ -28,10 +28,10 @@ setIsOpen(false)
       <Sidebar className="z-10" handleIsopen={handleIsopen} />
       <div className="flex flex-col flex-1">
         <Invite isOpen={IsOpen} handleIsclose={handleIsclose} />
-        <DataWelcomeModal isOpen={true} handleIsclose={handleIscloseWelcome} />
+        <DataWelcomeModal isOpen={false} handleIsclose={handleIscloseWelcome} />
       
         <Navbar className="z-20"  />
-        <div className="flex-1 lg:h-[83vh] outline-0 rounded-2xl mx-6 bg-[#F5F6FA] font-poppins overflow-y-auto"  style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
+        <div className="flex-1  h-full outline-0 rounded-2xl mx-6 bg-[#ffffff] font-poppins overflow-y-auto"  style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
           <Outlet />
         </div>
       </div>

@@ -141,3 +141,6 @@ body{
   z-index: 99;
   background: none;
 }
+.change-my-color {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(565%) hue-rotate(200deg) brightness(97%) contrast(102%);
+}
