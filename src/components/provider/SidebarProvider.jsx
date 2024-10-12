@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IoMdExit } from "react-icons/io";
 import Logo from "../../assets/images/Logo.png";
-import "../../../src/App.css";
+
 import {
   biddingprojectIcon,
   chatIcon,

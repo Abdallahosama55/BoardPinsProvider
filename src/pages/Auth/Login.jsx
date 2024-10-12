@@ -6,7 +6,7 @@ import CustomInput from '../../components/auth/Atoms/CusomInput';
 import CustomTitle from '../../components/auth/Atoms/CustomTitle';
 import CustomSubmitBtn from '../../components/auth/Atoms/CustomSubmitBtn';
 import CustomGoagleBtn from '../../components/auth/Atoms/CustomGoagleBtn';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import CustomTextNav from '../../components/auth/Atoms/CustomTextNav';
 
 import { toast ,ToastContainer} from 'react-toastify';
@@ -24,12 +24,17 @@ const initialValues = {
 
 function Login() {
   const [login, { isLoading, error, isSuccess }] = useLoginMutation();
-
+const navgate =useNavigate()
   const onSubmit = async (values) => {
     try {
       const response = await login(values).unwrap();
       // Handle successful login
       toast.success('Login successful!');
+    
+      localStorage.setItem('accessToken', response.tokens.access);
+      localStorage.setItem('refreshToken', response.tokens.refresh);
+
+      navgate("/myboard")
       // Redirect or update state based on the response
     } catch (error) {
       // Handle error

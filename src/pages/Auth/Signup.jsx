@@ -32,6 +32,7 @@ const initialValues = {
   password: '',
   confirmPassword: '',
   terms: false,
+  User_Type:"Provider"
 };
 
 function Signup() {
@@ -47,6 +48,7 @@ function Signup() {
       password: values.password,
       confirm_password: values.confirmPassword,
       accept_terms: values.terms,
+      User_Type:"Provider"
     };
 
     try {

@@ -10,6 +10,7 @@ import CustomTextNav from '../../components/auth/Atoms/CustomTextNav';
 
 import { toast,ToastContainer  } from 'react-toastify';
 import { useForgotPasswordMutation } from '../../services/userApi';
+import { useNavigate } from 'react-router-dom';
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email format').required('Email is required'),
@@ -21,11 +22,12 @@ const initialValues = {
 
 const ForgetPassword = () => {
   const [forgotPassword ,{data,isLoading,error}] = useForgotPasswordMutation();
-
+const nav =useNavigate()
   const onSubmit = async (values) => {
     try {
       await forgotPassword(values.email).unwrap();
       toast.success('Password reset link sent to your email');
+      nav('/recoverysuccess')
     } catch (error) {
      
       toast.error(error.data.detail||'Failed to send password reset link');

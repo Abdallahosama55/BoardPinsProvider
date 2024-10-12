@@ -10,6 +10,7 @@ import StepThree from "./FormsSteps/StepThree";
 import { useSelector } from "react-redux";
 import { selectAccountType } from "../../../redux/features/accountSlice";
 import StepFour from "./FormsSteps/StepFour";
+import { PendingModal } from "./FormsSteps/PendingModal";
 
 const DataWelcomeModal = ({ isOpen }) => {
   const accountType = useSelector(selectAccountType);
@@ -89,7 +90,7 @@ const DataWelcomeModal = ({ isOpen }) => {
                    
                     
                     </h1>
-                  {values.step === 1 && <StepOne setFieldValue={setFieldValue} />}
+                  {values.step === 1 && <StepOne setFieldValue={setFieldValue} />} 
                   {values.step === 2 && <StepTwo setFieldValue={setFieldValue} />}
                   {values.step === 3 && <StepThree setFieldValue={setFieldValue} />}
                   {(values.step === 3 && accountType==="business")&& (
@@ -101,13 +102,22 @@ const DataWelcomeModal = ({ isOpen }) => {
 {(values.step === 4 && accountType==="freelancer")&& (
                     <StepFour setFieldValue={setFieldValue} />
                   )}
-
+   
                 </Form>
               )}
+              
             </Formik>
+
+
+             
           </div>
         </div>
+        
       </div>
+
+
+{/*** if pending or success submited  appear  <PendingModal  /> */}
+     
     </Modal>
   );
 };

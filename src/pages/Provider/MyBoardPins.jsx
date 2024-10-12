@@ -9,6 +9,8 @@ import Reminder from '../../components/provider/myboard/Reminder';
 import Table from '../../components/provider/myboard/table';
 import TaskModal from '../../components/provider/myboard/TaskModal';
 import ManageCardSideBar from '../../components/provider/myboard/MangeCardSideBar';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/features/userSliceDate';
 
 function MyBoardPins() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -17,6 +19,7 @@ function MyBoardPins() {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+  const user = useSelector(selectUser);
 
   return (
     <div className='bg-white rounded-[30px] px-3 font-poppins shadow'>
@@ -30,7 +33,7 @@ function MyBoardPins() {
           }
         />
         <div className='flex-grow px-5'>
-          <h5 className='text-[#1E1E1E] font-[500] text-[30px]'>Hey, Kirolos 👋</h5>
+          <h5 className='text-[#1E1E1E] font-[500] text-[30px]'>Hey, {user.first_name} 👋</h5>
           <p className='text-[#1E1E1E] font-[400] text-[15px]'>What would you like to create today?</p>
         </div>
 

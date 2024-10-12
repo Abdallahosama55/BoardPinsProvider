@@ -8,11 +8,15 @@ import { useState } from "react";
 import NotificationList from "./NavbarProvider/NotificationList";
 import PersionalList from "./NavbarProvider/PersionalList";
 import { useNavigate } from "react-router-dom";
+import { selectUser } from "../../redux/features/userSliceDate";
+import { useSelector } from "react-redux";
 
 const NavbarProvider = ({handleIsopen}) => {
   const [show, setshow] = useState(false);
   const [showNotification, setShownotification] = useState(false);
   const Navgate=useNavigate()
+  const user = useSelector(selectUser);
+
   return (
     <nav className="justify-end items-center lg:justify-start md:justify-start flex   mt-2 md:ms-4 mb-1 text-white  ">
       
@@ -56,7 +60,7 @@ const NavbarProvider = ({handleIsopen}) => {
             onClick={() => setshow(!show)}
           >
             <img
-              src={user}
+              src={user.profile_picture}
               className="rounded-full border-[2px] border-[#292D32] w-14 h-14"
             />
             <MdKeyboardArrowDown size={28} color="#292D32" />

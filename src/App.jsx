@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Layout from "./utils/LayoutDashboard";
 import Dashboard from "./pages/Provider/Dashboard";
 import MyBoardPins from "./pages/Provider/MyBoardPins";
@@ -70,8 +70,8 @@ console.log("we have =====>",accessToken)
             <Route path="/merchantPinned" element={<MerchantPinned />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/chat" element={<Chat />}>
-              <Route path="chat" element={<ChatWelcome />} />
-              <Route path="chatmessages" element={<ChatMessages />} />
+              <Route path="/chat" element={<ChatWelcome />} />
+              <Route path="/chat/:id" element={<ChatMessages />} />
             </Route>
             <Route path="/projectmangement-SharedProjects" element={<SharedProjects />} />
             <Route path="/projectmangement-tasks" element={<ProjectmangementTasks />} />

@@ -32,6 +32,7 @@ export const userApi = createApi({
     }),
     getUserInfo: builder.query({
       query: () => '/userinfo/',
+      method: 'GET',
     }),
     resendOtp: builder.mutation({
       query: (email) => ({
@@ -56,7 +57,7 @@ export const userApi = createApi({
     }),
     resetPassword: builder.mutation({
         query: ({ id, password, confirmPassword }) => ({
-          url: `/reset_password/36ZNc0bCG7vPhwiaILmFPWAwHu3IANDuMRUhKiBR/`,
+          url: `/reset_password/${id}/`,
           method: 'POST',
           body: { password, confirmPassword },
         }),
