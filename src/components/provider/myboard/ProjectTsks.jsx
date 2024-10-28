@@ -31,7 +31,7 @@ function ProjectTsks() {
   };
 
   return (
-    <div className=' '>
+    <div className='shadow-custom  rounded-xl p-5 py-1'>
       <div className='py-5 items-center gap-2 flex relative'>
         <img src={iconTask} className="w-[45px] p-3 h-[45px] bg-[#D9D9D9] rounded-xl" alt="Task Icon" />
         <div>

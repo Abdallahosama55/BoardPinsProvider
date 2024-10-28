@@ -7,12 +7,12 @@ import CategorySelector from "../../atoms/atomsDateWelcomeModal/CategorySelector
 export const StepOne = () => {
   const { values, setFieldValue } = useFormikContext();
   const dispatch = useDispatch();
-  const isAccountTypeSelected = values.accountType !== '';
+  const isAccountTypeSelected = values.Provider_Type !== '';
 
   const handleAccountTypeChange = (event) => {
-    const accountType = event.target.value;
-    setFieldValue('accountType', accountType);
-    dispatch(setAccountType(accountType)); // Dispatch action to Redux store
+    const Provider_Type = event.target.value;
+    setFieldValue('Provider_Type', Provider_Type);
+    dispatch(setAccountType(Provider_Type)); // Dispatch action to Redux store
   };
 
   return (
@@ -26,8 +26,8 @@ export const StepOne = () => {
           <label className="mr-4">
             <Field
               type="radio"
-              name="accountType"
-              value="business"
+              name="Provider_Type"
+              value="Bussiness"
               className="mr-1"
               onChange={handleAccountTypeChange}
             />
@@ -36,8 +36,8 @@ export const StepOne = () => {
           <label>
             <Field
               type="radio"
-              name="accountType"
-              value="freelancer"
+              name="Provider_Type"
+              value="Freelancer"
               className="mr-1"
               onChange={handleAccountTypeChange}
             />
@@ -49,7 +49,7 @@ export const StepOne = () => {
       <div className="mb-4">
         <label className="block mb-2">Business name</label>
         <Field
-          name="businessName"
+          name="Business_name"
           placeholder="Business name"
           className="w-full p-2 rounded-lg border-[0.71px] outline-0 text-sm border-[#6161FF]"
         />

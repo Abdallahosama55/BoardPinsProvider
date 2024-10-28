@@ -8,14 +8,14 @@ import AccordionBoard from './AccordionBoard';
 function Reminder() {
   const [selectedButton, setSelectedButton] = useState('To Do');
 
-  const accordionItems = [
+  const accordionItemsReminder = [
     { title: 'Today', content: 'Test',title_num:"0" },
     { title: 'Overdue ', content: 'Test',title_num:"1" },
     { title: 'Next ', content: 'Test' ,title_num:"2" },
   ];
 
   return (
-    <div>
+    <div className='shadow-custom  h-full rounded-xl p-5 py-1'>
       <div className='my-5 flex items-center'>
         <img src={rounded} className='bg-[#D9D9D9] w-[40px] p-2 rounded-[10%] m-2' />
         <div className='text-[#26222B] font-[400]'>
@@ -60,7 +60,7 @@ function Reminder() {
       </header>
 
       <main className=' mt-6'>
-        <AccordionBoard items={accordionItems} />
+        <AccordionBoard items={accordionItemsReminder} />
       </main>
     </div>
   );

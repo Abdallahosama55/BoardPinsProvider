@@ -22,45 +22,26 @@ const OverviewCard = ({ title, items }) => (
   </div>
 );
 
-const PerformanceOverview = ({ title }) => (
+const PerformanceOverview = ({ title, dataPerformanceOverview }) => (
   <div className="mt-5 shadow-custom rounded-lg p-4 mb-3">
     <h3 className="font-bold text-lg">{title}</h3>
     <div className="grid items-center justify-center grid-cols-12 sm:grid-cols-12 lg:grid-cols-12 gap-2 py-5 gap-4">
-      <div className=' lg:col-span-3 col-span-2 h-full  flex items-center justify-center bg-gray-100 rounded-xl  '>
+      <div className='lg:col-span-3 col-span-2 h-full flex items-center justify-center bg-gray-100 rounded-xl'>
         <div className='lg:col-span-9 col-span-7'>
-          <h2 className=' font-bold text-2xl text-center '>4.5</h2>
-          <div> {/* Adjust the fontSize as needed */}
+          <h2 className='font-bold text-2xl text-center'>4.5</h2>
+          <div>
             <Rating name="half-rating-read" sx={{ fontSize: 14 }} defaultValue={4.5} precision={0.5} readOnly />
           </div>
         </div>
       </div>
 
-      <div className=' col-span-9  items-center justify-center  rounded-xl   '>
-        <div className='flex gap-2 items-center '>
-          <span className=' text-gray-500 text-sm'>5</span>
-          <ProgressBar progress={75} bgColor={"#FBBC04"} />
-        </div>
-
-        <div className='flex gap-2 items-center '>
-          <span className=' text-gray-500 text-sm'>4</span>
-          <ProgressBar progress={75} bgColor={"#FBBC04"} />
-        </div>
-
-        <div className='flex gap-2 items-center '>
-          <span className=' text-gray-500 text-sm'>3</span>
-          <ProgressBar progress={75} bgColor={"#FBBC04"} />
-        </div>
-
-        <div className='flex gap-2 items-center '>
-          <span className=' text-gray-500 text-sm'>2</span>
-          <ProgressBar progress={75} bgColor={"#FBBC04"} />
-        </div>
-
-        <div className='flex gap-2 items-center '>
-          <span className=' text-gray-500 text-sm'>1</span>
-          <ProgressBar progress={75} bgColor={"#FBBC04"} />
-        </div>
-
+      <div className='col-span-9 items-center justify-center rounded-xl'>
+        {dataPerformanceOverview?.map((item, index) => (
+          <div key={index} className='flex gap-2 items-center'>
+            <span className='text-gray-500 text-sm'>{item.rating}</span>
+            <ProgressBar progress={item.progress} bgColor={item.color} />
+          </div>
+        ))}
       </div>
     </div>
   </div>
@@ -134,7 +115,7 @@ const AnalyticsChart = () => {
   );
 };
 
-const MonthlyTargetandRevenues = ({ header, start_value, end_value }) => {
+const MonthlyTargetandRevenues = ({ header, start_value, end_value ,value_MonthlyTargetandRevenues }) => {
   // Calculate progress percentage based on start_value and end_value
   const progress = ((50 / 100) * 100).toFixed(2);
 
@@ -170,7 +151,7 @@ const MonthlyTargetandRevenues = ({ header, start_value, end_value }) => {
           <span className="font-bold text-lg">100</span>
         </div>
         {/* Progress Bar */}
-        <ProgressBar progress={progress} bgColor={"#6161FF"} />
+        <ProgressBar progress={value_MonthlyTargetandRevenues} bgColor={"#6161FF"} />
       </div>
     </div>
   );
@@ -195,6 +176,15 @@ function AnalyticsDashboard() {
     { image: pic, value: '200', description: 'In-progress projects' },
     { image: pic, value: '200', description: 'In-progress projects' },
   ];
+  
+  const dataPerformanceOverview = [
+    { rating: 5, progress: 75, color: '#FBBC04' },
+    { rating: 4, progress: 60, color: '#FBBC04' },
+    { rating: 3, progress: 45, color: '#FBBC04' },
+    { rating: 2, progress: 30, color: '#FBBC04' },
+    { rating: 1, progress: 15, color: '#FBBC04' },
+  ];
+const value_MonthlyTargetandRevenues=45
 
   return (
     <div className="p-4">
@@ -205,11 +195,12 @@ function AnalyticsDashboard() {
         </div>
         <div className="lg:col-span-6 col-span-12">
           <AnalyticsChart />
-          <PerformanceOverview title={"Performance Overview"} />
+          <PerformanceOverview title="Performance Overview" dataPerformanceOverview={dataPerformanceOverview} />
+
         </div>
       </div>
       <ProductionGroups items={projectItemsGroups} />
-      <MonthlyTargetandRevenues header={"Monthly Target and Revenues"} start_value={0} end_value={100} />
+      <MonthlyTargetandRevenues header={"Monthly Target and Revenues"} start_value={0} end_value={100}  value_MonthlyTargetandRevenues={value_MonthlyTargetandRevenues}/>
     </div>
   );
 }

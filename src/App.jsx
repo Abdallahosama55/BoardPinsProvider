@@ -47,7 +47,7 @@ console.log("we have =====>",accessToken)
       <Routes>
         <Route path="/" element={<LayoutAuth />}>
           <Route path="/recoverysuccess" element={<RecoverySuccess />} />
-          <Route path="/verifymail/:id" element={<VerifyMail />} />
+          <Route path="/verifymail/:id/:email?" element={<VerifyMail />} />
           <Route path="/reset_password/:id" element={<NewPassword />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

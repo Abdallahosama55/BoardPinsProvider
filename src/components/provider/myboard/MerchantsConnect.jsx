@@ -8,14 +8,14 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 
 function MerchantsConnect() {
   // Define your array of merchants
-  const merchants = [
+  const merchantsConnectdata = [
     { name: "Merchant Name 1", description: "any description here", timeAgo: "16h ago" },
     { name: "Merchant Name 2", description: "any description here", timeAgo: "16h ago" },
 
   ];
 
   return (
-    <div className=''>
+    <div className='shadow-custom  rounded-xl p-5 py-1'>
       <header className='py-5 items-center gap-2 flex relative'>
         <img src={iconTask} className="w-[45px] p-3 h-[45px] bg-[#D9D9D9] rounded-xl" alt="Task Icon" />
         <div>
@@ -33,7 +33,7 @@ function MerchantsConnect() {
 
       <main>
         <div className="">
-          {merchants?.map((merchant, index) => (
+          {merchantsConnectdata?.map((merchant, index) => (
             <div key={index} className="w-full max-h-[70vh] overflow-y-auto gap-4 grid grid-cols-12 mb-5">
               <div className=" md:col-span-6 col-span-12  flex" >
                 <div className="items-center flex">

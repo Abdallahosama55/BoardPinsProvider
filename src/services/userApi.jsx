@@ -1,7 +1,7 @@
 // userApi.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const baseUrl = `${import.meta.env.VITE_BASE_URL}:8080/api`;
+export const baseUrl = `https://boardpins.com/auth/api`;
 
 export const userApi = createApi({
   reducerPath: 'userApi',
@@ -57,7 +57,7 @@ export const userApi = createApi({
     }),
     resetPassword: builder.mutation({
         query: ({ id, password, confirmPassword }) => ({
-          url: `/reset_password/${id}/`,
+          url: `/reset_password/${id}`,
           method: 'POST',
           body: { password, confirmPassword },
         }),

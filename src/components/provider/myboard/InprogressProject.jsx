@@ -12,8 +12,8 @@ function InprogressProject() {
   };
 
   return (
-    <div>
-      <div className='my-5 flex items-center relative'>
+    <div className='shadow-custom  rounded-xl p-5 py-1'>
+      <div className='my-5 flex items-center relative '>
         <img src={pin} className='bg-[#D9D9D9] p-2 rounded-[10%] m-2' />
         <div>
           <h5>In-Progress Project</h5>

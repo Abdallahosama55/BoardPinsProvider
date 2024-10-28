@@ -5,7 +5,7 @@ import iconEdit from '../../../assets/icons/pepicons-pop_expand.png';
 import iconSetting from '../../../assets/icons/Group (1).png';
 import imgIcon from '../../../assets/icons/Ellipse 232.png';
 
-const merchants = [
+const ProductionGroupsData = [
   {
     name: "Mohamed Adel",
     rating: 4,
@@ -97,11 +97,11 @@ const ProjectActions = () => (
 
 function ProductionGroups() {
   return (
-    <div className="p-4 font-poppins">
+    <div className=" h-full font-poppins shadow-custom  rounded-xl p-5 py-1">
       <Header />
       <main>
         <div className="">
-          {merchants?.map((merchant, index) => (
+          {ProductionGroupsData?.map((merchant, index) => (
             <div className="py-2 grid grid-cols-12 gap-4 max-w-full overflow-x-auto" key={index}>
               <MerchantInfo {...merchant} />
               <Actions />

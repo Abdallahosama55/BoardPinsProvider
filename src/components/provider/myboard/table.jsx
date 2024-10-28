@@ -11,7 +11,7 @@ const handleSelect = (option) => {
   console.log('Selected option:', option);
 };
 
-const data = [
+const data_Personal_list = [
   {
     taskName: "Task One",
     assignee: avater,
@@ -59,7 +59,7 @@ function Table() {
   };
 
   return (
-    <div>
+    <div className='shadow-custom  rounded-xl p-5 py-1'>
       <div className='my-5 flex items-center relative'>
         <img src={rounded} className='bg-[#D9D9D9] w-[40px] p-2 rounded-[10%] m-2' />
         <div>
@@ -120,7 +120,7 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          {data?.map((item, index) => (
+          {data_Personal_list?.map((item, index) => (
             <tr key={index} className="bg-white border-b-[1px] border-blue hover:bg-gray-50">
               <td className="w-4 p-4">
                 <div className="flex items-center">

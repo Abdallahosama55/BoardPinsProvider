@@ -1,8 +1,8 @@
 // userSingleServicesProviderApi.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const url_SSP='http://boardpins.com'
-export const baseUrl = `${url_SSP}:9003`;
+
+export const baseUrl = `${import.meta.env.VITE_SSP_SERVICES_URL}:9003`;
 
 export const userSingleServicesProviderApi = createApi({
   reducerPath: 'userSingleServicesProviderApi',

@@ -60,7 +60,7 @@ function Signup() {
       setResponse(response); // Set response to state
 
       setTimeout(() => {
-        navigate(`/verifymail/${response.user.uuid}`);
+        navigate(`/verifymail/${response.user.uuid}/${values.email}`);
       }, 2000);
     } catch (err) {
       const errorMessage = Array.isArray(err.data.email) ? err.data.email.join(', ') : err.data.email || 'Failed to signup. Please try again!';

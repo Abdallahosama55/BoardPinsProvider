@@ -46,7 +46,7 @@ const LayoutDashboard = () => {
       <div className="flex flex-col flex-1">
         <Invite isOpen={IsOpen} handleIsclose={handleIsclose} />
 
-        {user.is_approvid ? "": <DataWelcomeModal isOpen={false} handleIsclose={handleIscloseWelcome} /> }
+        {user.is_approvid  ? "": <DataWelcomeModal isOpen={true} handleIsclose={handleIscloseWelcome} /> }
        
 
         <Navbar className="z-20" />

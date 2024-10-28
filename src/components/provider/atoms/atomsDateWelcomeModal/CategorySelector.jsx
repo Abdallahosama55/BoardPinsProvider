@@ -5,25 +5,43 @@ import { useFetchCategoriesQuery } from "../../../../services/userSingleServices
 import { Skeleton } from "@mui/material";
 
 const CategorySelector = ({ setFieldValue, title }) => {
+  const [selectedCategories, setSelectedCategories] = useState([]);
   const [showCategories, setShowCategories] = useState(false);
 
   // Fetch categories using the hook
   const { data: categories, error, isLoading } = useFetchCategoriesQuery();
 
-  if (isLoading) return <p>
-    <Skeleton animation="wave" />
-    <Skeleton animation="wave" />
-    <Skeleton animation="wave" />
-  </p>;
+  if (isLoading)
+    return (
+      <p>
+        <Skeleton animation="wave" />
+        <Skeleton animation="wave" />
+        <Skeleton animation="wave" />
+      </p>
+    );
   if (error) return <p>Error fetching categories</p>;
+
+  const handleCategoryChange = (categoryName) => {
+    const updatedCategories = selectedCategories.includes(categoryName)
+      ? selectedCategories.filter((name) => name !== categoryName)
+      : [...selectedCategories, categoryName];
+
+    setSelectedCategories(updatedCategories);
+    setFieldValue("category_names", updatedCategories); // Submit as category_names
+  };
 
   return (
     <div className="mb-4 font-poppins">
       <label className="block mb-2">{title}</label>
-      <div className="flex items-center bg-[#F5F5F5] rounded-xl p-3" onClick={() => setShowCategories(!showCategories)}>
+      <div
+        className="flex items-center bg-[#F5F5F5] rounded-xl p-3"
+        onClick={() => setShowCategories(!showCategories)}
+      >
         <div className="flex-grow">
           <button type="button" className="w-full text-left">
-            Select categories
+            {selectedCategories.length
+              ? selectedCategories.join(", ")
+              : "Select categories"}
           </button>
         </div>
         <MdKeyboardArrowDown size={22} />
@@ -36,10 +54,9 @@ const CategorySelector = ({ setFieldValue, title }) => {
               <label>
                 <Field
                   type="checkbox"
-                  name={`categories.${category.Category_name}`}
-                  onChange={() =>
-                    setFieldValue(`categories.${category.Category_name}`, !categories[category.Category_name])
-                  }
+                  name={`category_names`}
+                  checked={selectedCategories.includes(category.Category_name)}
+                  onChange={() => handleCategoryChange(category.Category_name)}
                 />
                 <span className="px-2">{category.Category_name}</span>
               </label>

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import { IoMdExit } from "react-icons/io";
 import Logo from "../../assets/images/Logo.png";
+import { TbSquareRoundedCheck } from "react-icons/tb";
 
 import {
   biddingprojectIcon,
@@ -29,11 +30,13 @@ import {
   compareformIcon,
 } from "../../assets/CustomIcon/SidebarIcon";
 import { FiSearch } from "react-icons/fi";
+import { useGetAllWorkspacesMutation } from "../../services/WorkspacesServices";
 
 const SidebarProvider = ({ handleIsopen }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedSubItem, setSelectedSubItem] = useState(null);
+  const [workspaces, setWorkspaces] = useState([]); // Store workspaces fetched from API
   const [dropdowns, setDropdowns] = useState({
     chat: false,
     projectManagement: false,
@@ -44,7 +47,39 @@ const SidebarProvider = ({ handleIsopen }) => {
     Setting: false,
   });
 
+  const [getAllWorkspaces, { isLoading, isSuccess, isError, data }] = useGetAllWorkspacesMutation();
+
+  useEffect(() => {
+    const fetchWorkspaces = async () => {
+      const token = localStorage.getItem('accessToken');
+      const userUuid = localStorage.getItem('uuid');
+
+      if (!token || !userUuid) {
+        console.error('Token or User UUID not found in localStorage');
+        return;
+      }
+
+      try {
+        // Trigger the mutation to fetch workspaces
+        await getAllWorkspaces({user_uuid: userUuid });
+      } catch (error) {
+        console.error('Error fetching workspaces:', error);
+      }
+    };
+
+    fetchWorkspaces();
+  }, [getAllWorkspaces]);
+
+  useEffect(() => {
+    if (isSuccess && data?.status === 'success') {
+      setWorkspaces(data.data);
+    } else if (isError) {
+      console.error('Failed to fetch workspaces');
+    }
+  }, [isSuccess, isError, data]);
+
   const location = useLocation();
+
 
   const menuItems = [
     { id: 1, icon: myboardIcon, text: "My Board Pins", path: "myboard" },
@@ -250,6 +285,16 @@ const SidebarProvider = ({ handleIsopen }) => {
             scrollbarColor: "#4B5563 ##1E1E1EBF",
           }}
         >
+  
+
+          {workspaces?.map(workspace => (
+          <li key={workspace.id} className=" p-1  bg-[#FFD5CF] text-[#FF6161] rounded-lg">
+              
+              <span > <TbSquareRoundedCheck size={22}  /></span>
+          <span className=" text-[#666666]">{workspace.title}</span>
+          
+          </li>
+        ))}
           <li className="bg-[#F2F2F2] rounded-lg  flex items-center text-[#666666] p-3 ">
             <FiSearch />
             <input
@@ -324,21 +369,18 @@ const SidebarProvider = ({ handleIsopen }) => {
                         {subItem.text}
                       </Link>
                     ))}
-                    
                   </ul>
-                  
                 )}
-        
               </Link>
-              {item.id===10 ?           <button className=" text-white  bg-[#6262FF] rounded-lg w-full py-2 mt-4">
-            <Link to="/upgrade">Upgrade</Link>
-          </button> :"" }
-
+              {item.id === 10 ? (
+                <button className=" text-white  bg-[#6262FF] rounded-lg w-full py-2 mt-4">
+                  <Link to="/upgrade">Upgrade</Link>
+                </button>
+              ) : (
+                ""
+              )}
             </React.Fragment>
           ))}
-      
-
-          
         </ul>
       </div>
     </>

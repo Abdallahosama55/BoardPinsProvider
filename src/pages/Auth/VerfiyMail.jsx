@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -90,11 +90,12 @@ export default function VerifyMail() {
       }
     }
   };
+  const { email ,id} = useParams();  // Get the user UUID from the URL
 
   const handleResendCode = async (resetForm) => {
-    if (userInfo?.email) {
+    if (userInfo?.email ||email) {
       try {
-        await resendOtp(userInfo.email).unwrap();
+        await resendOtp(email).unwrap();
         resetForm(); // Reset form values
       } catch (error) {
         // Handle error
@@ -104,10 +105,11 @@ export default function VerifyMail() {
       toast.error('No email found.');
     }
   };
-
+ 
   const handleSubmit = async (values) => {
     const otp = values.otp1 + values.otp2 + values.otp3 + values.otp4;
-    const user_uuid = localStorage.getItem('uuid');
+ 
+    const user_uuid = id || localStorage.getItem('uuid') ;
     
     try {
       await verifyEmail({ user_uuid, otp }).unwrap();
@@ -136,7 +138,7 @@ export default function VerifyMail() {
               </div>
               <div className="w-full flex flex-col pt-1 gap-2 text-center">
                 <span className="text-2xl font-poppins font-normal text-gray-800">
-                  Code has been sent to <span className="text-[#6161FF]">{userInfo?.email}</span>
+                  Code has been sent to <span className="text-[#6161FF]">{userInfo?.email ||email}</span>
                 </span>
                 <span className="text-2xl font-poppins font-normal text-gray-800">
                   Enter the code to verify your account.
@@ -165,6 +167,7 @@ export default function VerifyMail() {
                   className={`px-3 text-[#0685FA] underline font-poppins ${timeLeft > 0 ? 'cursor-not-allowed' : ''}`}
                   onClick={() => handleResendCode(resetForm)}
                   disabled={timeLeft > 0 || isResending}
+                  type="button"
                 >
                   Resend Code
                 </button>
@@ -176,6 +179,7 @@ export default function VerifyMail() {
                 <CustomSubmitBtn
                   nameBtn={isVerifying ? 'Loading...' : 'Send The Link'}
                   disabled={isVerifying}
+               
                 />
               </div>
             </Form>

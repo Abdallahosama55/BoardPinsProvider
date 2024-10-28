@@ -12,11 +12,11 @@ const options = ['Option 1', 'Option 2', 'Option 3'];
     console.log('Selected option:', option);
   };
 
-const data = [
+const data_Project = [
 
   {
     taskName: "Task One",
-    assignee: avater,
+    Merchant: avater,
     StartDate: "05/01/2023",
     dueDate: "05/01/2023",
     status: "Silver",
@@ -25,7 +25,7 @@ const data = [
   },
   {
     taskName: "Task Two",
-    assignee: avater,
+    Merchant: avater,
     dueDate: "05/02/2023",
     StartDate: "05/01/2023",
     Priority:"higher",
@@ -33,7 +33,7 @@ const data = [
   },
   {
     taskName: "Task One",
-    assignee: avater,
+    Merchant: avater,
     StartDate: "05/01/2023",
     dueDate: "05/01/2023",
 
@@ -42,7 +42,7 @@ const data = [
   },
   {
     taskName: "Task Two",
-    assignee: avater,
+    Merchant: avater,
     StartDate: "05/01/2023",
     dueDate: "05/02/2023",
     status: "Gold",
@@ -50,7 +50,7 @@ const data = [
   },
   {
     taskName: "Task One",
-    assignee: avater,
+    Merchant: avater,
     StartDate: "05/01/2023",
     dueDate: "05/01/2023",
     status: "Silverrrrr",
@@ -58,7 +58,7 @@ const data = [
   },
   {
     taskName: "Task Two",
-    assignee: avater,
+    Merchant: avater,
     StartDate: "05/01/2023",
     dueDate: "05/02/2023",
     status: "Gold",
@@ -84,14 +84,14 @@ function TableProjectTasks() {
               </div>
             </th>
             <th scope="col" className="px-6 py-3">Task Name</th>
-            <th scope="col" className="px-6 py-3">Assignee</th>
+            <th scope="col" className="px-6 py-3">Merchant</th>
             <th scope="col" className="px-6 py-3">Start date</th>
             <th scope="col" className="px-6 py-3">Due date</th>
             <th scope="col" className="px-6 py-3">Status</th>
           </tr>
         </thead>
         <tbody>
-          {data?.map((item, index) => (
+          {data_Project?.map((item, index) => (
             <tr key={index} className="bg-white border-b-[1px] border-blue hover:bg-gray-50">
               <td className="w-4 p-4">
                 <div className="flex items-center">
@@ -107,7 +107,7 @@ function TableProjectTasks() {
                 {item.taskName}
               </th>
               <td className="px-6 py-2">
-                <img src={item.assignee} alt="Assignee Avatar" className='rounded-[50%] w-[50px] height-[50px]' />
+                <img src={item.Merchant} alt="Assignee Avatar" className='rounded-[50%] w-[50px] height-[50px]' />
               </td>
               <td className="px-6 py-4">
               {item.StartDate}

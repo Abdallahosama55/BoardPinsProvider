@@ -22,23 +22,23 @@ function StepThree({ setFieldValue }) {
         <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
           <input
             type="file"
-            id="businessLogo"
-            name="businessLogo"
+            id="service_icon"
+            name="service_icon"
             className="hidden"
             onChange={(event) =>
-              setFieldValue("businessLogo", event.currentTarget.files[0])
+              setFieldValue("service_icon", event.currentTarget.files[0])
             }
           />
           <label
-            htmlFor="businessLogo"
+            htmlFor="service_icon"
             className="text-blue-500 cursor-pointer"
           >
             Drag and drop or <span className="underline">Browse files</span>
           </label>
         </div>
-        {/* Display error message for businessLogo */}
+        {/* Display error message for service_icon */}
         <ErrorMessage
-          name="businessLogo"
+          name="service_icon"
           component="div"
           className="text-red-500 text-sm mt-1"
         />
@@ -62,7 +62,7 @@ function StepThree({ setFieldValue }) {
         />
       </div>
       {/* Commercial Registration & Tax Card */}
-      {accountType === "business" ? (
+      {accountType === "Bussiness" ? (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4    ">
           <div>
             <label className="block text-gray-700 text-sm mt-2">
@@ -71,26 +71,26 @@ function StepThree({ setFieldValue }) {
             <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
               <input
                 type="file"
-                id="commercialRegistration"
-                name="commercialRegistration"
+                id="commercial_registration"
+                name="commercial_registration"
                 className="hidden"
                 onChange={(event) =>
                   setFieldValue(
-                    "commercialRegistration",
+                    "commercial_registration",
                     event.currentTarget.files[0]
                   )
                 }
               />
               <label
-                htmlFor="commercialRegistration"
+                htmlFor="commercial_registration"
                 className="text-blue-500 cursor-pointer text-xs font-semibold px-2"
               >
                 Drag and drop or <span className="underline">Browse files</span>
               </label>
             </div>
-            {/* Display error message for commercialRegistration */}
+            {/* Display error message for commercial_registration */}
             <ErrorMessage
-              name="commercialRegistration"
+              name="commercial_registration"
               component="div"
               className="text-red-500 text-sm mt-1"
             />
@@ -102,20 +102,20 @@ function StepThree({ setFieldValue }) {
             <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
               <input
                 type="file"
-                id="taxCard"
-                name="taxCard"
+                id="Tax_Card"
+                name="Tax_Card"
                 className="hidden"
                 onChange={(event) =>
-                  setFieldValue("taxCard", event.currentTarget.files[0])
+                  setFieldValue("Tax_Card", event.currentTarget.files[0])
                 }
               />
-              <label htmlFor="taxCard" className="text-blue-500 cursor-pointer">
+              <label htmlFor="Tax_Card" className="text-blue-500 cursor-pointer">
                 Drag and drop or <span className="underline">Browse files</span>
               </label>
             </div>
-            {/* Display error message for taxCard */}
+            {/* Display error message for Tax_Card */}
             <ErrorMessage
-              name="taxCard"
+              name="Tax_Card"
               component="div"
               className="text-red-500 text-sm mt-1"
             />
@@ -133,30 +133,30 @@ function StepThree({ setFieldValue }) {
         <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
           <input
             type="file"
-            id="serviceImages"
-            name="serviceImages"
+            id="service_photos"
+            name="service_photos"
             className="hidden"
             onChange={(event) =>
-              setFieldValue("serviceImages", event.currentTarget.files[0])
+              setFieldValue("service_photos", event.currentTarget.files[0])
             }
           />
           <label
-            htmlFor="serviceImages"
+            htmlFor="service_photos"
             className="text-blue-500 cursor-pointer"
           >
             Drag and drop or <span className="underline">Browse files</span>
           </label>
         </div>
-        {/* Display error message for serviceImages */}
+        {/* Display error message for service_photos */}
         <ErrorMessage
-          name="serviceImages"
+          name="service_photos"
           component="div"
           className="text-red-500 text-sm mt-1"
         />
       </div>
 
       {/* Company Profile & Pricelist  or    National id */}
-      {accountType === "business" ? (
+      {accountType === "Bussiness" ? (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4    ">
           <div>
             <label className="block text-gray-700 text-sm mt-2">
@@ -165,23 +165,23 @@ function StepThree({ setFieldValue }) {
             <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
               <input
                 type="file"
-                id="companyProfile"
-                name="companyProfile"
+                id="Company_Profile"
+                name="Company_Profile"
                 className="hidden"
                 onChange={(event) =>
-                  setFieldValue("companyProfile", event.currentTarget.files[0])
+                  setFieldValue("Company_Profile", event.currentTarget.files[0])
                 }
               />
               <label
-                htmlFor="companyProfile"
+                htmlFor="Company_Profile"
                 className="text-blue-500 cursor-pointer"
               >
                 Drag and drop or <span className="underline">Browse files</span>
               </label>
             </div>
-            {/* Display error message for companyProfile */}
+            {/* Display error message for Company_Profile */}
             <ErrorMessage
-              name="companyProfile"
+              name="Company_Profile"
               component="div"
               className="text-red-500 text-sm mt-1"
             />
@@ -193,23 +193,23 @@ function StepThree({ setFieldValue }) {
             <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
               <input
                 type="file"
-                id="pricelist"
-                name="pricelist"
+                id="Pricelist"
+                name="Pricelist"
                 className="hidden"
                 onChange={(event) =>
-                  setFieldValue("pricelist", event.currentTarget.files[0])
+                  setFieldValue("Pricelist", event.currentTarget.files[0])
                 }
               />
               <label
-                htmlFor="pricelist"
+                htmlFor="Pricelist"
                 className="text-blue-500 cursor-pointer"
               >
                 Drag and drop or <span className="underline">Browse files</span>
               </label>
             </div>
-            {/* Display error message for pricelist */}
+            {/* Display error message for Pricelist */}
             <ErrorMessage
-              name="pricelist"
+              name="Pricelist"
               component="div"
               className="text-red-500 text-sm mt-1"
             />
@@ -223,30 +223,30 @@ function StepThree({ setFieldValue }) {
           <div className="flex justify-center bg-[#F5F5F5] items-center w-full py-2 border-2 border-dashed border-[#6161ff7d] rounded-md">
             <input
               type="file"
-              id="nationalId"
-              name="nationalId"
+              id="National_ID"
+              name="National_ID"
               className="hidden"
               onChange={(event) =>
-                setFieldValue("nationalId", event.currentTarget.files[0])
+                setFieldValue("National_ID", event.currentTarget.files[0])
               }
             />
             <label
-              htmlFor="nationalId"
+              htmlFor="National_ID"
               className="text-blue-500 cursor-pointer"
             >
               Drag and drop or <span className="underline">Browse files</span>
             </label>
           </div>
-          {/* Display error message for nationalId */}
+          {/* Display error message for National_ID */}
           <ErrorMessage
-            name="nationalId"
+            name="National_ID"
             component="div"
             className="text-red-500 text-sm mt-1"
           />
         </div>
       )}
 
-      {accountType === "freelancer" ? (
+      {accountType === "Freelancer" ? (
         <button
           type="button"
           className={`bg-[#6161FF] mt-5 text-white w-full p-2 rounded-xl  cursor-pointer`}

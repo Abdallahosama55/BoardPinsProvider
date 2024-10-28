@@ -17,7 +17,7 @@ const buttons = [
 
 ];
 
-const items = [
+const itemsRecent = [
   { src: add, text: 'Add new Section “Bussiness Section”' },
   { src: chat, text: 'Chat' },
   { src: search, text: 'Search About .....' },
@@ -32,7 +32,7 @@ const items = [
 
 function Recents() {
   return (
-    <div>
+    <div className='shadow-custom  rounded-xl p-5 py-1'>
       <div className='my-5 flex items-center'>
         <img src={pin} className='bg-[#D9D9D9] p-2 rounded-[10%] m-2' alt='Pin' />
         <div>
@@ -48,7 +48,7 @@ function Recents() {
         </div>
       </div>
       <div className='mx-2 my-6  w-full '>
-        {items?.map((item, index) => (
+        {itemsRecent?.map((item, index) => (
           <div className='mx-2 my-6 flex  w-full gap-5 items-center' key={index}>
             <img src={item.src} className='w-[20px] ' alt={item.text} />
             <span className=' flex-grow'>{item.text}</span>

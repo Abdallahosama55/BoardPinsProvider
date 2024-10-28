@@ -7,10 +7,10 @@ import CustomTitle from '../../components/auth/Atoms/CustomTitle';
 import CustomSubmitBtn from '../../components/auth/Atoms/CustomSubmitBtn';
 import CustomGoagleBtn from '../../components/auth/Atoms/CustomGoagleBtn';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import { baseUrl, useLoginMutation, useResendOtpMutation } from '../../services/userApi';
 import CustomTextNav from '../../components/auth/Atoms/CustomTextNav';
 
-import { toast ,ToastContainer} from 'react-toastify';
-import { baseUrl, useLoginMutation } from '../../services/userApi';
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email format').required('Email is required'),
@@ -24,7 +24,10 @@ const initialValues = {
 
 function Login() {
   const [login, { isLoading, error, isSuccess }] = useLoginMutation();
-const navgate =useNavigate()
+  const navigate = useNavigate();
+
+  const [resendOtp] = useResendOtpMutation(); // Use the resend OTP mutation
+
   const onSubmit = async (values) => {
     try {
       const response = await login(values).unwrap();
@@ -33,18 +36,33 @@ const navgate =useNavigate()
     
       localStorage.setItem('accessToken', response.tokens.access);
       localStorage.setItem('refreshToken', response.tokens.refresh);
-
-      navgate("/myboard")
-      // Redirect or update state based on the response
+  
+      navigate("/myboard");
     } catch (error) {
-      // Handle error
-      toast.error(error.data.message||'Login failed. Please check your credentials.');
+      // Check if the error is 403 and the message indicates email activation
+      if (error.status === 403 && error.data.message === 'Please activate email') {
+        const userEmail = values.email;
+        toast.info('Resending OTP. Please verify your email.');
+  
+        // Resend OTP
+        try {
+          await resendOtp(userEmail).unwrap();
+          toast.success('OTP resent successfully.');
+  
+          navigate(`/verifymail/${error.data.user_id}/${userEmail}`);
+        } catch (resendError) {
+          toast.error('Failed to resend OTP. Please try again.');
+        }
+      } else {
+        // Handle other errors
+        toast.error(error.data.message || 'Login failed. Please check your credentials.');
+      }
     }
   };
 
   return (
     <div className='mt-12'>
-       <ToastContainer />
+      <ToastContainer />
       <header>
         <CustomTitle title={'Log in'} />
       </header>
@@ -77,11 +95,11 @@ const navgate =useNavigate()
               />
 
               <div className='py-6 text-center flex flex-col gap-6'>
-                <CustomSubmitBtn nameBtn={isLoading?"Loading...":'Log in'} />
+                <CustomSubmitBtn nameBtn={isLoading ? "Loading..." : 'Log in'} />
                 <Link to='/forgetpassword' className='underline text-[#00000080] text-center'>Forgot password?</Link>
               </div>
 
-              <CustomTextNav title={"Need an account ?"} linkName="Sign up"  linkNav={"/signup"} />
+              <CustomTextNav title={"Need an account ?"} linkName="Sign up" linkNav={"/signup"} />
             </Form>
           )}
         </Formik>

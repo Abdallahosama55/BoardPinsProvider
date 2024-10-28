@@ -33,8 +33,8 @@ function MyBoardPins() {
           }
         />
         <div className='flex-grow px-5'>
-          <h5 className='text-[#1E1E1E] font-[500] text-[30px]'>Hey, {user.first_name} 👋</h5>
-          <p className='text-[#1E1E1E] font-[400] text-[15px]'>What would you like to create today?</p>
+        <h5 className='text-[#1E1E1E] font-[500] text-[30px]'>Hey, {user.first_name} 👋</h5>
+        <p className='text-[#1E1E1E] font-[400] text-[15px]'>What would you like to create today?</p>
         </div>
 
         <div className='flex gap-4 lg:mt-5 lg:mx-12 mt-6 justify-center col-span-12'>
@@ -54,35 +54,35 @@ function MyBoardPins() {
       </div>
 
       <div className='py-5 md:mx-5 grid grid-cols-12 gap-5'>
-        <div className='relative shadow-custom rounded-xl md:col-span-6 col-span-12 px-5'>
+        <div className='relative  rounded-xl md:col-span-6 col-span-12 px-5'>
           <InprogressProject />
         </div>
 
-        <div className='shadow-custom rounded-xl md:col-span-6 col-span-12 px-5'>
-          <div className="relative overflow-x-auto sm:rounded-lg">
+        <div className=' rounded-xl shadow-custom md:col-span-6 col-span-12 px-5'>
+          <div className="relative  overflow-x-auto sm:rounded-lg">
             <Table />
           </div>
         </div>
 
-        <div className='w-full shadow-custom rounded-xl col-span-12 px-5'>
+        <div className='w-full  rounded-xl col-span-12 px-5'>
           <ProjectTsks />
         </div>
 
-        <div className='shadow-custom rounded-xl md:col-span-6 col-span-12 px-5'>
-          <div className='relative'>
+        <div className=' h-full rounded-xl md:col-span-6 col-span-12 px-5'>
+          <div className=' h-full relative'>
             <Recents />
           </div>
         </div>
 
-        <div className='shadow-custom relative rounded-xl md:col-span-6 col-span-12 px-5'>
+        <div className=' h-full relative rounded-xl md:col-span-6 col-span-12 px-5'>
           <Reminder />
         </div>
 
-        <div className='w-full shadow-custom rounded-xl col-span-12 px-5'>
+        <div className='w-full  rounded-xl col-span-12 px-5'>
           <MerchantsConnect />
         </div>
 
-        <div className='w-full shadow-custom rounded-xl col-span-12 px-5'>
+        <div className='w-full  rounded-xl col-span-12 px-5'>
           <ProductionGroups />
         </div>
       </div>
