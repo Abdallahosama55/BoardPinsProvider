@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { HashLink } from 'react-router-hash-link';
 import logo from '../../assets/images/Logo.png';
 import TagManager from 'react-gtm-module';
-
-
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -22,29 +20,33 @@ const Navbar = () => {
   const smoothScroll = (el) => {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
   const tagManagerArgs = {
     gtmId: 'G-47G2XH7T8L'
   };
   TagManager.initialize(tagManagerArgs);
+
   const handleLoginClick = () => {
-    console.log('Login click event triggered');
     TagManager.dataLayer({
       dataLayer: {
         event: 'login_click',
       },
-      
     });
-    console.log('Login click event triggered');
   };
-  
+
+  useEffect(() => {
+    // Set body direction and font family based on the language
+    document.body.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    document.body.style.fontFamily = i18n.language === 'ar' ? 'Cairo, sans-serif' : 'Poppins, sans-serif';
+  }, [i18n.language]);
+
   return (
     <nav
-      dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
       className={`bg-[#F5F6FA] lg:mx-24 p-4 ${i18n.language === 'ar' ? 'font-cairo' : 'font-poppins'}`}
     >
       <div className="mx-auto flex items-center">
         <div className="flex flex-grow gap-12 items-center">
-          <Link to={"/"} className="text-[#8E8E8E] text-xl font-bold cursor-pointer">
+          <Link to="/" className="text-[#8E8E8E] text-xl font-bold cursor-pointer">
             <img src={logo} className="w-[200px]" alt="Logo" />
           </Link>
           <div className="hidden md:flex gap-6">
@@ -62,7 +64,7 @@ const Navbar = () => {
             </NavLink>
             <HashLink
               to="/home#howUsage"
-              className='text-[#8E8E8E] hover:text-[#6161FF]'
+              className="text-[#8E8E8E] hover:text-[#6161FF]"
               scroll={smoothScroll}
             >
               {t('howItWorks')}
@@ -81,7 +83,7 @@ const Navbar = () => {
             className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
           >
             <button onClick={handleLoginClick} className="text-[#6161FF]">
-              {t('login')}
+              {t('loginn')}
             </button>
           </NavLink>
           <NavLink to="/signup">
@@ -135,8 +137,8 @@ const Navbar = () => {
           </NavLink>
           <HashLink
             to="/home#howUsage"
-            className='text-gray-300 hover:text-[#6161FF] px-2 py-1'
-            smooth={smoothScroll}
+            className="text-gray-300 hover:text-[#6161FF] px-2 py-1"
+            scroll={smoothScroll}
           >
             {t('howItWorks')}
           </HashLink>

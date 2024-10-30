@@ -4,7 +4,7 @@ import CardsKnowledgeBase from '../../components/provider/KnowledgeBase/CardsKno
 
 function KnowledgeBase() {
   return (
-    <div className='bg-white rounded-xl h-full p-5 font-poppins'>
+    <div className='bg-white rounded-xl h-full p-5 '>
 <HeaderKnowledgeBase/>
 
 <CardsKnowledgeBase/>

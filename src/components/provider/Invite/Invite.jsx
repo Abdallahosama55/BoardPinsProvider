@@ -4,15 +4,17 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { IoLinkOutline } from "react-icons/io5";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useTranslation } from "react-i18next";
 
 // Validation schema using Yup
 const validationSchema = Yup.object({
   email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
+  .email("Invalid email format") // Keep this in English as it's part of validation messages
+  .required("Email is required"), // Keep this in English as it's part of validation messages
 });
 
 const Invite = ({ isOpen, handleIsclose }) => {
+  const {t}=useTranslation()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Member");
 
@@ -34,20 +36,19 @@ const Invite = ({ isOpen, handleIsclose }) => {
 
   return (
     <Modal isOpen={isOpen} onClose={handleIsclose} smallModal={"true"}>
-      <div className="flex items-center justify-center lg:min-w-[800px]">
+      <div className="flex items-center justify-center  lg:max-w-[600px]">
         <div>
           <h2 className="text-center font-bold text-[#333333] text-4xl pt-8">
-            Invite people
+          {t("invite.title")} {/* Translated title */}
           </h2>
           <p className="text-center lg:text-2xl py-4 text-[#333333] text-light pb-8">
-            New members will gain access to public Spaces, <br />
-            Docs and Dashboards.
+          {t("invite.description")} {/* Translated description */}
           </p>
 
           <div className="flex">
-            <div className="flex-grow">Invite by email</div>
+            <div className="flex-grow">{t("invite.inviteByEmail")}</div>
             <button className="flex items-center gap-1 bg-transparent text-primary text-sm">
-              <IoLinkOutline /> Copy Link
+            <IoLinkOutline /> {t("invite.copyLink")} {/* Translated copy link */}
             </button>
           </div>
 
@@ -63,7 +64,7 @@ const Invite = ({ isOpen, handleIsclose }) => {
                     type="text"
                     name="email"
                     className="flex-grow outline-0"
-                    placeholder="Email, comma or space separated"
+                    placeholder={t("invite.emailPlaceholder")}
                   />
         
                   <div className="relative">
@@ -72,7 +73,7 @@ const Invite = ({ isOpen, handleIsclose }) => {
                       className="bg-[#D9D9D9] py-2 rounded-xl flex items-center gap-1 px-4 w-full text-left"
                       onClick={toggleDropdown}
                     >
-                      {selectedOption} <MdOutlineKeyboardArrowDown />
+                    {t(`invite.${selectedOption.toLowerCase()}`)} <MdOutlineKeyboardArrowDown />
                     </button>
                     {isDropdownOpen && (
                       <ul className="absolute border bg-[#D9D9D9] rounded-xl mt-0 w-full">
@@ -80,19 +81,19 @@ const Invite = ({ isOpen, handleIsclose }) => {
                           className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                           onClick={() => handleSelectOption("Member")}
                         >
-                          Member
+                              {t("invite.member")} {/* Translated guest */}
                         </li>
                         <li
                           className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                           onClick={() => handleSelectOption("Admin")}
                         >
-                          Admin
+                              {t("invite.admin")} {/* Translated guest */}
                         </li>
                         <li
                           className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
                           onClick={() => handleSelectOption("Guest")}
                         >
-                          Guest
+                              {t("invite.guest")} {/* Translated guest */}
                         </li>
                       </ul>
                     )}
@@ -107,13 +108,13 @@ const Invite = ({ isOpen, handleIsclose }) => {
                     className="px-5 py-3 rounded-xl text-dark bg-[#F5F5F5]"
                     onClick={handleIsclose}
                   >
-                    Cancel
+                 {t("invite.cancel")} {/* Translated cancel */}
                   </button>
                   <button
                     type="submit"
                     className="px-9 py-3 rounded-xl text-white bg-[#6161FF]"
                   >
-                    Add
+                     {t("invite.add")}
                   </button>
                 </div>
               </Form>

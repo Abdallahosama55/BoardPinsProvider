@@ -1,24 +1,28 @@
+import React from 'react';
 import CardsInfo from "./CardsInfo";
-import pic from '../../../assets/images/merchants/Rectangle 4649.png'; // Make sure to import the image correctly
+import pic from '../../../assets/images/merchants/Rectangle 4649.png'; // Ensure the import path is correct
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 function MerchantCards() {
+  const { t } = useTranslation(); // Initialize useTranslation
+
   const cardsData_ConnectMerchant = [
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic,status:"Acepted" ,itemsCategories:["tag1","Frontend"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic ,status:"Acepted",itemsCategories:["tag1"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic,status:"Acepted",itemsCategories:["tag1","tag2"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic ,status:"Acepted",itemsCategories:["tag1","tag2"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic,status:"Acepted" ,itemsCategories:["tag1","Frontend"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic ,status:"Acepted",itemsCategories:["tag1"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic,status:"Acepted",itemsCategories:["tag1","tag2"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic ,status:"Acepted",itemsCategories:["tag1","tag2"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic,status:"Acepted" ,itemsCategories:["tag1","Frontend"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic ,status:"Acepted",itemsCategories:["tag1"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic,status:"Acepted",itemsCategories:["tag1","tag2"] },
-    { title: "Project Name", role: "Graphic Design", phone: "101455", imgSrc: pic ,status:"Acepted",itemsCategories:["tag1","tag2"] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), "Frontend"] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), t('merchant_connect.tags.tag2')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), t('merchant_connect.tags.tag2')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), "Frontend"] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), t('merchant_connect.tags.tag2')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), t('merchant_connect.tags.tag2')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), "Frontend"] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), t('merchant_connect.tags.tag2')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant.tags.tag1'), t('merchant.tags.tag2')] },
   ];
 
   return (
-    <div className=" grid grid-cols-12 gap-5">
+    <div className="grid grid-cols-12 gap-5">
       {cardsData_ConnectMerchant?.map((card, index) => (
         <div key={index} className="lg:col-span-3 col-span-12 ">
           <CardsInfo 

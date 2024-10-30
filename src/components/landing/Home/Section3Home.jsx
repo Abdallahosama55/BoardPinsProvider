@@ -9,7 +9,7 @@ import { FaCheck } from "react-icons/fa6";
 import { RiArrowRightLine } from "react-icons/ri";
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-
+import { FaCheckSquare } from "react-icons/fa";
 const featuresList1 = {
   en: [
     'Searching for verified service providers',
@@ -91,8 +91,8 @@ function Section3Home() {
       <div className={`shadow-custom bg-white rounded lg:mx-24 mx-8 my-12 ${currentLanguage === "ar" ? 'font-cairo' : 'font-poppins'}`} dir={currentLanguage === "ar" ? "rtl" : "ltr"}>
         <div className='grid lg:grid-cols-2 grid-col-1 py-6 px-3'>
           <div className='p-4'>
-            <h1 className='flex font-bold text-primary text-xl gap-1 items-center'>
-              <img src={right} alt="right_icon" />
+            <h1 className='flex font-bold text-primary text-xl gap-1 items-start'>
+            <FaCheckSquare className='   w-[60px] ' size={30} />
               <span className='text-primary font-[600]'>
                 {currentLanguage === 'ar' ? "عن طريق Board Pins. البحث عن مقدمي خدمات موثوقين" : "Board Pins. Searching for verified Service providers"}
               </span>

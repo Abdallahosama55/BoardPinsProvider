@@ -7,75 +7,74 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import CustomSubmitBtn from "../../components/auth/Atoms/CustomSubmitBtn";
 import { useGetUserInfoQuery, useVerifyEmailMutation, useResendOtpMutation } from "../../services/userApi";
+import { useTranslation } from "react-i18next";
 
-const validationSchema = Yup.object().shape({
-  otp1: Yup.string().matches(/^\d{1}$/, "Invalid OTP").required("Required"),
-  otp2: Yup.string().matches(/^\d{1}$/, "Invalid OTP").required("Required"),
-  otp3: Yup.string().matches(/^\d{1}$/, "Invalid OTP").required("Required"),
-  otp4: Yup.string().matches(/^\d{1}$/, "Invalid OTP").required("Required"),
-});
 
 export default function VerifyMail() {
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = useState(59);
   const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
   const [verifyEmail, { isLoading: isVerifying, isError, isSuccess }] = useVerifyEmailMutation();
   const [resendOtp, { isLoading: isResending, isError: resendError, isSuccess: resendSuccess }] = useResendOtpMutation();
   const { data: userInfo, refetch: refetchUserInfo, error: userInfoError, isLoading: isUserInfoLoading } = useGetUserInfoQuery(undefined, {
-   skip: !localStorage.getItem('accessToken'), // Skip query if no token
+   skip: !localStorage.getItem('accessToken'),
  });
+
  
- 
+const validationSchema = Yup.object().shape({
+  otp1: Yup.string().matches(/^\d{1}$/, t("invalid_otp")).required(t("required")),
+  otp2: Yup.string().matches(/^\d{1}$/, t("invalid_otp")).required(t("required")),
+  otp3: Yup.string().matches(/^\d{1}$/, t("invalid_otp")).required(t("required")),
+  otp4: Yup.string().matches(/^\d{1}$/, t("invalid_otp")).required(t("required")),
+});
+
   const navigate = useNavigate();
 
   useEffect(() => {
-   if (isSuccess) {
-     toast.success('Email verified successfully!');
-     refetchUserInfo(); // Ensure the user info is up-to-date
-     setTimeout(() => {
-       navigate(`/myboard`);
-     }, 2000); // Adjust the timeout duration as needed
-   }
- }, [isSuccess, refetchUserInfo, navigate]);
- 
- useEffect(() => {
-   if (resendSuccess) {
-     toast.success('Code resent successfully!');
-     setTimeLeft(59); // Reset timer on success
-   } else if (resendError) {
-     toast.error('Failed to resend code. Please try again.');
-   }
- }, [resendSuccess, resendError]);
- 
- // Optional: Add a useEffect to refetch user info on component mount or when relevant dependencies change
- useEffect(() => {
-   if (localStorage.getItem('accessToken')) {
-     refetchUserInfo(); // Fetch user info when component mounts or when token changes
-   }
- }, [refetchUserInfo]);
- 
+    if (isSuccess) {
+      toast.success(t('email_verified'));
+      refetchUserInfo();
+      setTimeout(() => {
+        navigate(`/myboard`);
+      }, 2000);
+    }
+  }, [isSuccess, refetchUserInfo, navigate, t]);
+
+  useEffect(() => {
+    if (resendSuccess) {
+      toast.success(t('code_resent'));
+      setTimeLeft(59);
+    } else if (resendError) {
+      toast.error(t('resend_failed'));
+    }
+  }, [resendSuccess, resendError, t]);
+
+  useEffect(() => {
+    if (localStorage.getItem('accessToken')) {
+      refetchUserInfo();
+    }
+  }, [refetchUserInfo]);
+
   const focusNextInput = (index) => {
     if (index < inputRefs.length - 1) {
       inputRefs[index + 1].current.focus();
     }
   };
   useEffect(() => {
-   if (timeLeft > 0) {
-     const timer = setInterval(() => {
-       setTimeLeft((prevTime) => prevTime - 1);
-     }, 1000);
-
-     return () => clearInterval(timer);
-   }
- }, [timeLeft]);
+    if (timeLeft > 0) {
+      const timer = setInterval(() => {
+        setTimeLeft((prevTime) => prevTime - 1);
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [timeLeft]);
 
   const handleInput = (e, index, setFieldValue) => {
     const { value } = e.target;
     if (value.length === 1) {
-      // When a character is entered, set the value and focus next input
       setFieldValue(`otp${index + 1}`, value);
       focusNextInput(index);
     } else if (value === '') {
-      // Handle backspace or deletion
       setFieldValue(`otp${index + 1}`, '');
       if (index > 0) {
         inputRefs[index - 1].current.focus();
@@ -90,38 +89,35 @@ export default function VerifyMail() {
       }
     }
   };
-  const { email ,id} = useParams();  // Get the user UUID from the URL
+
+  const { email, id } = useParams();
 
   const handleResendCode = async (resetForm) => {
-    if (userInfo?.email ||email) {
+    if (userInfo?.email || email) {
       try {
         await resendOtp(email).unwrap();
-        resetForm(); // Reset form values
+        resetForm();
       } catch (error) {
-        // Handle error
-        toast.error('Error resending code.');
+        toast.error(t('resend_error'));
       }
     } else {
-      toast.error('No email found.');
+      toast.error(t('no_email_found'));
     }
   };
- 
+
   const handleSubmit = async (values) => {
     const otp = values.otp1 + values.otp2 + values.otp3 + values.otp4;
- 
-    const user_uuid = id || localStorage.getItem('uuid') ;
-    
+    const user_uuid = id || localStorage.getItem('uuid');
     try {
       await verifyEmail({ user_uuid, otp }).unwrap();
     } catch (error) {
-      // Extract the error message from the response
-      const errorMessage = error?.data?.detail || 'Verification failed. Please try again.';
+      const errorMessage = error?.data?.detail || t('verification_failed');
       toast.error(errorMessage);
     }
   };
 
-  if (isUserInfoLoading) return <div>Loading user info...</div>;
-  if (userInfoError) return <div>Error: {userInfoError.message}</div>;
+  if (isUserInfoLoading) return <div>{t('loading_user_info')}</div>;
+  if (userInfoError) return <div>{t('error')}: {userInfoError.message}</div>;
 
   return (
     <section className="Auth mb-5 mt-12">
@@ -133,18 +129,18 @@ export default function VerifyMail() {
         >
           {({ isSubmitting, setFieldValue, resetForm }) => (
             <Form className="mt-3 xl:w-3/6 lg:w-4/6 md:w-1/6 m-auto xl:px-7">
-              <div className="py-5 text-center font-poppins text-5xl md:text-4xl font-bold md:leading-7 text-gray-800">
-                Verify Email
+              <div className="py-5 text-center  text-5xl md:text-4xl font-bold md:leading-7 text-gray-800">
+                {t('verify_email')}
               </div>
               <div className="w-full flex flex-col pt-1 gap-2 text-center">
-                <span className="text-2xl font-poppins font-normal text-gray-800">
-                  Code has been sent to <span className="text-[#6161FF]">{userInfo?.email ||email}</span>
+                <span className="text-2xl  font-normal text-gray-800">
+                  {t('code_sent_to')} <span className="text-[#6161FF]">{userInfo?.email || email}</span>
                 </span>
-                <span className="text-2xl font-poppins font-normal text-gray-800">
-                  Enter the code to verify your account.
+                <span className="text-2xl  font-normal text-gray-800">
+                  {t('enter_code_to_verify')}
                 </span>
               </div>
-              <div className="text-center mt-12">Enter Your Code</div>
+              <div className="text-center mt-12">{t('enter_your_code')}</div>
               <div className="flex justify-center py-5 space-x-4">
                 {inputRefs?.map((inputRef, index) => (
                   <Field
@@ -162,24 +158,23 @@ export default function VerifyMail() {
               </div>
               <ErrorMessage name="otp4" component="div" className="text-red-500 mt-1" />
               <div className="text-center">
-                <span className="text-[##1E1E1E]">Didn’t Receive Code?</span>
+                <span className="text-[##1E1E1E]">{t('didnt_receive_code')}</span>
                 <button
-                  className={`px-3 text-[#0685FA] underline font-poppins ${timeLeft > 0 ? 'cursor-not-allowed' : ''}`}
+                  className={`px-3 text-[#0685FA] underline  ${timeLeft > 0 ? 'cursor-not-allowed' : ''}`}
                   onClick={() => handleResendCode(resetForm)}
                   disabled={timeLeft > 0 || isResending}
                   type="button"
                 >
-                  Resend Code
+                  {t('resend_code')}
                 </button>
               </div>
               <div className="text-center text-[#6161FF] py-2">
-                <span>Resend code in {`00:${timeLeft < 10 ? `0${timeLeft}` : timeLeft}`}</span>
+                <span>{t('resend_code_in')} {`00:${timeLeft < 10 ? `0${timeLeft}` : timeLeft}`}</span>
               </div>
               <div className="py-5 lg:px-24">
                 <CustomSubmitBtn
-                  nameBtn={isVerifying ? 'Loading...' : 'Send The Link'}
+                  nameBtn={isVerifying ? t('loading') : t('send_the_link')}
                   disabled={isVerifying}
-               
                 />
               </div>
             </Form>

@@ -12,7 +12,7 @@ function CardsInfo({ title, role, phone, imgSrc, status, itemsCategories }) {
 
   return (
     <div className="rounded-2xl shadow-custom bg-white relative p-5 py-4">
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-4 end-4">
         <button onClick={toggleDropdown} className="relative">
           <img
             src={setting}
@@ -43,7 +43,7 @@ function CardsInfo({ title, role, phone, imgSrc, status, itemsCategories }) {
         <p className="">{role}</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-7">
+      <div className=" flex flex-grow text-sm gap-2">
         {itemsCategories?.map((item, key) => (
           <div key={key} className="py-2">
             <span className="px-3 border-[1px] border-[#6161FF] text-[#6161FF] rounded-3xl flex">

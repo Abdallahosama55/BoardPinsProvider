@@ -5,8 +5,10 @@ import "../atoms/atomsEditor/Global.css"; // Make sure to import your styles
 import { IoClose } from "react-icons/io5";
 import useTiptapEditor from "../atoms/atomsEditor/useTiptapEditor";
 import TaskModalForm from "./TaskModalForm";
+import { useTranslation } from 'react-i18next';
 
 const TaskModal = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("");
   const editor = useTiptapEditor();
@@ -18,7 +20,7 @@ const TaskModal = ({ isOpen, onClose }) => {
   const formik = useFormik({
     initialValues: {
       title: "",
-      description: "", // Removed the duplicate "description" key
+      description: "",
       subtask: false,
       dueDate: "",
       doDate: "",
@@ -26,20 +28,19 @@ const TaskModal = ({ isOpen, onClose }) => {
       link: "",
     },
     validationSchema: Yup.object({
-      title: Yup.string().required("Title is required"),
-      dueDate: Yup.string().required("Due date is required"),
-      doDate: Yup.string().required("Due time is required"),
+      title: Yup.string().required(t("validation.titleRequired")),
+      dueDate: Yup.string().required(t("validation.dueDateRequired")),
+      doDate: Yup.string().required(t("validation.doDateRequired")),
     }),
     onSubmit: (values) => {
-      values.description = editor.getText(); // Add the editor content to the form values
-      values.priority = priority; // Add the priority to the form values
+      values.description = editor.getText();
+      values.priority = priority;
       console.log("Form data:", values);
-      // You can add additional logic to handle the form submission
     },
   });
 
   const handleLinkClick = () => {
-    const link = prompt("Please enter the link:");
+    const link = prompt(t("prompt.enterLink"));
     if (link) {
       formik.setFieldValue("link", link);
     }
@@ -53,15 +54,12 @@ const TaskModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-[85%] h-[95%] overflow-y-auto"  style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
+      <div className="bg-white p-8 rounded-lg shadow-lg w-[85%] h-[95%] overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
         <div className="flex">
           <div className="flex-grow">
-            <h1 className="text-2xl text-blue-500 font-bold">New Task</h1>
+            <h1 className="text-2xl text-blue-500 font-bold">{t('newTask')}</h1>
           </div>
-          <button
-            className="text-gray-500 hover:text-gray-700"
-            onClick={onClose}
-          >
+          <button className="text-gray-500 hover:text-gray-700" onClick={onClose}>
             <IoClose size={22} />
           </button>
         </div>

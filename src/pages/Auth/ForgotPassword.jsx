@@ -7,31 +7,31 @@ import CustomInput from '../../components/auth/Atoms/CusomInput';
 import CustomTitle from '../../components/auth/Atoms/CustomTitle';
 import CustomSubmitBtn from '../../components/auth/Atoms/CustomSubmitBtn';
 import CustomTextNav from '../../components/auth/Atoms/CustomTextNav';
-
-import { toast,ToastContainer  } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import { useForgotPasswordMutation } from '../../services/userApi';
 import { useNavigate } from 'react-router-dom';
-
-const validationSchema = Yup.object({
-  email: Yup.string().email('Invalid email format').required('Email is required'),
-});
-
-const initialValues = {
-  email: '',
-};
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 const ForgetPassword = () => {
-  const [forgotPassword ,{data,isLoading,error}] = useForgotPasswordMutation();
-const nav =useNavigate()
+  const { t } = useTranslation(); // Initialize useTranslation
+  const [forgotPassword, { data, isLoading, error }] = useForgotPasswordMutation();
+  const nav = useNavigate();
+
+  const validationSchema = Yup.object({
+    email: Yup.string().email(t('forgetPassword.invalidEmail')).required(t('forgetPassword.emailRequired')),
+  });
+
+  const initialValues = {
+    email: '',
+  };
+
   const onSubmit = async (values) => {
     try {
       await forgotPassword(values.email).unwrap();
-      toast.success('Password reset link sent to your email');
-      nav('/recoverysuccess')
+      toast.success(t('forgetPassword.resetLinkSent'));
+      nav('/recoverysuccess');
     } catch (error) {
-     
-      toast.error(error.data.detail||'Failed to send password reset link');
-
+      toast.error(error.data.detail || t('forgetPassword.failedToSendLink'));
     }
   };
 
@@ -39,7 +39,7 @@ const nav =useNavigate()
     <div className='pb-3 mt-24'>
       <ToastContainer />
       <header>
-        <CustomTitle title={'Forgot your password?'} />
+        <CustomTitle title={t('forgetPassword.headerTitle')} />
       </header>
       <main className='flex flex-row gap-12 mt-12 justify-center items-center'>
         <Formik
@@ -51,16 +51,16 @@ const nav =useNavigate()
             <Form className='lg:w-[450px] w-full mx-12 flex flex-col gap-3'>
               <CustomInput
                 type='email'
-                label='Email'
-                placeholder='Enter your Email to reset password ...'
+                label={t('forgetPassword.emailRequired')}
+                placeholder={t('forgetPassword.emailRequired')}
                 name='email'
               />
-              <CustomSubmitBtn nameBtn={isLoading?"Loading....":"Send me the link"} />
+              <CustomSubmitBtn nameBtn={isLoading ? t('forgetPassword.loading') : t('forgetPassword.sendLink')} />
             </Form>
           )}
         </Formik>
       </main>
-      <CustomTextNav title={"Need an account?"} linkName={" Sign up"} linkNav={"/signup"} />
+      <CustomTextNav title={t('forgetPassword.needAccount')} linkName={t('forgetPassword.signUp')} linkNav={"/signup"} />
     </div>
   );
 };

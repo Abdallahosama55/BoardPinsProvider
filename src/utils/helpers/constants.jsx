@@ -102,7 +102,7 @@ export const initialdoneItems = [
 export const initialColumnData = {
   todoColumn: {
     id: 1,
-    title: "To do",
+    title: "toDo",
     items: [...initialTodoItems],
   },
   doingColumn: {
@@ -112,7 +112,7 @@ export const initialColumnData = {
   },
   doneColumn: {
     id: 3,
-    title: "Done",
+    title: "done",
     items: [...initialdoneItems],
   },
 };

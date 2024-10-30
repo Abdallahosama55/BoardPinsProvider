@@ -2,14 +2,13 @@ import React from 'react';
 import EditorFully from '../atoms/atomsEditor/EditorFully';
 import PriorityButtons from '../atoms/atomsTaskModal/PriorityButtons';
 import MenuBar from '../atoms/atomsEditor/MenuBar';
-
 import { HiOutlineCalendar } from 'react-icons/hi2';
-
 import { GoClock } from 'react-icons/go';
 import { TbPhoto } from 'react-icons/tb';
 import { PiClock } from 'react-icons/pi';
 import { IoMdArrowDropright } from 'react-icons/io';
 import { IoLinkOutline } from 'react-icons/io5';
+import { useTranslation } from 'react-i18next';
 
 const TaskModalForm = ({
   formik,
@@ -19,8 +18,8 @@ const TaskModalForm = ({
   handleLinkClick,
   handlePhotoClick,
 }) => {
+  const { t } = useTranslation();
 
-  
   return (
     <div>
       <form onSubmit={formik.handleSubmit}>
@@ -29,45 +28,45 @@ const TaskModalForm = ({
             <FormField
               id="title"
               name="title"
-              label="Title"
+              label={t('task.title')} // Translated title label
               type="text"
               formik={formik}
             />
             <div className="mb-4">
               <label htmlFor="description" className="block text-gray-700 font-bold mb-1">
-                Description
+                {t('task.description')} {/* Translated description label */}
               </label>
               <EditorFully editor={editor} />
               {formik.touched.description && formik.errors.description && (
                 <ErrorText>{formik.errors.description}</ErrorText>
               )}
             </div>
-            <SubtaskSection />
+            <SubtaskSection t={t} /> {/* Pass t as a prop */}
             <div className="flex items-center gap-3">
               <FormField
                 id="dueDate"
                 name="dueDate"
-                label="Due Date"
+                label={t('task.dueDate')} // Translated due date label
                 type="date"
                 formik={formik}
               />
               <FormField
                 id="doDate"
                 name="doDate"
-                label="Do Date"
+                label={t('task.doDate')} // Translated do date label
                 type="date"
                 formik={formik}
               />
             </div>
-            <PriorityButtons priority={priority} setPriority={setPriority} />
+            <PriorityButtons priority={priority} setPriority={setPriority} t={t} />
           </div>
           <div className="lg:col-span-1 col-span-3 py-2 px-5">
-            <StatusButtons />
+            <StatusButtons t={t} />
             <div>
-              <h3 className="text-[#6F6F6F] mt-3">Text Editor</h3>
-              <MenuBar editor={editor} />
+              <h3 className="text-[#6F6F6F] mt-3">{t('task.textEditor')}</h3> {/* Translated text editor header */}
+              <MenuBar editor={editor} t={t} />
             </div>
-            <AttachmentSection handleLinkClick={handleLinkClick} handlePhotoClick={handlePhotoClick} formik={formik} />
+            <AttachmentSection handleLinkClick={handleLinkClick} handlePhotoClick={handlePhotoClick} formik={formik} t={t} />
           </div>
         </div>
         <div className="flex justify-end">
@@ -75,7 +74,7 @@ const TaskModalForm = ({
             type="submit"
             className="bg-blue-500 text-white py-2 px-4 rounded-xl hover:bg-blue-700"
           >
-            Add new Task
+            {t('task.addNewTask')} {/* Translated button text */}
           </button>
         </div>
       </form>
@@ -110,10 +109,10 @@ const ErrorText = ({ children }) => (
 );
 
 // Extracted SubtaskSection Component
-const SubtaskSection = () => (
+const SubtaskSection = ({ t }) => (
   <div className="mb-4 ">
     <label className="block text-gray-700 font-bold mb-2">
-      <h2 className="text-sm  mb-2 ">Subtask</h2>
+      <h2 className="text-sm  mb-2 ">{t('task.subtask')}</h2> {/* Translated subtask header */}
       <div className="px-5 py-0 flex gap-2 items-center shadow-custom">
         <input
           type="radio"
@@ -121,10 +120,10 @@ const SubtaskSection = () => (
           id="specifyColor"
           className="mr-2 leading-tight rounded-full border-[3px] border-blue-500"
         />
-        <div className="flex-grow py-2 px-1 font-poppins">
-          <h2 className="font-bold text-dark text-xs">Sub Task 1</h2>
+        <div className="flex-grow py-2 px-1 ">
+          <h2 className="font-bold text-dark text-xs">{t('task.subTask1')}</h2> {/* Translated subtask 1 */}
           <p className="font-light text-[9px]">
-            Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
+            {t('task.subTask1Description')} {/* Translated subtask description */}
           </p>
           <div className="flex gap-4 items-center py-1 font-normal">
             <div className="flex items-center gap-2 text-gray-500 text-xs">
@@ -144,24 +143,24 @@ const SubtaskSection = () => (
 );
 
 // Extracted StatusButtons Component
-const StatusButtons = () => (
+const StatusButtons = ({ t }) => (
   <div>
-    <h2 className="text-[#6F6F6F] pb-3">Pick a Status</h2>
+    <h2 className="text-[#6F6F6F] pb-3">{t('task.pickStatus')}</h2> {/* Translated status header */}
     <div className="flex gap-5 items-center">
       <button className="text-[#FB5607] rounded-3xl bg-[#FB56071A] flex items-center ps-2 pe-5 font-medium text-[15px] min-w-[100px] py-1" type="button">
-        <IoMdArrowDropright color="#FB5607" size={25} /> To do
+        <IoMdArrowDropright color="#FB5607" size={25} /> {t('task.toDo')} {/* Translated to-do button */}
       </button>
       <button className="text-[#292D32] rounded-3xl gap-2 flex items-center ps-2 pe-5 text-sm font-medium py-1 min-w-[130px]" type="button">
-        <GoClock color="#292D32" size={18} /> Remind Me
+        <GoClock color="#292D32" size={18} /> {t('task.remindMe')} {/* Translated remind me button */}
       </button>
     </div>
   </div>
 );
 
 // Extracted AttachmentSection Component
-const AttachmentSection = ({ handleLinkClick, handlePhotoClick, formik }) => (
+const AttachmentSection = ({ handleLinkClick, handlePhotoClick, formik, t }) => (
   <div>
-    <h3 className="text-[#6F6F6F] mt-6">Attachment</h3>
+    <h3 className="text-[#6F6F6F] mt-6">{t('task.attachment')}</h3> {/* Translated attachment header */}
     <div className="flex mt-2 text-[#6F6F6F]">
       <IoLinkOutline size={22} className="mr-4 cursor-pointer" onClick={handleLinkClick} />
       <TbPhoto size={22} className="cursor-pointer" onClick={handlePhotoClick} />

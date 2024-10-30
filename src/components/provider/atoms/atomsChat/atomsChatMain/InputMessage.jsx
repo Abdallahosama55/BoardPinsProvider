@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom'; // useLocation to detect page changes
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import arrow from '../../../../../assets/icons/arrowwhite.png';
 import { useSendMessageMutation, useCreateConversationMutation } from '../../../../../services/ChatServices';
 import { useDispatch } from 'react-redux';
 import { addMessage, addresponseModel } from '../../../../../redux/features/ChatSlice';
 import { FaPauseCircle } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next'; // Import the translation hook
 
 function InputMessage() {
   const [content, setContent] = useState('');
@@ -14,6 +15,7 @@ function InputMessage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation(); // Detect navigation changes
+  const { t } = useTranslation(); // Use the translation hook
 
   // Local state to track the conversationId (param or newly created one)
   const [conversationId, setConversationId] = useState(id);
@@ -39,7 +41,7 @@ function InputMessage() {
 
       // If conversationId is undefined, create a new conversation
       if (!currentConversationId) {
-        const newConversation = await createConversation("untitled").unwrap();
+        const newConversation = await createConversation(t('untitledConversation')).unwrap();
         currentConversationId = newConversation.id; // Assuming the response contains the new conversation ID
 
         // Update the conversation ID in local state
@@ -62,7 +64,7 @@ function InputMessage() {
       // Clear the input field
       setContent('');
     } catch (err) {
-      console.error('Failed to send message:', err);
+      console.error(t('failedToSendMessage'), err); // Use translation for error message
     }
   };
 
@@ -73,7 +75,7 @@ function InputMessage() {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         className='flex-grow outline-0 px-3 h-100 w-full bg-transparent'
-        placeholder='Write a message'
+        placeholder={t('writeMessage')} // Use translation for placeholder
         disabled={isLoading} // Disable input when loading
       />
       <div 

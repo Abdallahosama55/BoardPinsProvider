@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import  Filter  from '../../assets/icons/vertical-slider-square--adjustment-adjust-controls-fader-vertical-settings-slider-square.svg';
-import list from '../../assets/icons/listleft.svg'
+import Filter from '../../assets/icons/vertical-slider-square--adjustment-adjust-controls-fader-vertical-settings-slider-square.svg';
+import list from '../../assets/icons/listleft.svg';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
+
 function HeaderConnectedMerchants() {
+  const { t } = useTranslation(); // Initialize useTranslation
   const [selected, setSelected] = useState('ALL');
 
   const getButtonClasses = (buttonName) => {
@@ -11,43 +14,37 @@ function HeaderConnectedMerchants() {
   };
 
   return (
-    <div className=' lg:flex '>
-      <div className='flex-grow gap-3 lg:justify-start justify-center  '>
+    <div className='lg:flex'>
+      <div className='flex-grow gap-3 lg:justify-start justify-center'>
         <button
           className={getButtonClasses('ALL')}
           onClick={() => setSelected('ALL')}
         >
-          All
+          {t('header_connect.all')} {/* Translated 'All' */}
         </button>
         <button
           className={getButtonClasses('Pending')}
           onClick={() => setSelected('Pending')}
         >
-          Pending
+          {t('header_connect.pending')} {/* Translated 'Pending' */}
         </button>
         <button
           className={getButtonClasses('Declined')}
           onClick={() => setSelected('Declined')}
         >
-          Declined
+          {t('header_connect.declined')} {/* Translated 'Declined' */}
         </button>
       </div>
 
-
-      <div className=' flex gap-5 justify-center lg:mt-auto mt-6'>
-      <button
- className=' flex items-center gap-2'
-    >
-    <img src={Filter}/>
-    Filter
-    </button>
-    <button
-  className=' flex items-center gap-2'
-    >
-    <img src={list}/>
-    Sort
-    </button>
-      
+      <div className='flex gap-5 justify-center lg:mt-auto mt-6'>
+        <button className='flex items-center gap-2'>
+          <img src={Filter} alt="Filter icon" />
+          {t('header_connect.filter')} {/* Translated 'Filter' */}
+        </button>
+        <button className='flex items-center gap-2'>
+          <img src={list} alt="Sort icon" />
+          {t('header_connect.sort')} {/* Translated 'Sort' */}
+        </button>
       </div>
     </div>
   );

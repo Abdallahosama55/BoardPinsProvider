@@ -31,12 +31,14 @@ import {
 } from "../../assets/CustomIcon/SidebarIcon";
 import { FiSearch } from "react-icons/fi";
 import { useGetAllWorkspacesMutation } from "../../services/WorkspacesServices";
+import { useTranslation } from "react-i18next";
 
 const SidebarProvider = ({ handleIsopen }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedSubItem, setSelectedSubItem] = useState(null);
   const [workspaces, setWorkspaces] = useState([]); // Store workspaces fetched from API
+  const{t,i18n}=useTranslation()
   const [dropdowns, setDropdowns] = useState({
     chat: false,
     projectManagement: false,
@@ -82,23 +84,23 @@ const SidebarProvider = ({ handleIsopen }) => {
 
 
   const menuItems = [
-    { id: 1, icon: myboardIcon, text: "My Board Pins", path: "myboard" },
+    { id: 1, icon: myboardIcon, text: "menu.myBoardPins", path: "myboard" },
     {
       id: 2,
       icon: dashboardIcon,
-      text: "Dashboard",
+      text: "menu.dashboard",
       path: "dashboard",
     },
     {
       id: 3,
       icon: chatIcon,
-      text: "Chat",
+      text: "menu.chat",
       dropdown: "chat",
       subItems: [
-        { id: "chat", text: "Chat", icon: chatIcon, path: "/chat" },
+        { id: "chat", text: "menu.chat", icon: chatIcon, path: "/chat" },
         {
           id: "knowledgebase",
-          text: "Knowledge Base",
+          text: "menu.knowledgeBase",
           icon: KnowloagebaseIcon,
           path: "/knowledgebase",
         },
@@ -107,18 +109,18 @@ const SidebarProvider = ({ handleIsopen }) => {
     {
       id: 4,
       icon: merchantIcon,
-      text: "Merchant",
+      text: "menu.merchant",
       dropdown: "Merchant",
       subItems: [
         {
           id: "connected",
-          text: "Connected",
+          text: "menu.connected",
           icon: connectedmerchanetIcon,
           path: "/merchant",
         },
         {
           id: "pinned",
-          text: "Pinned",
+          text: "menu.pinned",
           icon: pinnedmerchanetIcon,
           path: "/merchantPinned",
         },
@@ -127,18 +129,18 @@ const SidebarProvider = ({ handleIsopen }) => {
     {
       id: 5,
       icon: projectmangementIcon,
-      text: "Project Management",
+      text: "menu.projectManagement",
       dropdown: "projectManagement",
       subItems: [
         {
           id: "tasks",
-          text: "Tasks",
+          text: "menu.tasks",
           icon: projectmangementIcon,
           path: "/projectmangement-tasks",
         },
         {
           id: "sharedprojects",
-          text: "Shared Projects",
+          text: "menu.sharedProjects",
           icon: sharedprojectIcon,
           path: "/projectmangement-SharedProjects",
         },
@@ -147,25 +149,25 @@ const SidebarProvider = ({ handleIsopen }) => {
     {
       id: 6,
       icon: biddingprojectIcon,
-      text: "Bidding Projects",
+      text: "menu.biddingProjects",
       dropdown: "biddingProject",
       path: "/bidding-project/offer",
       subItems: [
         {
           id: "discover",
-          text: "Discover Projects",
+          text: "menu.discoverProjects",
           icon: discoverprojectIcon,
           path: "/bidding-project",
         },
         {
           id: "mybids",
-          text: "My Bids",
+          text: "menu.myBids",
           icon: mybidsIcon,
           path: "/mybids",
         },
         {
           id: "saved",
-          text: "Saved Projects",
+          text: "menu.savedProjects",
           icon: savedIcon,
           path: "/saved-BiddingProject",
         },
@@ -174,19 +176,19 @@ const SidebarProvider = ({ handleIsopen }) => {
     {
       id: 7,
       icon: compareIcon,
-      text: "Compare Space",
+      text: "menu.compareSpace",
       path: "/compare",
       dropdown: "compare",
       subItems: [
         {
           id: "compare",
-          text: "Compare",
+          text: "menu.compare",
           icon: compareItemIcon,
           path: "/compare-between",
         },
         {
           id: "saved",
-          text: "Saved",
+          text: "menu.saved",
           icon: compareformIcon,
           path: "/compare/saved",
         },
@@ -195,22 +197,23 @@ const SidebarProvider = ({ handleIsopen }) => {
     {
       id: 8,
       icon: productiongroupIcon,
-      text: "Production Group",
+      text: "menu.productionGroup",
       path: "/production-group",
     },
-    { id: 9, text: "ACCOUNT" },
+    { id: 9, text: "menu.account" },
     {
       id: 10,
       icon: settingIcon,
-      text: "Setting",
+      text: "menu.setting",
       dropdown: "Setting",
       subItems: [
-        { id: "billing", text: "Billing", icon: "", path: "/setting-billing" },
-        { id: "profile", text: "Profile", icon: "", path: "/setting-profile" },
+        { id: "billing", text: "menu.billing", icon: "", path: "/setting-billing" },
+        { id: "profile", text: "menu.profile", icon: "", path: "/setting-profile" },
       ],
     },
-    { id: 11, icon: inviteIcon, text: "Invite", onClick: handleIsopen },
-  ];
+    { id: 11, icon: inviteIcon, text: "menu.invite", onClick: handleIsopen },
+];
+
 
   useEffect(() => {
     const currentPath = location.pathname;
@@ -261,15 +264,19 @@ const SidebarProvider = ({ handleIsopen }) => {
       <button
         onClick={toggleSidebar}
         className={`fixed ${isOpen ? "top-[1%]" : "top-[3%]"} ${
-          isOpen ? "left-[48%]" : "left-[5%]"
+          isOpen ? "start-[48%]" : "start-[5%]"
         } p-2 rounded-lg z-50 md:hidden bg-white`}
       >
         {isOpen ? <IoMdExit /> : <MenuIcon color="#000" />}
       </button>
 
       <div
-        className={`fixed inset-x-0 font-poppins px-4 h-full left-0 md:bg-transparent bg-white text-white w-72 transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed inset-x-0  px-4 h-full left-0 md:bg-transparent bg-white text-white w-72 transform ${
+          isOpen 
+            ? "translate-x-0"
+            : i18n.language === "ar" 
+            ? "translate-x-full" 
+            : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-40 md:static md:translate-x-0 py-4 top-0 md:py-0 md:h-full md:w-[17.5%]`}
       >
         <div className="flex justify-between items-center w-full">
@@ -291,7 +298,7 @@ const SidebarProvider = ({ handleIsopen }) => {
           <li key={workspace.id} className=" p-1  bg-[#FFD5CF] text-[#FF6161] rounded-lg">
               
               <span > <TbSquareRoundedCheck size={22}  /></span>
-          <span className=" text-[#666666]">{workspace.title}</span>
+          <span className=" text-[#666666]">{t('workspace.title')}</span>
           
           </li>
         ))}
@@ -299,8 +306,8 @@ const SidebarProvider = ({ handleIsopen }) => {
             <FiSearch />
             <input
               type="text"
-              placeholder="Search..."
-              className="bg-transparent outline-0 flex-grow"
+              placeholder={t('search_placeholder')}
+              className="bg-transparent px-2 outline-0 flex-grow"
             />
           </li>
 
@@ -335,7 +342,8 @@ const SidebarProvider = ({ handleIsopen }) => {
                         {item.icon}
                       </span>
                     )}
-                    {item.text}
+                    {t(item.text)}
+
                   </div>
                   {item.dropdown && (
                     <div className="flex justify-end pe-4">{arrowdownIcon}</div>
@@ -366,7 +374,7 @@ const SidebarProvider = ({ handleIsopen }) => {
                             {subItem.icon}
                           </span>
                         )}
-                        {subItem.text}
+                        {t(subItem.text)}
                       </Link>
                     ))}
                   </ul>
@@ -374,7 +382,7 @@ const SidebarProvider = ({ handleIsopen }) => {
               </Link>
               {item.id === 10 ? (
                 <button className=" text-white  bg-[#6262FF] rounded-lg w-full py-2 mt-4">
-                  <Link to="/upgrade">Upgrade</Link>
+                  <Link to="/upgrade">{t('Upgrade')}</Link>
                 </button>
               ) : (
                 ""

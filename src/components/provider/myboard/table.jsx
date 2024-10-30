@@ -4,6 +4,7 @@ import icon_edit from '../../../assets/icons/pepicons-pop_expand.png';
 import icon_setting from '../../../assets/icons/Group (1).png';
 import rounded from "../../../assets/icons/rounded.png";
 import CustomSelectButton from '../atoms/commonatoms/CustomSelectButton';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 const options = ['Option 1', 'Option 2', 'Option 3'];
 
@@ -25,22 +26,10 @@ const data_Personal_list = [
     status: "Gold"
   },
   {
-    taskName: "Task One",
-    assignee: avater,
-    dueDate: "05/01/2023",
-    status: "Silver"
-  },
-  {
     taskName: "Task Two",
     assignee: avater,
     dueDate: "05/02/2023",
     status: "Gold"
-  },
-  {
-    taskName: "Task One",
-    assignee: avater,
-    dueDate: "05/01/2023",
-    status: "Silver"
   },
   {
     taskName: "Task Two",
@@ -53,20 +42,21 @@ const data_Personal_list = [
 
 function Table() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { t } = useTranslation(); // Initialize translation hook
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
   return (
-    <div className='shadow-custom  rounded-xl p-5 py-1'>
+    <div className='shadow-custom rounded-xl p-5 py-1'>
       <div className='my-5 flex items-center relative'>
         <img src={rounded} className='bg-[#D9D9D9] w-[40px] p-2 rounded-[10%] m-2' />
         <div>
-          <h5>Personal List</h5>
-          <p>lorem ipsum...</p>
+          <h5>{t('personal_list')}</h5> {/* Use translation key */}
+          <p>{t('lorem_ipsum')}</p> {/* Use translation key */}
         </div>
-        <div className='absolute md:gap-4 left-[85%] flex items-center justify-center gap-2'>
+        <div className='absolute md:gap-4 start-[85%] flex items-center justify-center gap-2'>
           <button>
             <img src={rounded} className='w-[20px]' />
           </button>
@@ -78,16 +68,16 @@ function Table() {
               <img src={icon_setting} className='w-[30px]' />
             </button>
             {dropdownOpen && (
-              <div className='absolute right-0 mt-2 w-32 bg-white rounded-md shadow-custom z-10'>
+              <div className='absolute end-0 mt-2 w-32 bg-white rounded-md shadow-custom z-10'>
                 <ul className='py-1'>
                   <li className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer'>
-                    Action 1
+                    {t('action_1')} {/* Use translation key */}
                   </li>
                   <li className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer'>
-                    Action 2
+                    {t('action_2')} {/* Use translation key */}
                   </li>
                   <li className='px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer'>
-                    Action 3
+                    {t('action_3')} {/* Use translation key */}
                   </li>
                 </ul>
               </div>
@@ -96,8 +86,8 @@ function Table() {
         </div>
       </div>
       <div className='flex w-full justify-end gap-3 mb-5'>
-        <CustomSelectButton options={options} onSelect={handleSelect} defaultText="Assigned to me" />
-        <CustomSelectButton options={options} onSelect={handleSelect} defaultText="Sort" />
+        <CustomSelectButton options={options} onSelect={handleSelect} defaultText={t('assigned_to_me')} />
+        <CustomSelectButton options={options} onSelect={handleSelect} defaultText={t('sort')} />
       </div>
 
       <table className="w-full text-sm text-left rtl:text-right text-gray-500">
@@ -113,10 +103,10 @@ function Table() {
                 <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
               </div>
             </th>
-            <th scope="col" className="px-6 py-3">Task Name</th>
-            <th scope="col" className="px-6 py-3">Assignee</th>
-            <th scope="col" className="px-6 py-3">Due date</th>
-            <th scope="col" className="px-6 py-3">Status</th>
+            <th scope="col" className="px-6 py-3">{t('task_name')}</th> {/* Use translation key */}
+            <th scope="col" className="px-6 py-3">{t('assignee')}</th> {/* Use translation key */}
+            <th scope="col" className="px-6 py-3">{t('due_date')}</th> {/* Use translation key */}
+            <th scope="col" className="px-6 py-3">{t('status')}</th> {/* Use translation key */}
           </tr>
         </thead>
         <tbody>

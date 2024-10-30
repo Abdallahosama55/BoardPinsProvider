@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import  Filter  from '../../../assets/icons/vertical-slider-square--adjustment-adjust-controls-fader-vertical-settings-slider-square.svg';
 import list from '../../../assets/icons/listleft.svg'
+import { useTranslation } from 'react-i18next';
 function HeaderSharedProjects({handleOpenModal}) {
   const [selected, setSelected] = useState('ALL');
-
+const {t}=useTranslation()
   const getButtonClasses = (buttonName) => {
     return selected === buttonName
       ? 'px-5 rounded-3xl bg-[#6161FF] text-white py-2'
@@ -17,18 +18,19 @@ function HeaderSharedProjects({handleOpenModal}) {
           className={getButtonClasses('ALL')}
           onClick={() => setSelected('ALL')}
         >
-          All
+          {t('all')}
         </button>
         <button
           className={getButtonClasses('In Progress')}
           onClick={() => setSelected('In Progress')}
         >
-In Progress        </button>
+   {t('In Progress ')}    
+</button>
         <button
           className={getButtonClasses('Completed')}
           onClick={() => setSelected('Completed')}
         >
-          Completed
+          {t('Completed')}
         </button>
       </div>
 
@@ -38,13 +40,13 @@ In Progress        </button>
  className=' flex items-center gap-2'
     >
     <img src={Filter}/>
-    Filter
+   {t('Fillter')}
     </button>
     <button
   className=' flex items-center gap-2'
     >
     <img src={list}/>
-    Sort
+    {t('sort')}
     </button>
 
     <button
@@ -52,7 +54,7 @@ In Progress        </button>
   onClick={()=>handleOpenModal()}
     >
  
-    + New Project
+    + {t('New Project')}
     </button>
       
       </div>

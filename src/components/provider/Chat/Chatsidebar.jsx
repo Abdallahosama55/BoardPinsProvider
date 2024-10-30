@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import InputSearch from '../atoms/atomsChat/atomsChatSidebar/InputSearch';
 import ButtonaddChat from '../atoms/atomsChat/atomsChatSidebar/ButtonaddChat';
 import { useCreateConversationMutation } from '../../../services/ChatServices';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 function Chatsidebar() {
+  const { t } = useTranslation(); // Initialize translation function
   const [createConversation] = useCreateConversationMutation();
   const [conversationTitle, setConversationTitle] = useState('');
   const navigate = useNavigate(); // Initialize useNavigate
@@ -26,9 +28,9 @@ function Chatsidebar() {
 
   return (
     <div className='h-full flex flex-col gap-3'>
-      <InputSearch />
+      <InputSearch  title={t('search_chat')} />
       <hr className='font-extrabold' />
-      <ButtonaddChat onClick={handleAddChat} />
+      <ButtonaddChat onClick={handleAddChat} text={t('add_chat')} /> {/* Use translation here */}
     </div>
   );
 }

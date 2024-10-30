@@ -48,7 +48,7 @@ function Section1Home() {
       {/* Section 1 */}
       <div className={`flex lg:flex-row flex-col bg w-full py-12 gap-2`}>
         <div className={` ${currentLanguage === "ar" ? "lg:me-56" : "lg:ms-56"} flex-grow bg py-5 md:order-2 order-2`}>
-          <h1 className="lg:font-[800] font-[700] text-center leading-[3.5rem] md:text-[38px]  text-[48px]  text-[#333333]">
+          <h1 className="lg:font-[800] font-[700] text-center lg:leading-[3.5rem] md:text-[38px]  text-[32px]  text-[#333333]">
             {currentLanguage === "ar" ? "نمو عملك في الخدمة مع منصتنا الشاملة" : "Grow Your Service Business with Our All-in-One Platform"}
           </h1>
           <p className="text-md text-center py-3 mt-5">
@@ -60,7 +60,7 @@ function Section1Home() {
           </div>
         </div>
 
-        <div className={`flex justify-center lg:max-w-[300px] items-center w-full  order-1 ${currentLanguage === "ar" ? "md:order-1" : "md:order-3"}`}>
+        <div className={`lg:flex hidden justify-center  lg:max-w-[300px] items-center w-full  order-1 ${currentLanguage === "ar" ? "md:order-1" : "md:order-3"}`}>
           <img src={illustration} alt="Illustration" className={currentLanguage === "ar" ? `md:w-auto w-[200px] ` : `md:w-auto w-[200px]`} />
         </div>
       </div>

@@ -8,6 +8,7 @@ import { MdContentCopy } from 'react-icons/md';
 import { useGetMessagesQuery } from '../../../services/ChatServices';
 import MarkdownIt from 'markdown-it'; // Import markdown-it
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
 // Initialize markdown-it
 const md = new MarkdownIt();
@@ -41,14 +42,15 @@ const Message = ({ isUser, text, imgSrc }) => (
 );
 
 const ChatMessages = () => {
+  const { t } = useTranslation(); // Initialize translation function
   const { id } = useParams();
   const messageslist = useSelector((state) => state.message.messages);
   const Modellist = useSelector((state) => state.message.responseModel);
 
   const { data: response, isLoading, isError } = useGetMessagesQuery(id);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error loading messages.</div>;
+  if (isLoading) return <div>{t('loading')}</div>; // Use translation here
+  if (isError) return <div>{t('error_loading_messages')}</div>; // Use translation here
 
   const messages = Array.isArray(response?.results) ? response.results : [];
 
@@ -103,7 +105,7 @@ const ChatMessages = () => {
   return (
     <div className="flex flex-col gap-8 p-4 pb-32 h-full  overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 #1E1E1E' }}>
       {combinedMessages?.length === 0 ? (
-        <div>No messages found.</div>
+        <div>{t('no_messages_found')}</div> // Use translation here
       ) : (
         combinedMessages?.map(({ id, isUser, text, imgSrc }) => (
           <Message

@@ -6,10 +6,11 @@ import MerchantCards from '../../components/provider/merchant/MerchantCards';
 import HeaderSharedProjects from '../../components/provider/ProjectMangent/HeaderSharedProjects';
 import AddNewProjectModal from '../../components/provider/ProjectMangent/SharedProject/AddNewProjectModal';
 import SharedProjectCards from '../../components/provider/ProjectMangent/SharedProject/SahredProjectCards';
+import { useTranslation } from 'react-i18next';
 
 function SharedProjects() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+const{t}=useTranslation()
     const handleOpenModal = () => {
       setIsModalOpen(true);
     };
@@ -21,7 +22,7 @@ function SharedProjects() {
     <div className="bg-white rounded-lg py-6 px-8">
       <div className='flex items-center gap-2 mb-12'>
         <img src={correct} className='w-[35px]' />
-        <h3 className='font-bold text-lg'>Projects</h3>
+        <h3 className='font-bold text-lg'>{t("menu.sharedProjects")}</h3>
       </div>
     
      <header className=' lg:mx-9'> <HeaderSharedProjects handleOpenModal={handleOpenModal} /></header>

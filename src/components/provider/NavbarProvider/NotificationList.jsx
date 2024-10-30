@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+
 import del from '../../../assets/icons/delete.svg';
 import right from '../../../assets/icons/right.svg';
 import rec from '../../../assets/icons/rec.png';
+import { useTranslation } from 'react-i18next';
 
 const NotificationList = () => {
+  const { t } = useTranslation(); // Use the 'common' namespace
   const [selected, setSelected] = useState('All');
 
-  const tabs = ['All', 'Unread', 'Mentioned'];
+  const tabs = [t('tabs.all'), t('tabs.unread'), t('tabs.mentioned')]; // Use translations for tabs
   const notifications = [
-    { id: 1, text: 'Notification 1' , description :' Eleifend dui sit vitae eu non hendrerit malesuada convallis bibendum. Nisi cras id at urna id. Velit nam et integer bibendum pharetra eu consequat fringilla. Platea felis erat nibh neque porttitor enim in.' },
-    { id: 2, text: 'Notification 2'  , description :' Eleifend dui sit vitae eu non hendrerit malesuada convallis bibendum. Nisi cras id at urna id. Velit nam et integer bibendum pharetra eu consequat fringilla. Platea felis erat nibh neque porttitor enim in.' },
-    { id: 3, text: 'Notification 3'  , description :' Eleifend dui sit vitae eu non hendrerit malesuada convallis bibendum. Nisi cras id at urna id. Velit nam et integer bibendum pharetra eu consequat fringilla. Platea felis erat nibh neque porttitor enim in.' }
+    { id: 1, text: t('notification.notification_1'), description: t('notification.description') },
+    { id: 2, text: t('notification.notification_2'), description: t('notification.description') },
+    { id: 3, text: t('notification.notification_3'), description: t('notification.description') }
   ];
 
   const renderTabs = () => {
@@ -36,30 +39,30 @@ const NotificationList = () => {
 
   const renderNotifications = () => {
     return notifications?.map((notification) => (
-      <div key={notification.id} className=''>
-        <div className='flex gap-2 items-center'>
+      <div key={notification.id} className=' hover:bg-gray-100  cursor-pointer p-3 rounded-lg'>
+        <div className='flex gap-2 text-start'>
           <input type='checkbox' />
-          <h3 className='font-poppins font-bold text-dark'>{notification.text}</h3>
+          <h3 className='  font-bold text-dark'>{notification.text}</h3>
         </div>
         <p className='ps-4 text-gray-500 text-sm'>
-         {notification.description}
+          {notification.description}
         </p>
       </div>
     ));
   };
 
   return (
-    <div className='p-4 relative max-w-[450px]'>
-      <img src={rec} className='absolute top-[-10px] right-1 w-[30px]' alt="Decoration" />
-      <h1 className='font-semibold py-4 text-dark font-poppins'>Notifications</h1>
-      <div className='border-b-[1px] border-[#1E1E1E80] pb-5 flex gap-3 font-poppins font-medium text-[16px]'>
+    <div className='p-4 relative max-w-[450px] text-start'>
+      <img src={rec} className='absolute top-[-10px] end-1 w-[30px]' alt="Decoration" />
+      <h1 className='font-semibold py-4 text-dark text-start  '>{t('notifications')}</h1>
+      <div className='border-b-[1px] border-[#1E1E1E80]  pb-5 flex gap-3   font-medium text-[16px]'>
         {renderTabs()}
       </div>
       <div className='flex gap-3 py-4'>
-        {renderButton(del, 'Delete all')}
-        {renderButton(right, 'Mark all as read')}
+        {renderButton(del, t('delete_all'))} {/* Use translation for delete button */}
+        {renderButton(right, t('mark_all_read'))} {/* Use translation for mark as read button */}
       </div>
-      <div className='max-h-64 flex flex-col gap-2 overflow-y-auto' style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
+      <div className='max-h-64 flex flex-col gap-2 bg overflow-y-auto' style={{ scrollbarWidth: 'thin', scrollbarColor: '#4B5563 ##1E1E1EBF' }}>
         {renderNotifications()}
       </div>
     </div>

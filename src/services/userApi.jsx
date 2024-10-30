@@ -1,7 +1,7 @@
 // userApi.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const baseUrl = `http://auth-service:8000/api`;
+export const baseUrl = `https://boardpins.com/auth/api`;
 
 export const userApi = createApi({
   reducerPath: 'userApi',

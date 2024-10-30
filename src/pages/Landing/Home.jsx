@@ -9,7 +9,7 @@ import Section7Home from "../../components/landing/Home/Section7Home"
 
 function Home() {
   return (
-    <div className=' bg-[#F5F6FA] font-poppins'>
+    <div className=' overflow-x-hidden bg-[#F5F6FA] font-poppins'>
 <Section1Home/>
 <Section2Home/>
 <Section3Home/>

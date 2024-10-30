@@ -9,27 +9,16 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useGetUserInfoQuery } from "../services/userApi";
 import { CircularProgress } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const LayoutDashboard = () => {
   const [IsOpen, setIsOpen] = useState();
   const [IsOpenWelcome, setIsOpenWelcome] = useState(true);
-  const handleIsopen = () => {
-    setIsOpen(true);
-  };
-  const handleIsopenWelcome = () => {
-    setIsOpenWelcome(true);
-  };
-  const handleIsclose = () => {
-    setIsOpen(false);
-  };
-  const handleIscloseWelcome = () => {
-    setIsOpenWelcome(false);
-  };
 
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-
   const { data, error, isLoading } = useGetUserInfoQuery(); // RTK Query to get user info
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     if (data) {
@@ -37,24 +26,33 @@ const LayoutDashboard = () => {
     }
   }, [data, dispatch]);
 
-  if (isLoading) return <p className=" flex justify-center items-center min-h-screen"><CircularProgress /></p>;
+  // Set the body direction and font style based on the language
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+    if (i18n.language === "ar") {
+      htmlElement.setAttribute("dir", "rtl");
+      htmlElement.style.fontFamily = "Cairo, sans-serif"; // Set font to Cairo for Arabic
+    } else {
+      htmlElement.setAttribute("dir", "ltr");
+      htmlElement.style.fontFamily = "Poppins, sans-serif"; // Set font to Poppins for English
+    }
+  }, [i18n.language]); // Run this effect when the language changes
+
+  if (isLoading) return <p className="flex justify-center items-center min-h-screen"><CircularProgress /></p>;
   if (error) return <p>Error loading user data.</p>;
 
   return (
     <div className="flex h-screen overflow-hidden bg-[#F5F6FA] relative">
-      <Sidebar className="z-10" handleIsopen={handleIsopen} />
+      <Sidebar className="z-10" handleIsopen={() => setIsOpen(true)} />
       <div className="flex flex-col flex-1">
-        <Invite isOpen={IsOpen} handleIsclose={handleIsclose} />
-
-        {user.is_approvid  ? "": <DataWelcomeModal isOpen={true} handleIsclose={handleIscloseWelcome} /> }
-       
-
+        <Invite isOpen={IsOpen} handleIsclose={() => setIsOpen(false)} />
+        {user.is_approvid ? "" : <DataWelcomeModal isOpen={true} handleIsclose={() => setIsOpenWelcome(false)} />}
         <Navbar className="z-20" />
         <div
-          className="flex-1  h-full outline-0 rounded-2xl mx-6 bg-[#ffffff] font-poppins overflow-y-auto"
+          className="flex-1 h-full outline-0 rounded-2xl mx-6 bg-[#ffffff]  overflow-y-auto"
           style={{
             scrollbarWidth: "thin",
-            scrollbarColor: "#4B5563 ##1E1E1EBF",
+            scrollbarColor: "#4B5563 #fffff",
           }}
         >
           <Outlet />

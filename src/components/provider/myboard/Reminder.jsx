@@ -23,7 +23,7 @@ function Reminder() {
           <p>lorem ipsum...</p>
         </div>
 
-        <div className='absolute md:gap-2 left-[85%] flex items-center justify-center'>
+        <div className='absolute md:gap-2  start-[80%] flex items-center justify-center'>
           <button>
             <img src={rounded} className='w-[15px]' />
           </button>

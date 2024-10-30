@@ -14,7 +14,7 @@ function Chat() {
   };
 
   return (
-    <div className='h-full rounded-xl p-5 bg font-poppins flex flex-col'>
+    <div className='h-full rounded-xl p-5 bg  flex flex-col'>
       <Chatheader toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
 
   

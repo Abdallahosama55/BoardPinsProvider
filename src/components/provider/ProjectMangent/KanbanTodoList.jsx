@@ -5,10 +5,11 @@ import StrictModeDroppable from "./kanban/droppable";
 import { reorder } from "../../../utils/helpers/helpers";
 import { initialColumnData } from "../../../utils/helpers/constants";
 import toast, { Toaster } from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const KanbanTodoList = () => {
   const [columnData, setColumnData] = useState(initialColumnData);
-
+const{t}=useTranslation()
   const onDragEnd = (result) => {
     const { source, destination } = result;
 
@@ -94,7 +95,7 @@ const KanbanTodoList = () => {
             <StrictModeDroppable droppableId={id} key={id}>
               {(provided) => (
                 <div {...provided.droppableProps} ref={provided.innerRef}>
-                  <ItemsColumn columnTitle={column.title} columnId={column.id} items={column.items} />
+                  <ItemsColumn columnTitle={t(column.title)} columnId={column.id} items={column.items} />
                   {provided.placeholder}
                 </div>
               )}

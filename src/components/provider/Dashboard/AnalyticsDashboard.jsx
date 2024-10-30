@@ -4,6 +4,7 @@ import ChartDashbard from './chartDahboard';
 import { Rating } from '@mui/material';
 import ProgressBar from '../atoms/commonatoms/Progressbar';
 import ChartDahboard2 from './chartDahboard2';
+import { useTranslation } from 'react-i18next';
 
 const OverviewCard = ({ title, items }) => (
   <div className="OverviewCard shadow-custom rounded-lg p-6 mb-3">
@@ -47,9 +48,9 @@ const PerformanceOverview = ({ title, dataPerformanceOverview }) => (
   </div>
 );
 
-const ProjectCard = ({ items }) => (
+const ProjectCard = ({ items,title }) => (
   <div className="OverviewCard shadow-custom rounded-lg p-6 mb-3">
-    <h3 className="font-bold text-lg py-3">Projects Overview</h3>
+    <h3 className="font-bold text-lg py-3">{title}</h3>
     <div className="grid grid-cols-2 sm:grid-cols-2 gap-2 py-6">
       {items?.map((item, index) => (
         <div key={index} className="flex gap-2 my-3">
@@ -64,9 +65,9 @@ const ProjectCard = ({ items }) => (
   </div>
 );
 
-const ProductionGroups = ({ items }) => (
+const ProductionGroups = ({ items ,title }) => (
   <div className=" shadow-custom rounded-lg p-4 mb-3">
-    <h3 className="font-bold text-lg">Production Groups Overview</h3>
+    <h3 className="font-bold text-lg">{title}</h3>
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-6">
       {items?.map((item, index) => (
         <div key={index} className="flex gap-2">
@@ -81,7 +82,7 @@ const ProductionGroups = ({ items }) => (
   </div>
 );
 
-const AnalyticsChart = () => {
+const AnalyticsChart = ({Merchants,Projects}) => {
   const [selectedButton, setSelectedButton] = useState('merchants'); // State to manage selected button
 
   const handleButtonClick = (buttonType) => {
@@ -97,14 +98,14 @@ const AnalyticsChart = () => {
           className={` rounded-2xl px-5 py-2  mb-2 sm:mb-0 sm:ml-4 ${selectedButton === 'merchants' ? 'bg-[#6161FF] text-white' : '#6161F'}`}
           onClick={() => handleButtonClick('merchants')}
         >
-          Merchants
+          {Merchants}
         </button>
         {/* Projects Button */}
         <button
           className={` rounded-2xl px-5 py-2  mb-2 sm:mb-0 sm:ml-4 ${selectedButton === 'projects' ? 'bg-[#6161FF] text-white' : 'text-blue-500'}`}
           onClick={() => handleButtonClick('projects')}
         >
-          Projects
+          {Projects}
         </button>
       </div>
       <div>
@@ -118,18 +119,18 @@ const AnalyticsChart = () => {
 const MonthlyTargetandRevenues = ({ header, start_value, end_value ,value_MonthlyTargetandRevenues }) => {
   // Calculate progress percentage based on start_value and end_value
   const progress = ((50 / 100) * 100).toFixed(2);
-
+const {t}=useTranslation()
   return (
     <div className="shadow-custom rounded-lg p-4 mb-3">
       <div className="lg:flex gap-4 sm:items-center">
         <h3 className="font-bold flex-grow py-3 text-md text-lg ">{header}</h3>
-        <button className="text-[#6161FF] mb-2 sm:mb-0 sm:ml-4 lg:w-auto w-full">Edit</button>
+        <button className="text-[#6161FF] mb-2 sm:mb-0 sm:ml-4 lg:w-auto w-full">{t('edit')}</button>
         <div className=' justify-center flex gap-1'>
           <button className="bg-[#6161FF] font-[500] lg:text-sm  px-4 text-[12px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
-            + Add Annual Target
+           {t('+_add_annual_target')}
           </button>
           <button className="bg-[#6161FF] font-[500] lg:text-sm  px-4 text-[12px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
-            + Add Monthly Target
+          {t('+_add_monthly_target')}
           </button>
         </div>
       </div>
@@ -138,11 +139,12 @@ const MonthlyTargetandRevenues = ({ header, start_value, end_value ,value_Monthl
       <div className="flex lg:justify-start  justify-center items-center gap-4 py-3">
         {/* Monthly Target Button */}
         <button className="bg-[#6161FF] rounded-2xl px-7 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
-          Monthly
+          {t("monthly")}
         </button>
         {/* Annual Target Button */}
         <button className="text-[#6161FF] rounded-lg px-7 py-2">
-          Annual
+          
+          {t('Annual')}
         </button>
       </div>
       <div className=' mx-5 mt-5  progressbar'>
@@ -185,22 +187,22 @@ function AnalyticsDashboard() {
     { rating: 1, progress: 15, color: '#FBBC04' },
   ];
 const value_MonthlyTargetandRevenues=45
-
+const {t}=useTranslation()
   return (
     <div className="p-4">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         <div className="lg:col-span-6 col-span-12">
-          <OverviewCard title="Merchants Overview" items={merchantItems} />
-          <ProjectCard items={projectItems} />
+          <OverviewCard title={t('merchants_overview')} items={merchantItems} />
+          <ProjectCard items={projectItems} title={t('projects_overview')}/>
         </div>
         <div className="lg:col-span-6 col-span-12">
-          <AnalyticsChart />
-          <PerformanceOverview title="Performance Overview" dataPerformanceOverview={dataPerformanceOverview} />
+          <AnalyticsChart  Projects={t('projects')} Merchants={t('merchants.name')}/>
+          <PerformanceOverview title={t('performance_overview')} dataPerformanceOverview={dataPerformanceOverview} />
 
         </div>
       </div>
-      <ProductionGroups items={projectItemsGroups} />
-      <MonthlyTargetandRevenues header={"Monthly Target and Revenues"} start_value={0} end_value={100}  value_MonthlyTargetandRevenues={value_MonthlyTargetandRevenues}/>
+      <ProductionGroups items={projectItemsGroups} title={t('production_groups_overview')} />
+      <MonthlyTargetandRevenues header={t('monthly_target_and_revenues')} start_value={0} end_value={100}  value_MonthlyTargetandRevenues={value_MonthlyTargetandRevenues}/>
     </div>
   );
 }
