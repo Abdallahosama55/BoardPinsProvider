@@ -72,7 +72,7 @@ const TaskModalForm = ({
         <div className="flex justify-end">
           <button
             type="submit"
-            className="bg-blue-500 text-white py-2 px-4 rounded-xl hover:bg-blue-700"
+            className="bg-[#6161FF] text-white py-2 px-4 rounded-xl hover:bg-blue-700"
           >
             {t('task.addNewTask')} {/* Translated button text */}
           </button>

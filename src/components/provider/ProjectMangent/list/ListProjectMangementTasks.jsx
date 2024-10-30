@@ -7,6 +7,7 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 
 // Import the data
 import { data as initialData } from '../../../../utils/helpers/constants';
+import { useTranslation } from 'react-i18next';
 
 const handleSelect = (option) => {
   console.log('Selected option:', option);
@@ -22,7 +23,7 @@ const reorder = (list, startIndex, endIndex) => {
 
 function ListProjectMangementTable() {
   const [items, setItems] = React.useState(initialData);
-
+const {t}=useTranslation()
   // Handles the end of a drag event
   const onDragEnd = (result) => {
     if (!result.destination) {
@@ -69,11 +70,11 @@ function ListProjectMangementTable() {
           >
                     <header className="lg:flex block m-3">
 <div className=" gap-5 items-center py-2 flex flex-grow  p-4">
-<span className=" gap-2 flex items-center text-sm "> <TiArrowSortedDown /> Section Name ...</span>
-<span className=" text-[#A4A4A4]">+ add new task</span>
+<span className=" gap-2 flex items-center text-sm "> <TiArrowSortedDown />{t('Section_Name')}</span>
+<span className=" text-[#A4A4A4]"> {t('newTask')}</span>
 </div>
 <div className=" items-center  gap-3 flex">
-<span className=" text-sm text-[#505050]">Assign List</span>
+<span className=" text-sm text-[#505050]">{t('assignList')}</span>
 <IoPersonAddOutline className=" p-2 bg-[#F5F6FA]  rounded-full"  size={30}/>
 
 </div>
@@ -93,13 +94,13 @@ function ListProjectMangementTable() {
                       <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
                     </div>
                   </th>
-                  <th scope="col" className="px-6 py-3">Task Name</th>
-                  <th scope="col" className="px-6 py-3">Assignee</th>
-                  <th scope="col" className="px-6 py-3">Status</th>
-                  <th scope="col" className="px-6 py-3">Priority</th>
-                  <th scope="col" className="px-6 py-3">Start date</th>
-                  <th scope="col" className="px-6 py-3">Due date</th>
-                  <th scope="col" className="px-6 py-3">Actions</th>
+                  <th scope="col" className="px-6 py-3">{t('Task Name')}</th>
+                  <th scope="col" className="px-6 py-3">{t('Assignee')}</th>
+                  <th scope="col" className="px-6 py-3">{t('Status')}</th>
+                  <th scope="col" className="px-6 py-3">{t('Priority')}</th>
+                  <th scope="col" className="px-6 py-3">{t('Start date')}</th>
+                  <th scope="col" className="px-6 py-3">{t('Due date')}</th>
+                  <th scope="col" className="px-6 py-3">{t('Actions')}</th>
                 </tr>
               </thead>
               <tbody>

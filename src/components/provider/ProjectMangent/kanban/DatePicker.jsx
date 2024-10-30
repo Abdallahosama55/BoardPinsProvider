@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import dayjs from 'dayjs';
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md';
 import clender from '../../../../assets/icons/clender.png'
+import { useTranslation } from 'react-i18next';
 const DatePickerContainer = styled.div`
   display: flex;
   align-items: center;
@@ -89,19 +90,19 @@ const DatePicker = () => {
     }
     return dates;
   };
-
+ const {t}=useTranslation()
   return (
     <Fragment>
     <div className='  flex items-center '>
       <div className=' flex-grow'>
       
-<h2 className=' text-primary font-[600] text-lg px-4'>February 2024</h2>      
+<h2 className=' text-[#6161FF] font-[600] text-lg px-4'>February 2024</h2>      
       </div>
 <div className=' flex items-center gap-2'>
 <img src={clender} alt='clender' className=' w-[40px] p-2  shadow-custom rounded-xl'/>
 
 
-  <button className='  bg-blue-500 text-white rounded-lg px-6 py-2'> Today</button>
+  <button className='  bg-[#6161FF] text-white rounded-lg px-6 py-2'> {t('Today')}</button>
 </div>
 
     </div>

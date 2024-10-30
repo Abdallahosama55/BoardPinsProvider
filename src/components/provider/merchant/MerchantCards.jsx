@@ -18,7 +18,7 @@ function MerchantCards() {
     { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), "Frontend"] },
     { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1')] },
     { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), t('merchant_connect.tags.tag2')] },
-    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant.tags.tag1'), t('merchant.tags.tag2')] },
+    { title: t('merchant_connect.projectName'), role: t('merchant_connect.role'), phone: "101455", imgSrc: pic, status: t('merchant_connect.statusAccepted'), itemsCategories: [t('merchant_connect.tags.tag1'), t('merchant_connect.tags.tag2')] },
   ];
 
   return (

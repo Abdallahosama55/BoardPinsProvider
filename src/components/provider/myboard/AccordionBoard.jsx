@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { BiSolidDownArrow } from "react-icons/bi";
 import { BiSolidRightArrow } from "react-icons/bi";
 import { LuAlarmClock } from "react-icons/lu";
@@ -8,7 +9,7 @@ const AccordionItem = ({ title, content , title_num}) => {
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
-
+const {t}=useTranslation()
   return (
     <div className="accordion-item ">
       <div
@@ -24,7 +25,7 @@ const AccordionItem = ({ title, content , title_num}) => {
         <LuAlarmClock color='#C6CAD1' size={22} />
         <p className='px-3 underline font-medium text-lg text-[#6A6A65]'>{content}</p>
         <div className='flex-grow' /> {/* This will push "Today" to the right */}
-        <p className='text-[#6161FF] font-medium'>Today</p>
+        <p className='text-[#6161FF] font-medium'>{t('Today')}</p>
       </div>
       
       )}

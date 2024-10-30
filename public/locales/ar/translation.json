@@ -224,6 +224,8 @@
     "description": "قائمة بجميع الكائنات والأماكن التي قمت بمشاهدتها مؤخرًا في Board Pins."
   },
   "newTask": "مهمة جديدة",
+  "assignList": "تعين قائمة",
+  "Section_Name" :"اسم القسم",
   "validation": {
     "titleRequired": "العنوان مطلوب",
     "dueDateRequired": "تاريخ الاستحقاق مطلوب",
@@ -342,6 +344,7 @@
 "Selected Project": "المشروع المحدد",
 "Project Name": "اسم المشروع",
 "Today Tasks": "مهام اليوم",
+"Today":"اليوم",
 "Total": "الإجمالي",
 "Done": "مكتمل",
 "In Progress": "قيد التقدم",
@@ -381,6 +384,17 @@
   "didnt_receive_code": "لم تستلم الرمز؟",
   "resend_code": "إعادة إرسال الرمز",
   "resend_code_in": "إعادة إرسال الرمز خلال",
-  "send_the_link": "أرسل الرابط"
+  "send_the_link": "أرسل الرابط",
+  "Task Name": "اسم المهمة",
+  "Assignee": "المسؤول",
+  "Status": "الحالة",
+  "Priority": "الأولوية",
+  "Start date": "تاريخ البدء",
+  "Due date": "تاريخ الاستحقاق",
+  "Actions": "الإجراءات",
+  "checkbox": "تحديد الكل",
+  "priorityLow": "منخفض",
+  "priorityMedium": "متوسط",
+  "priorityHigh": "مرتفع"
 
 }

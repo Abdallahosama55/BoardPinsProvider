@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import "../../atoms/atomsEditor/Global.css"; // Make sure to import your styles
 import useTiptapEditor from "../../atoms/atomsEditor/useTiptapEditor";
 import NewTaskSidebar from "./NewTaskSidebar";
+import { useTranslation } from "react-i18next";
 
 const NewTaskModal = ({ isOpen, onClose }) => {
   const [description, setDescription] = useState("");
@@ -49,12 +50,12 @@ const NewTaskModal = ({ isOpen, onClose }) => {
   const handlePhotoClick = () => {
     document.getElementById("photo-upload").click();
   };
-
+const {t}=useTranslation()
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="New Task">
+    <Modal isOpen={isOpen} onClose={onClose} title={t("newTask")} className={"h-[60vh]   overflow-y-auto bg-white max-w-[80%]"}>
       <div className="mt-4">
         <div className=" grid lg:grid-cols-3 grid-cols-1">
-          <div className=" col-span-2 px-5">
+          <div className=" col-span-2 ">
             <TaskModalForm
               formik={formik}
               editor={editor}
