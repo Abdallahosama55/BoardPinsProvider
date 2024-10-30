@@ -395,6 +395,9 @@
   "checkbox": "تحديد الكل",
   "priorityLow": "منخفض",
   "priorityMedium": "متوسط",
-  "priorityHigh": "مرتفع"
+  "priorityHigh": "مرتفع",
+  "Activity":"الأنشطة",
+  "comment":"أكتب تعليق",
+  "send":"ارسال"
 
 }

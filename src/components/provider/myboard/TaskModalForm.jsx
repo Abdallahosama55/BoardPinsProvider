@@ -147,10 +147,10 @@ const StatusButtons = ({ t }) => (
   <div>
     <h2 className="text-[#6F6F6F] pb-3">{t('task.pickStatus')}</h2> {/* Translated status header */}
     <div className="flex gap-5 items-center">
-      <button className="text-[#FB5607] rounded-3xl bg-[#FB56071A] flex items-center ps-2 pe-5 font-medium text-[15px] min-w-[100px] py-1" type="button">
+      <button className="text-[#FB5607] rounded-3xl bg-[#FB56071A] flex items-center  font-medium text-[15px] min-w-[100px] py-1" type="button">
         <IoMdArrowDropright color="#FB5607" size={25} /> {t('task.toDo')} {/* Translated to-do button */}
       </button>
-      <button className="text-[#292D32] rounded-3xl gap-2 flex items-center ps-2 pe-5 text-sm font-medium py-1 min-w-[130px]" type="button">
+      <button className="text-[#292D32] rounded-3xl gap-2 flex items-center  text-sm font-medium py-1 min-w-[130px]" type="button">
         <GoClock color="#292D32" size={18} /> {t('task.remindMe')} {/* Translated remind me button */}
       </button>
     </div>

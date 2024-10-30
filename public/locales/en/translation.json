@@ -392,5 +392,8 @@
   "Today": "Today",
   "priorityLow": "Low",
   "priorityMedium": "Medium",
-  "priorityHigh": "High"
+  "priorityHigh": "High",
+  "Activity":"Activity",
+  "comment":"Write comment here",
+  "send":"send"
 }

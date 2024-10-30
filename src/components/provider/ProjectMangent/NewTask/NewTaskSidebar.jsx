@@ -1,6 +1,7 @@
 import React from "react";
 import profile from "../../../../assets/icons/Ellipse 232.png";
 import { AiOutlineLike } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 const Comment = () => (
   <div className="comment p-4 rounded-2xl border border-gray-400 min-h-[150px] mx-2">
@@ -24,10 +25,11 @@ const Comment = () => (
 );
 
 function NewTaskSidebar() {
+  const {t}=useTranslation()
   return (
     <div className="flex flex-col border-gray-400 md:mt-2 mt-12 lg:border-l md:border-t-0 border-t p-4">
       <div className="flex-grow">
-        <h3 className="text-2xl lg:border-b-2 border-gray-400">Activity</h3>
+        <h3 className="text-2xl lg:border-b-2 border-gray-400">{t('Activity')}</h3>
         <div className="comments-container flex flex-col gap-5 pt-8 overflow-y-auto max-h-[400px]">
           <Comment />
           <Comment />
@@ -38,10 +40,10 @@ function NewTaskSidebar() {
         <input
           type="text"
           className="w-full flex-grow outline-none px-3 py-1"
-          placeholder="Write a comment..."
+          placeholder={t('comment')}
         />
         <button className="bg-primary lg:p-3 p-1 px-3 text-white rounded">
-          Send
+          {t('send')}
         </button>
       </form>
     </div>
