@@ -47,14 +47,14 @@ function CardsKnowledgeBase() {
         {items.map((item, index) => (
           <div key={index} className="pt-4 pb-0 rounded-xl bg-[#E7E7E7] relative">
             <div className="flex px-5 justify-end text-gray-500 text-md gap-2">
-              <button className="hover:text-blue-500 transition duration-300">
+              <button className="hover:text-[#6161FF] transition duration-300">
                 <MdOutlineModeEditOutline />
               </button>
               <button className="hover:text-red-500 transition duration-300">
                 <MdOutlineDeleteOutline />
               </button>
               <button
-                className="hover:text-blue-500 transition duration-300 relative"
+                className="hover:text-[#6161FF] transition duration-300 relative"
                 onClick={() => toggleDropdown(index)}
               >
                 <PiDotsThreeOutlineFill />

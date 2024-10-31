@@ -31,7 +31,7 @@ function StepThree({ setFieldValue }) {
           />
           <label
             htmlFor="service_icon"
-            className="text-blue-500 cursor-pointer"
+            className="text-[#6161FF] cursor-pointer"
           >
             Drag and drop or <span className="underline">Browse files</span>
           </label>
@@ -83,7 +83,7 @@ function StepThree({ setFieldValue }) {
               />
               <label
                 htmlFor="commercial_registration"
-                className="text-blue-500 cursor-pointer text-xs font-semibold px-2"
+                className="text-[#6161FF] cursor-pointer text-xs font-semibold px-2"
               >
                 Drag and drop or <span className="underline">Browse files</span>
               </label>
@@ -109,7 +109,7 @@ function StepThree({ setFieldValue }) {
                   setFieldValue("Tax_Card", event.currentTarget.files[0])
                 }
               />
-              <label htmlFor="Tax_Card" className="text-blue-500 cursor-pointer">
+              <label htmlFor="Tax_Card" className="text-[#6161FF] cursor-pointer">
                 Drag and drop or <span className="underline">Browse files</span>
               </label>
             </div>
@@ -142,7 +142,7 @@ function StepThree({ setFieldValue }) {
           />
           <label
             htmlFor="service_photos"
-            className="text-blue-500 cursor-pointer"
+            className="text-[#6161FF] cursor-pointer"
           >
             Drag and drop or <span className="underline">Browse files</span>
           </label>
@@ -174,7 +174,7 @@ function StepThree({ setFieldValue }) {
               />
               <label
                 htmlFor="Company_Profile"
-                className="text-blue-500 cursor-pointer"
+                className="text-[#6161FF] cursor-pointer"
               >
                 Drag and drop or <span className="underline">Browse files</span>
               </label>
@@ -202,7 +202,7 @@ function StepThree({ setFieldValue }) {
               />
               <label
                 htmlFor="Pricelist"
-                className="text-blue-500 cursor-pointer"
+                className="text-[#6161FF] cursor-pointer"
               >
                 Drag and drop or <span className="underline">Browse files</span>
               </label>
@@ -232,7 +232,7 @@ function StepThree({ setFieldValue }) {
             />
             <label
               htmlFor="National_ID"
-              className="text-blue-500 cursor-pointer"
+              className="text-[#6161FF] cursor-pointer"
             >
               Drag and drop or <span className="underline">Browse files</span>
             </label>

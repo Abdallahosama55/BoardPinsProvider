@@ -78,7 +78,7 @@ function TableProjectTasks() {
                 <input 
                   id="checkbox-all-search" 
                   type="checkbox" 
-                  className="w-4 h-4 text-blue-600 rounded" 
+                  className="w-4 h-4 text-[#6161FF] rounded" 
                 />
                 <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
               </div>
@@ -98,7 +98,7 @@ function TableProjectTasks() {
                   <input 
                     id={`checkbox-table-search-${index}`} 
                     type="checkbox" 
-                    className="w-4 h-4 text-blue-600 bg-gray-100 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700" 
+                    className="w-4 h-4 text-[#6161FF] bg-gray-100 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700" 
                   />
                   <label htmlFor={`checkbox-table-search-${index}`} className="sr-only">checkbox</label>
                 </div>

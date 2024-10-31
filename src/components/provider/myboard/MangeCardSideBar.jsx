@@ -6,12 +6,12 @@ const ManageCardSideBar = ({ isOpenMangeCard, toggleSidebar }) => {
   const { t } = useTranslation();
 
   const cards = [
-    { title: t('Recents'), description: t('Recents Description'), color: 'text-blue-500', icon: '🕒', bgColorIcon: 'bg-blue-500' },
+    { title: t('Recents'), description: t('Recents Description'), color: 'text-[#6161FF]', icon: '🕒', bgColorIcon: 'bg-blue-500' },
     { title: t('In-Progress Project'), description: t('In-Progress Project Description'), color: 'text-purple-500', icon: '🔍', bgColorIcon: 'bg-purple-500' },
     { title: t('Reminder'), description: t('Reminder Description'), color: 'text-yellow-500', icon: '⏰', bgColorIcon: 'bg-yellow-500' },
     { title: t('Project Tasks'), description: t('Project Tasks Description'), color: 'text-orange-500', icon: '⏳', bgColorIcon: 'bg-orange-500' },
     { title: t('Personal List'), description: t('Personal List Description'), color: 'text-green-500', icon: '📝', bgColorIcon: 'bg-green-500' },
-    { title: t('Merchants Want’s To Connect'), description: t('Merchants Want’s To Connect Description'), color: 'text-blue-500', icon: '🛒', bgColorIcon: 'bg-blue-500' },
+    { title: t('Merchants Want’s To Connect'), description: t('Merchants Want’s To Connect Description'), color: 'text-[#6161FF]', icon: '🛒', bgColorIcon: 'bg-blue-500' },
     { title: t('Production Groups'), description: t('Production Groups Description'), color: 'text-indigo-500', icon: '👥', bgColorIcon: 'bg-indigo-500' },
   ];
 

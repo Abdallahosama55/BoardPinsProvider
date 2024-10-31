@@ -89,7 +89,7 @@ const SidebarProjectManagement = () => {
       <div className='bg-white rounded-xl p-4 py-8 '>
         <div className='flex items-center gap-4'>
           <Dropdown isOpen={isOpen} toggleDropdown={toggleDropdown} />
-          <button className="px-3 h-100 py-1 text-center flex justify-center rounded-lg shadow-custom bg-white text-blue-500">
+          <button className="px-3 h-100 py-1 text-center flex justify-center rounded-lg shadow-custom bg-white text-[#6161FF]">
             <div>
               <h3>+</h3>
               <h3>{t("New")}</h3>

@@ -102,7 +102,7 @@ const AnalyticsChart = ({Merchants,Projects}) => {
         </button>
         {/* Projects Button */}
         <button
-          className={` rounded-2xl px-5 py-2  mb-2 sm:mb-0 sm:ml-4 ${selectedButton === 'projects' ? 'bg-[#6161FF] text-white' : 'text-blue-500'}`}
+          className={` rounded-2xl px-5 py-2  mb-2 sm:mb-0 sm:ml-4 ${selectedButton === 'projects' ? 'bg-[#6161FF] text-white' : 'text-[#6161FF]'}`}
           onClick={() => handleButtonClick('projects')}
         >
           {Projects}

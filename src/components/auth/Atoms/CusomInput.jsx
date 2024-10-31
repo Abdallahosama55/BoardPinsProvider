@@ -13,8 +13,8 @@ function CustomInput({ type, label, placeholder, name }) {
         />
         <label htmlFor={name} className='block text-sm font-medium text-gray-700'>
           By proceeding, you agree to the
-          <span className='text-blue-500 px-1 underline'>Terms of Service</span> and
-          <span className='text-blue-500 px-1 underline'>Privacy Policy</span>
+          <span className='text-[#6161FF] px-1 underline'>Terms of Service</span> and
+          <span className='text-[#6161FF] px-1 underline'>Privacy Policy</span>
         </label>
       </div>
     );

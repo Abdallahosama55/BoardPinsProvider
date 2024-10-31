@@ -10,12 +10,12 @@ const events = {
   1: [{ type: 'Note taking', color: 'bg-gray-300', textColor: 'text-gray-600' }],
   2: [{ type: 'Development', color: 'bg-orange-300', textColor: 'text-orange-600' }],
   3: [{ type: 'Note taking', color: 'bg-gray-300', textColor: 'text-gray-600' }],
-  4: [{ type: 'Design', color: 'bg-blue-300', textColor: 'text-blue-500' }, { type: 'Development', color: 'bg-orange-300', textColor: 'text-orange-500' }],
+  4: [{ type: 'Design', color: 'bg-blue-300', textColor: 'text-[#6161FF]' }, { type: 'Development', color: 'bg-orange-300', textColor: 'text-orange-500' }],
   5: [{ type: 'Regular Tag', color: 'bg-gray-300', textColor: 'text-gray-600' }],
   6: [{ type: 'Development', color: 'bg-orange-300', textColor: 'text-orange-500' }],
   7: [{ type: 'Edit file', color: 'bg-red-300', textColor: 'text-red-500' }],
   8: [{ type: 'Note taking', color: 'bg-gray-300', textColor: 'text-gray-600' }],
-  9: [{ type: 'Design', color: 'bg-blue-300', textColor: 'text-blue-500' }, { type: 'Development', color: 'bg-orange-300', textColor: 'text-orange-500' }, { type: 'Development', color: 'bg-orange-300', textColor: 'text-orange-500' }],
+  9: [{ type: 'Design', color: 'bg-blue-300', textColor: 'text-[#6161FF]' }, { type: 'Development', color: 'bg-orange-300', textColor: 'text-orange-500' }, { type: 'Development', color: 'bg-orange-300', textColor: 'text-orange-500' }],
   10: [{ type: 'Note taking', color: 'bg-gray-300', textColor: 'text-gray-600' }],
   // Add more events as needed...
 };

@@ -24,7 +24,7 @@ const Modal = ({ isOpen, onClose, title, children, smallModal, className }) => {
       >
         <div className="flex">
           <div className="flex-grow">
-            <h1 className="text-2xl text-blue-500 font-bold">{title}</h1>
+            <h1 className="text-2xl text-[#6161FF] font-bold">{title}</h1>
           </div>
           {onClose ? (
             <button

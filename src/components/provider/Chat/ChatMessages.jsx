@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next'; // Import useTranslation
 const md = new MarkdownIt();
 
 const IconButton = ({ icon: Icon }) => (
-  <button className="text-gray-500 hover:text-blue-500 transition">
+  <button className="text-gray-500 hover:text-[#6161FF] transition">
     <Icon />
   </button>
 );
