@@ -10,4 +10,7 @@
   font-weight: 100 !important;
   font-style: normal !important;
 }
+.change-my-color {
+  filter: brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(565%) hue-rotate(200deg) brightness(97%) contrast(102%);
+}
 

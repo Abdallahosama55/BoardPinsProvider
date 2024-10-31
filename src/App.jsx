@@ -66,7 +66,7 @@ console.log("we have =====>",accessToken)
             <Route index element={accessToken ? <Navigate to="/myboard" /> : <Navigate to="/home" />} />
             <Route path="/knowledgebase" element={<KnowledgeBase />} />
             <Route path="/myboard" element={<MyBoardPins />} />
-            <Route path="/merchant" element={<Merchant />} />
+            <Route path="/connected" element={<Merchant />} />
             <Route path="/merchantPinned" element={<MerchantPinned />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/chat" element={<Chat />}>

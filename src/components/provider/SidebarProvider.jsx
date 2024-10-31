@@ -44,9 +44,11 @@ const SidebarProvider = ({ handleIsopen }) => {
     projectManagement: false,
     Merchant: false,
     compare: false,
+    pinned:false,
     biddingProject: false,
     productionGroup: false,
     Setting: false,
+    connected:false,
   });
 
   const [getAllWorkspaces, { isLoading, isSuccess, isError, data }] = useGetAllWorkspacesMutation();
@@ -116,7 +118,7 @@ const SidebarProvider = ({ handleIsopen }) => {
           id: "connected",
           text: "menu.connected",
           icon: connectedmerchanetIcon,
-          path: "/merchant",
+          path: "/connected",
         },
         {
           id: "pinned",
@@ -271,7 +273,7 @@ const SidebarProvider = ({ handleIsopen }) => {
       </button>
 
       <div
-        className={`fixed inset-x-0  px-4 h-full left-0 md:bg-transparent bg-white text-white w-72 transform ${
+        className={`fixed inset-x-0   px-4 h-full left-0 md:bg-transparent bg-white text-white w-72 transform ${
           isOpen 
             ? "translate-x-0"
             : i18n.language === "ar" 
@@ -286,7 +288,7 @@ const SidebarProvider = ({ handleIsopen }) => {
         </div>
 
         <ul
-          className="font-popines flex flex-col text-sm gap-4 font-[500] max-h-[90vh] overflow-y-auto py-4 px-1 mt-2"
+          className=" overflow-x-hidden flex flex-col text-sm gap-4 font-[500] max-h-[90vh] overflow-y-auto py-4 px-1 mt-2"
           style={{
             scrollbarWidth: "thin",
             scrollbarColor: "#4B5563 ##1E1E1EBF",
@@ -332,9 +334,12 @@ const SidebarProvider = ({ handleIsopen }) => {
                   <div className="flex-grow flex items-center w-full gap-3">
                     {item.icon && (
                       <span
-                        style={{
-                          color: selectedItem === item.id ? "#6161FF" : "#000",
-                        }}
+                      style={{
+                        filter:
+                          selectedItem === item.id
+                            ? "brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(565%) hue-rotate(200deg) brightness(97%) contrast(102%)"
+                            : "none",
+                      }}
                         className={`${
                           selectedItem === item.id ? "change-my-color" : ""
                         }`}
@@ -355,6 +360,12 @@ const SidebarProvider = ({ handleIsopen }) => {
                       <Link
                         to={subItem.path}
                         key={subItem.id}
+                        style={{
+                          filter:
+                          selectedSubItem === subItem.id
+                              ? "brightness(0) saturate(100%) invert(35%) sepia(65%) saturate(565%) hue-rotate(200deg) brightness(97%) contrast(102%)"
+                              : "none",
+                        }}
                         className={`flex items-center gap-2 px-3 ${
                           selectedSubItem === subItem.id
                             ? " change-my-color  border-l-[3px]"
