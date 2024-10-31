@@ -69,7 +69,7 @@ const NavbarProvider = ({ handleIsopen }) => {
             <MdKeyboardArrowDown size={28} color="#292D32" />
           </button>
           <div
-            className={`font-poppins text-poppins top-24 z-50 h-32 text-dark bg-white rounded-xl shadow-custom z-999 w-32 absolute transition-all duration-300 ease-in-out ${
+            className={` top-24 z-50 h-32 text-dark bg-white rounded-xl shadow-custom z-999 w-32 absolute transition-all duration-300 ease-in-out ${
               show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
             }`}
           >

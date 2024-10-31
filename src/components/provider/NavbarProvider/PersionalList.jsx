@@ -18,7 +18,7 @@ function PersionalList({ Navgate }) {
 
   return (
     <div>
-      <ul className="font-medium text-dark text-sm p-3 flex flex-col gap-1">
+      <ul className="font-medium  text-dark text-sm p-3 flex flex-col gap-1">
         <li onClick={() => Navgate('/setting-profile')} className="cursor-pointer">
           {t('profile')} {/* Use translation key */}
         </li>
