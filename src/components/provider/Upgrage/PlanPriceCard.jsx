@@ -1,14 +1,16 @@
 import React from 'react';
 import star from '../../../assets/icons/Star 15.svg';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const PlanCard = ({ title, price, buttonText, currentLanguage,listItems, borderColor, buttonBgColor, buttonTextColor, viewBadge }) => {
+ const{t,i18n}=useTranslation()
   return (
     <div className={`w-full min-h-[580px] max-w-[400px] rounded-3xl border-[1px] h-full`} style={{ borderColor }}>
       <div className={`text-center bg-[#6161FF] rounded-t-3xl text-[#F5F6FA] p-3 text-2xl text-[400] ${viewBadge ? 'block' : 'hidden'}`}>
-       
-        {currentLanguage==="ar" ? <h1 className=' font-cairo'>الأكثر شيوعا</h1> : <h1>Most Popular</h1>}
-      </div>
+      <h1>{t('Most_Popular')}</h1>
+ 
+      </div>       
 
       <div className='p-4'>
         <header className="flex justify-center">

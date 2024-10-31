@@ -541,6 +541,94 @@
    "select_all": "Select all",
   "quantity": "Quantity",
   "create_project_with_merchant": "Create project with this merchant",
-  "remove": "Remove"
+  "remove": "Remove",
+  "merchant_pinned": {
+    "unlock_message": "To be able to unlock more Pinned merchants, you have to Upgrade your plan",
+    "upgrade_button": "Upgrade Now"
+  },
+  
+    "paymentGateways": {
+      "comparison": "Payment Gateways Comparison",
+      "gateway1": "Payment Gateway 1",
+      "gateway2": "Payment Gateway 2",
+      "gateway3": "Payment Gateway 3"
+    },
+    "comparison": {
+      "another": "Another Comparison",
+      "anotherOne": "Yet Another Comparison",
+      "different": "Different Comparison",
+      "anotherOneAgain": "Yet Another Comparison",
+      "final": "Final Comparison",
+      "comparison1": "Comparison 1",
+      "comparison2": "Comparison 2",
+      "comparison3": "Comparison 3",
+      "comparison4": "Comparison 4",
+      "comparison7": "Comparison 7",
+      "comparison8": "Comparison 8",
+      "comparison9": "Comparison 9",
+      "comparison10": "Comparison 10",
+      "comparison11": "Comparison 11",
+      "comparison12": "Comparison 12",
+      "comparison13": "Comparison 13",
+      "typeHere": " Type here to compare ",
+      "vs": "Vs",
+      "compareNow": "  Compare Now",
+      "title":"Welcome to Board Compare!",
+      "header_des":"Now  you can compare  between every service providers to find the best for your business.",
+      "choose": "Choose anything to start",
+      "chooseServiceProvider": "Choose any Service Provider or Freelancer/ Influencer to show details here"
+    },
+    "chooseAndStart": "Choose and start Comparison!",
+    "compareText": "Now you can compare between every service provider to find the best for your business",
+    "compare": "Compare",
+    "paymentGateway": "Payment gateways",
+    
+      "free_trial": "Free Trial on All Paid Plans",
+      "experience_power": "Experience the platform's power before committing.",
+      "flexible_billing": "Flexible Billing",
+      "choose_plans": "Choose monthly or annual plans (annual plans get exclusive discounts!).",
+      "subscription_plans": "Subscription Plans",
+  
+      "plans": {
+        "free": {
+          "title": "Free",
+          "price": "EGP 0",
+          "buttonText": "Start Now",
+          "features": [
+            "Get a basic listing in the directory to showcase your skills and experience to potential clients.",
+            "Receive a limited number of connection requests: Get discovered by high-growth e-commerce businesses. 5 connections only (To be editable)",
+            "Freemium Project Management: Collaborate with connected merchants on basic project tasks (Limited to one project)"
+          ]
+        },
+        "standard": {
+          "title": "Standard",
+          "price": "EGP 299",
+          "buttonText": "Subscribe Now",
+          "features": [
+            "Everything in the Free Plan",
+            "Stand Out from the Crowd",
+            "Unlimited Connection Requests",
+            "Create Pins Collection",
+            "Lead Generation Machine",
+            "Basic reporting and analytics",
+            "Get featured in our weekly client spotlight newsletter (limited slots available!)"
+          ]
+        },
+        "premium": {
+          "title": "Premium",
+          "price": "EGP 399",
+          "buttonText": "Start Now",
+          "features": [
+            "Everything in the Premium Plan",
+            "Dominate Directory Searches",
+            "Your Personal Growth Partner"
+          ]
+        }
+      },
+      "Most_Popular":"Most Popular"
+    
+    
+  
+  
   
 }

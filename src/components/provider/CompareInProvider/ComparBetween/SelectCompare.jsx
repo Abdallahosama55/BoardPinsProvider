@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Modal from "../../atoms/commonatoms/Modal";
 import HeaderSelectCompare from "./HeaderSelectCompare";
 import fawry from "../../../../assets/images/provider/fawry.png";
@@ -6,6 +7,7 @@ import { FaMinus } from "react-icons/fa";
 import ProgressRing from "../../atoms/commonatoms/ProgressRing";
 
 function SelectCompare({ isModalOpen, handleCloseModal, onApply }) {
+  const { t } = useTranslation(); // Hook to get translation function
   const [selectedCards, setSelectedCards] = useState([]);
 
   const handleSelect = (id) => {
@@ -40,23 +42,26 @@ function SelectCompare({ isModalOpen, handleCloseModal, onApply }) {
         onClose={handleCloseModal}
       >
         <HeaderSelectCompare />
-        <main className="py-5 rounded-xl bg-white h-[600px] font-poppins overflow-y-auto p-5 mt-4">
-
-<div className="  mx-4 px-8 py-12 bg-[#F9F9F9] rounded-lg">
-<h1 className=" text-3xl  font-[800] my-3 text-[#292D32] font-poppins">Choose and start Comparison!</h1>
-<p className=" font-poppins text-[#A2A5A8]">Now  you can compare  between every service providers to find the best for your business</p>
-</div>
+        <main className="py-5 rounded-xl bg-white h-[600px]  overflow-y-auto p-5 mt-4">
+          <div className="mx-4 px-8 py-12 bg-[#F9F9F9] rounded-lg">
+            <h1 className="text-3xl font-[800] my-3 text-[#292D32] ">
+              {t('chooseAndStart')}
+            </h1>
+            <p className=" text-[#A2A5A8]">
+              {t('compareText')}
+            </p>
+          </div>
 
           <div className="flex w-full justify-end">
             <button
-              className={`py-2 rounded-lg font-poppins m-5 px-5 ${
+              className={`py-2 rounded-lg  m-5 px-5 ${
                 selectedCards.length === 0
                   ? "opacity-0"
                   : "bg-primary text-white"
               }`}
               onClick={handleApply}
             >
-              Compare
+              {t('compare')}
             </button>
           </div>
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-2 justify-center px-4">
@@ -72,7 +77,7 @@ function SelectCompare({ isModalOpen, handleCloseModal, onApply }) {
               >
                 <img src={item.src} alt={item.title} />
                 <div className="flex items-center gap-2">
-                  <div className="relative   flex items-center ">
+                  <div className="relative flex items-center">
                     <ProgressRing
                       radius={22}
                       stroke={4}
@@ -80,10 +85,10 @@ function SelectCompare({ isModalOpen, handleCloseModal, onApply }) {
                       color="#6161FF"
                     />
                     <div className="absolute inset-0 flex items-center justify-center text-xs font-bold">
-                      <span className=" text-[#6161FF] text-[10px]">{item.precent}%</span>  
+                      <span className="text-[#6161FF] text-[10px]">{item.precent}%</span>
                     </div>
                   </div>
-                  <div className="flex-grow  font-[600] text-[#4D4D4D]  font-poppins">
+                  <div className="flex-grow font-[600] text-[#4D4D4D] ">
                     {item.title}
                   </div>
                   {selectedCards.includes(item.id) ? (

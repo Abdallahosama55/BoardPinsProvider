@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdAddCircleOutline } from "react-icons/md";
 
@@ -58,7 +59,7 @@ function SearchInput() {
       return newInputs;
     });
   };
-
+const {t}=useTranslation()
   return (
     <div className="flex flex-col items-center py-6">
       {inputs?.map((input, index) => (
@@ -66,7 +67,7 @@ function SearchInput() {
           <div key={input.id} className="flex items-center w-full py-2">
             <div className="flex items-center justify-center h-full">
               <div className="mt-3 text-xs font-bold text-gray-600 flex px-2 flex-col items-center">
-                <span>VS</span>
+                <span>{t('comparison.vs')}</span>
                 <div>|</div>
               </div>
             </div>
@@ -96,7 +97,7 @@ function SearchInput() {
 
   <div className="flex items-center justify-center h-full">
           <div className="vs-line px-2 text-xs font-bold text-gray-600 flex flex-col items-center">
-            <span className="vs-text">VS</span>
+            <span className="vs-text">{t('comparison.vs')}</span>
           </div>
         </div>
 
@@ -104,7 +105,7 @@ function SearchInput() {
           <input
             type="text"
             className="lg:w-full flex-grow h-full outline-0 py-3"
-            placeholder="Type here to compare"
+            placeholder={t('comparison.typeHere')}
             onChange={(event) => handleInputChange(inputs[inputs.length - 1].id, event)}
           />
           <IoSearchOutline size={20} className="search-icon" />
@@ -115,7 +116,7 @@ function SearchInput() {
           className="flex lg:mt-1 mt-6  min-w-[140px] justify-center text-center gap-1 items-center px-2 bg-[#6161FF] text-white font-medium text-sm py-3 rounded-lg ml-2"
           onClick={handleSubmit}
         >
-          <MdAddCircleOutline size={18} /> Compare Now
+          <MdAddCircleOutline size={18} /> {t('comparison.compareNow')}
         </button>
       </div>
     </div>

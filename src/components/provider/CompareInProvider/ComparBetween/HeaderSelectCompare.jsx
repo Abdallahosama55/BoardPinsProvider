@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
 
@@ -12,6 +13,7 @@ function HeaderSelectCompare() {
   const toggleServicesDropdown = () => {
     setIsServicesOpen(!isServicesOpen);
   };
+  const {t}=useTranslation()
   return (
     <div>
       <header className=" bg-white rounded-xl py-5 flex px-5 gap-5 items-center  w-full">
@@ -20,7 +22,7 @@ function HeaderSelectCompare() {
           <input
             type="text"
             className=" py-2 w-full flex-grow px-4  bg-[#F9F9F9] outline-none "
-            placeholder="Payment gateways"
+            placeholder={t('paymentGateway')}
           />
         </div>
         <div className="flex gap-2 items-center relative">
@@ -29,7 +31,7 @@ function HeaderSelectCompare() {
               className="flex items-center gap-1 bg-white shadow-xl text-sm font-medium border border-gray-100 text-primary rounded-xl p-4 py-2"
               onClick={toggleCategoriesDropdown}
             >
-              Categories{" "}
+              {t('common_comparison.categories')}{" "}
               {isCategoriesOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </button>
             {isCategoriesOpen && (
@@ -51,7 +53,8 @@ function HeaderSelectCompare() {
               className="flex items-center gap-1 bg-white shadow-xl text-primary rounded-xl text-sm font-medium border border-gray-100 p-4 py-2"
               onClick={toggleServicesDropdown}
             >
-              Services {isServicesOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              {t('services')}
+               {isServicesOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </button>
             {isServicesOpen && (
               <ul className="absolute bg-white shadow-lg rounded-lg mt-2 w-[44%] p-2">
