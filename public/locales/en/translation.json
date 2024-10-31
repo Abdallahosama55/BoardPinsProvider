@@ -227,11 +227,7 @@
     "description": "A list of all the Board Pins objects and locations you’ve recently viewed."
   },
   "newTask": "New Task",
-  "validation": {
-    "titleRequired": "Title is required",
-    "dueDateRequired": "Due date is required",
-    "doDateRequired": "Due time is required"
-  },
+
   "prompt": {
     "enterLink": "Please enter the link:"
   },
@@ -393,7 +389,158 @@
   "priorityLow": "Low",
   "priorityMedium": "Medium",
   "priorityHigh": "High",
-  "Activity":"Activity",
-  "comment":"Write comment here",
-  "send":"send"
+  "Activity": "Activity",
+  "comment": "Write comment here",
+  "send": "send",
+  "applied": "Applied",
+  "apply": "Apply",
+  "status_bids": {
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "pending": "Pending"
+  },
+  "content": "Lorem ipsum dolor sit amet consectetur. Ac tellus consequat dis ac elementum odio. Faucibus id vestibulum pretium malesuada quisque mi elementum. Semper egestas ut sed phasellus blandit scelerisque vestibulum. Nullam tortor ac malesuada sapien porttitor orci.",
+  "myBids": "My Bids",
+  "filter": "Filter",
+  "status": "Status",
+  "skills": "Project owner",
+  "deadline": "Deadline",
+  "priceRange": "Price Range",
+  "statusItems": {
+    "pendingRequest": "Pending Request",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "inProgress": "Inprogress",
+    "finished": "Finished",
+    "closed": "Closed"
+  },
+  "skillsItems": {
+    "kirolosAdel": "Kirolos Adel",
+    "mohamedIbrahim": "MOhamed Ibrahim",
+    "abdallahOsama": "Abdallah Osama",
+    "yousefAI": "Yousef AI"
+  },
+  "deadlineItems": {
+    "lessThanWeek": "Less than a Week",
+    "moreThanWeek": "More than a Week"
+  },
+
+  "discoverBiddingProjects": "Discover Bidding Projects",
+  "creativeWork": "Creative Work",
+  "marketingAgency": "Marketing Agency",
+  "webDevelopment": "Web Development",
+  "html": "HTML",
+  "css": "CSS",
+  "react": "React",
+  "django": "Django",
+  "lessThanWeek": "Less than a Week",
+  "moreThanWeek": "More than a Week",
+  "savedProjects": "Saved Projects",
+
+  "type": "Type",
+  "projectOwner": "Project Owner",
+
+  "savedProjectsType": "Saved Projects",
+  "draftProjectsType": "Draft Projects",
+  "kirolosAdel": "Kirolos Adel",
+  "mohamedIbrahim": "Mohamed Ibrahim",
+  "abdallahOsama": "Abdallah Osama",
+  "yousefAi": "Yousef AI",
+  "deleteTitle": "Delete {{title}}",
+  "deleteConfirmation": "Are you sure you want to delete this {{title}}? This action cannot be undone.",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "webDevelopmentProject": "Web Development Project",
+  "bidding": "Bidding",
+  "discoverProjects": "Discover Bidding Projects",
+  "projectOverview": "Project Overview",
+  "projectStatus": "Project Status",
+  "opened": "Opened",
+
+  "shareProject": "Share Project",
+  "copyLink": "Copy Link",
+  "publishedFrom": "Published from",
+  "budgetRange": "Budget range",
+
+  "numberOfBids": "Number of Bids",
+  "daysAgo": "{{days}} days ago",
+  "currencyRange": "{{min}} - {{max}} Egp",
+  "project_description": "Project Description",
+  "project_title": "Lorem ipsum dolor sit amet consectetur",
+  "project_details": [
+    "Quis et quis aliquet ornare netus nec.",
+    "Quis amet feugiat bibendum non lorem tincidunt nulla."
+  ],
+  "see_example": "See an example",
+  "attachments": "Attachments",
+  "platform_url": "Platform Url",
+  "skills_needed": "Skills Needed",
+  "your_proposal": "Your Proposal",
+
+  "provided_price": "Provided Price",
+  "from": "From",
+"proposal_message":" Peace be upon you. Hello, Mr. Omar. You are now available to begin immediately designing your identity. I read the description carefully and I promise to provide you with a professional and attractive official design, as the identity reflects the company’s image...",
+  "portfolio": "My portfolio",
+  "Sort_by":"Sort by",
+  "file_size": "30Mb",
+  "greeting": "Peace be upon you. Hello, Mr. Omar. You are now available to begin immediately designing your identity. I read the description carefully and I promise to provide you with a professional and attractive official design, as the identity reflects the company’s image...",
+  "welcome_production": "Welcome to Production groups!",
+  "description_production": "Now you can create production groups with more than one merchant in order to reach your target quantity of production in less time.",
+  "create_new": "Create New",
+  "declined":"Declined",
+  "groupName": "Group Name",
+  "targetQuantity": "1600 from 2000",
+  "targetQuantityDescription": "Target Quantity Number",
+  "merchantsApplied": "3 merchants applied",
+  "merchantNumberDescription": "Merchant Number",
+  "categoryName": "Footwear",
+  "categoryDescription": "Category",
+  "stopNow": "Stop Now",
+  "moveToInProgress": "Move to in progress",
+  "appliedMerchants": " Applied Merchants",
+  "removeGroup": "Remove Group",
+  "targetNumber": "Target Number",
+  "merchantsApply": "merchants apply",
+  "merchantNumber": "Merchant Number",
+  "category": "category",
+  "applyFor": "apply for",
+  "showMoreText": "Show More",
+    "form": {
+      "groupTitle": "Group Title",
+      "groupTitlePlaceholder": "Enter group title",
+      "chooseMerchantsCategory": "Choose Merchants Category",
+      "minQuantity": "Minimum Quantity",
+      "minPlaceholder": "Enter minimum quantity",
+      "maxQuantity": "Maximum Quantity",
+      "maxPlaceholder": "Enter maximum quantity",
+      "minPerMerchant": "Minimum Quantity per Merchant",
+      "minPerMerchantPlaceholder": "Enter minimum quantity per merchant",
+      "notes": "Notes",
+      "notesPlaceholder": "Enter additional notes",
+      "phoneNumber": "Phone Number (WhatsApp)",
+      "createGroup": "Create Group"
+    },
+    "validation": {
+      "groupTitleRequired": "Group title is required",
+      "categoryRequired": "Category is required",
+      "minQuantityRequired": "Minimum quantity is required",
+      "maxQuantityRequired": "Maximum quantity is required",
+      "minPerMerchantRequired": "Minimum quantity per merchant is required",
+      "phoneNumberRequired": "Phone number is required",
+      "titleRequired": "Title is required",
+      "dueDateRequired": "Due date is required",
+      "doDateRequired": "Due time is required"
+    },
+    "categories": {
+      "apparel": "Apparel",
+      "footwear": "Footwear",
+      "accessories": "Accessories",
+      "pottery": "Pottery"
+    },
+
+   "select_all": "Select all",
+  "quantity": "Quantity",
+  "create_project_with_merchant": "Create project with this merchant",
+  "remove": "Remove"
+  
 }

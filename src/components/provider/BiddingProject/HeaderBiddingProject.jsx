@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BiddongProject from "../../../assets/icons/BiddingProject.svg";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-function HeaderBiddingProject({ toggleSidebar ,title }) {
+function HeaderBiddingProject({ toggleSidebar ,title,Sort_by }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -11,7 +11,7 @@ function HeaderBiddingProject({ toggleSidebar ,title }) {
 
   return (
     <div>
-      <div className="lg:flex items-center font-poppins">
+      <div className="lg:flex items-center">
         <div className="flex items-center gap-2 flex-grow">
           <img
             src={BiddongProject}
@@ -28,11 +28,11 @@ function HeaderBiddingProject({ toggleSidebar ,title }) {
               className=" text-[#A2A2A2] items-center flex justify-center gap-2  text-sm py-2  px-3 border border-[#404040] rounded-lg"
               onClick={toggleDropdown}
             >
-              <div className="flex-grow">Sort by</div>
+              <div className="flex-grow">{Sort_by}</div>
               <MdKeyboardArrowDown color="#404040" size={25} />
             </button>
             {isOpen && (
-              <div className="absolute right-0 z-40 lg:mt-1 mt-4 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
+              <div className="absolute end-0 z-40 lg:mt-1 mt-4 w-48 bg-white border border-gray-200 rounded-lg shadow-lg">
                 <ul className="py-1">
                   <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                     Option 1

@@ -12,7 +12,7 @@ function ProductionGroup() {
         setisOpen(false)
     }
   return (
-    <div className=" bg-white p-6 rounded-xl min-h-full font-poppins">
+    <div className=" bg-white p-6 rounded-xl min-h-full ">
 <HeaderProductionsGroup setisOpen={setisOpen}/>
 
 

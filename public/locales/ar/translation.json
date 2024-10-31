@@ -226,11 +226,7 @@
   "newTask": "مهمة جديدة",
   "assignList": "تعين قائمة",
   "Section_Name" :"اسم القسم",
-  "validation": {
-    "titleRequired": "العنوان مطلوب",
-    "dueDateRequired": "تاريخ الاستحقاق مطلوب",
-    "doDateRequired": "وقت التنفيذ مطلوب"
-  },
+
   "prompt": {
     "enterLink": "يرجى إدخال الرابط:"
   },
@@ -330,6 +326,7 @@
     "filter": "تصفية",
     "sort": "ترتيب"
   },
+  "declined":"مغلق",
   "merchant_connect": {
     "connectedMerchants": "التجار المتصلين",
     "projectName": "اسم المشروع",
@@ -398,6 +395,150 @@
   "priorityHigh": "مرتفع",
   "Activity":"الأنشطة",
   "comment":"أكتب تعليق",
-  "send":"ارسال"
+  "send":"ارسال",
+  "applied": "تم التقديم",
+  "apply": "تقديم",
+  "status_bids": {
+    "approved": "مقبول",
+    "rejected": "مرفوض",
+    "pending": "قيد الانتظار"
+  },
+  "content": "لوريم إيبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم.",
+  "myBids": "عروضي",
+  "filter": "تصفية",
+  "status": "الحالة",
+  "skills": "صاحب المشروع",
+  "deadline": "الموعد النهائي",
+  "priceRange": "نطاق السعر",
+  "statusItems": {
+    "pendingRequest": "طلب معلق",
+    "approved": "موافق عليه",
+    "rejected": "مرفوض",
+    "inProgress": "قيد التقدم",
+    "finished": "منتهي",
+    "closed": "مغلق"
+  },
+  "skillsItems": {
+    "kirolosAdel": "كيرولوس عادل",
+    "mohamedIbrahim": "محمد إبراهيم",
+    "abdallahOsama": "عبدالله أسامة",
+    "yousefAI": "يوسف الذكاء الاصطناعي"
+  },
+  "deadlineItems": {
+    "lessThanWeek": "أقل من أسبوع",
+    "moreThanWeek": "أكثر من أسبوع"
+  },
+  "discoverBiddingProjects": "اكتشف مشاريع المناقصات",
+  "creativeWork": "عمل إبداعي",
+  "marketingAgency": "وكالة تسويق",
+  "webDevelopment": "تطوير ويب",
+  "html": "HTML",
+  "css": "CSS",
+  "react": "React",
+  "django": "Django",
+
+  "savedProjectsType": "المشاريع المحفوظة",
+  "draftProjectsType": "مشاريع المسودة",
+  "kirolosAdel": "كيرولوس عادل",
+  "mohamedIbrahim": "محمد إبراهيم",
+  "abdallahOsama": "عبد الله أسامة",
+  "yousefAi": "يوسف الذكاء الصناعي",
+  "lessThanWeek": "أقل من أسبوع",
+  "moreThanWeek": "أكثر من أسبوع",
+  "deleteTitle": "حذف {{title}}",
+  "deleteConfirmation": "هل أنت متأكد من أنك تريد حذف هذا {{title}}؟ لا يمكن التراجع عن هذا الإجراء.",
+  "delete": "حذف",
+  "cancel": "إلغاء",
+  "webDevelopmentProject": "مشروع تطوير الويب",
+"projectOverview": "نظرة عامة على المشروع",
+  "projectStatus": "حالة المشروع",
+  "opened": "مفتوح",
+  "projectOwner": "مالك المشروع",
+  "shareProject": "مشاركة المشروع",
+  "copyLink": "نسخ الرابط",
+  "publishedFrom": "تم النشر منذ",
+  "budgetRange": "نطاق الميزانية",
+  "numberOfBids": "عدد العروض",
+  "daysAgo": "منذ {{days}} يوم",
+  "currencyRange": "{{min}} - {{max}} جنيه",
+  "bidding": "المزايدة",
+  "discoverProjects": "اكتشاف مشاريع المزايدة",
+  "project_description": "وصف المشروع",
+  "project_title": "لوريم إيبسوم دولور سيت أميت كونسيكتيتور",
+  "project_details": [
+    "كويز إيت كويز أليكت أورناري نيتوس نيك.",
+    "كويز أميت فيجيت بيبندوم نون لوريم تيندينت نولا."
+  ],
+  "see_example": "انظر مثالاً",
+  "attachments": "المرفقات",
+  "platform_url": "رابط المنصة",
+  "skills_needed": "المهارات المطلوبة",
+  "your_proposal": "عرضك",
+"Sort_by":"ترتيب بواسطة",
+"welcome_production": "مرحبًا بك في مجموعات الإنتاج!",
+"description_production": "الآن يمكنك إنشاء مجموعات إنتاج تضم أكثر من تاجر للوصول إلى الكمية المستهدفة من الإنتاج في وقت أقل.",
+"create_new": "إنشاء جديد",
+  "provided_price": "السعر المقدم",
+  "from": "من",
+"proposal_message": "السلام عليكم. مرحبًا أستاذ عمر. أنت الآن متاح لبدء تصميم هويتك على الفور. لقد قرأت الوصف بعناية وأعدك بتقديم تصميم رسمي محترف وجذاب، حيث تعكس الهوية صورة الشركة...",
+  "portfolio": "محفظتي",
+  "file_size": "30 ميغابايت",
+  "greeting": "السلام عليكم. مرحبا، السيد عمر. أنت الآن متاح لبدء تصميم هويتك على الفور. لقد قرأت الوصف بعناية وأعدك بتقديم تصميم رسمي احترافي وجذاب، حيث تعكس الهوية صورة الشركة...",
+    "form": {
+      "groupTitle": "عنوان المجموعة",
+      "groupTitlePlaceholder": "أدخل عنوان المجموعة",
+      "chooseMerchantsCategory": "اختر فئة التجار",
+      "minQuantity": "الحد الأدنى للكمية",
+      "minPlaceholder": "أدخل الحد الأدنى للكمية",
+      "maxQuantity": "الحد الأقصى للكمية",
+      "maxPlaceholder": "أدخل الحد الأقصى للكمية",
+      "minPerMerchant": "الحد الأدنى للكمية لكل تاجر",
+      "minPerMerchantPlaceholder": "أدخل الحد الأدنى للكمية لكل تاجر",
+      "notes": "ملاحظات",
+      "notesPlaceholder": "أدخل ملاحظات إضافية",
+      "phoneNumber": "رقم الهاتف (واتساب)",
+      "createGroup": "إنشاء مجموعة"
+    },
+    "validation": {
+      "groupTitleRequired": "عنوان المجموعة مطلوب",
+      "categoryRequired": "الفئة مطلوبة",
+        "dueDateRequired": "تاريخ الاستحقاق مطلوب",
+    "doDateRequired": "وقت التنفيذ مطلوب",
+      "minQuantityRequired": "الحد الأدنى للكمية مطلوب",
+      "maxQuantityRequired": "الحد الأقصى للكمية مطلوب",
+      "minPerMerchantRequired": "الحد الأدنى للكمية لكل تاجر مطلوب",
+      "phoneNumberRequired": "رقم الهاتف مطلوب"
+    },
+    "categories": {
+      "apparel": "الملابس",
+      "footwear": "الأحذية",
+      "accessories": "الإكسسوارات",
+      "pottery": "الفخار"
+    },
+    
+    "targetNumber": "عدد الأهداف",
+    "merchantsApply": "التجار المتقدمون",
+    "merchantNumber": "عدد التجار",
+    "category": "الفئة",
+    "applyFor": "التقديم لـ",
+    "groupName": "اسم المجموعة",
+    "removeGroup": "إزالة المجموعة",
+    "showMoreText": "عرض المزيد",
+    "targetQuantity": "1600 من 2000",
+    "targetQuantityDescription": "عدد الكمية المستهدفة",
+    "merchantsApplied": "3 تجار قدموا",
+    "merchantNumberDescription": "عدد التجار",
+    "categoryName": "أحذية",
+    "categoryDescription": "الفئة",
+    "stopNow": "أوقف الآن",
+    "moveToInProgress": "انتقل إلى قيد التنفيذ",
+    "appliedMerchants": "التجار المتقدمين",
+    "select_all": "حدد الكل",
+    "quantity": "الكمية",
+  "create_project_with_merchant": "إنشاء مشروع مع هذا التاجر",
+  "remove": "إزالة"
+
+  
+  
 
 }

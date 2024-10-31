@@ -14,9 +14,9 @@ function BiddingProjectDetails() {
         setModalIsOpen(false)
     }
   return (
-    <div className="bg-white rounded-xl p-6 font-poppins">
+    <div className="bg-white rounded-xl p-6 ">
         <ModalAttacement isOpen={modalIsOpen} onClose={closeAttachmentModal}/>
-      <HeaderBiddingProjectDetails />
+      <HeaderBiddingProjectDetails/>
       <div className="mt-3 grid lg:grid-cols-3 grid-cols-1 gap-3">
         <div className="col-span-2">
         <MainProjectsDetails openAttachmentModal={openAttachmentModal}/>

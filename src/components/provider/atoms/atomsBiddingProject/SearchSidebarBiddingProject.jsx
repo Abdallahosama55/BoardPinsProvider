@@ -10,7 +10,7 @@ function SearchSidebarBiddingProject() {
     />
     <button
       type="submit"
-      className="absolute right-4 flex items-center justify-center h-full"
+      className="absolute end-4 flex items-center justify-center h-full"
     >
       <img src={search} alt="search" className="md:w-[20px] w-[20px]" />
     </button>

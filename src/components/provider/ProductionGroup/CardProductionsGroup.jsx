@@ -6,20 +6,21 @@ import { GoDotFill } from "react-icons/go";
 import { MdDelete, MdEdit } from "react-icons/md";
 import { cardDataGroupProduction } from "../../../utils/helpers/constants";
 import { Link } from "react-router-dom";
-
-
+import { useTranslation } from "react-i18next"; // Importing useTranslation
 
 function CardProductionsGroup() {
+  const { t } = useTranslation(); // Initializing translation function
+
   return (
-    <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 md:gap-6 gap-12  p-0">
+    <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-6 md:gap-6 gap-12 p-0">
       {cardDataGroupProduction?.map((card, index) => (
         <Link
-        to={`/production-group/${index}`}
+          to={`/production-group/${index}`}
           key={index}
           className="grid lg:grid-cols-2 grid-cols-1 gap-1 lg:gap-0"
         >
           <div className="py-5 px-3 bg-[#F5F6FA] rounded-xl flex flex-col gap-5">
-            <div className="flex gap-1 font-poppins">
+            <div className="flex gap-1 ">
               <div className="flex justify-center items-center rounded-full w-[40px] h-[40px] bg-[#6161FF1F] text-primary">
                 <FaCheck />
               </div>
@@ -28,12 +29,12 @@ function CardProductionsGroup() {
                   <strong className="font-extrabold text-lg">
                     {card.target.current}
                   </strong>{" "}
-                  from {card.target.total}
+                  {t('from')} {card.target.total}
                 </h1>
-                <p className="text-[#919191] text-xs">Target Number</p>
+                <p className="text-[#919191] text-xs">{t('targetNumber')}</p>
               </div>
             </div>
-            <div className="flex gap-1 font-poppins">
+            <div className="flex gap-1 ">
               <div className="flex justify-center items-center rounded-full w-[40px] h-[40px] bg-[#6161FF1F] text-primary">
                 <IoPersonSharp />
               </div>
@@ -42,12 +43,12 @@ function CardProductionsGroup() {
                   <strong className="font-extrabold text-lg">
                     {card.merchantsApply}
                   </strong>{" "}
-                  merchants apply
+                  {t('merchantsApply')}
                 </h1>
-                <p className="text-[#919191] text-xs">Merchant Number</p>
+                <p className="text-[#919191] text-xs">{t('merchantNumber')}</p>
               </div>
             </div>
-            <div className="flex gap-1 font-poppins">
+            <div className="flex gap-1 ">
               <div className="flex justify-center items-center rounded-full w-[40px] h-[40px] bg-[#6161FF1F] text-primary">
                 <AiFillAppstore />
               </div>
@@ -55,7 +56,7 @@ function CardProductionsGroup() {
                 <h1 className="text-[#6161FF] text-sm">
                   <strong className="font-bold text-lg">{card.category}</strong>
                 </h1>
-                <p className="text-[#919191] text-xs">category</p>
+                <p className="text-[#919191] text-xs">{t('category')}</p>
               </div>
             </div>
           </div>
@@ -70,10 +71,11 @@ function CardProductionsGroup() {
                   <img
                     src={merchant.imgSrc}
                     className="rounded-lg w-[70px] h-[40px] my-1"
+                    alt={merchant.name}
                   />
                   <h1 className="text-[8px] py-1 font-bold">{merchant.name}</h1>
                   <p className="text-[9px] text-[#919191]">
-                    apply for {merchant.applyFor}
+                    {t('applyFor')} {merchant.applyFor}
                   </p>
                 </div>
               </div>
@@ -94,27 +96,25 @@ function CardProductionsGroup() {
               </div>
             </div>
           </div>
-          <div className=" w-full flex col-span-2 mt-4 font-poppins ">
-            <div className="   flex-grow">
-              <h2 className=" flex gap-2 items-center  text-sm ">
-                {" "}
+          <div className="w-full flex col-span-2 mt-4  ">
+            <div className="flex-grow">
+              <h2 className="flex gap-2 items-center text-sm ">
                 {card.groupName}{" "}
-                <span className=" text-dark font-semibold bg-[#40404012] rounded-xl px-2  flex items-center gap-1 py-1 text-[10px]">
+                <span className="text-dark font-semibold bg-[#40404012] rounded-xl px-2 flex items-center gap-1 py-1 text-[10px]">
                   <GoDotFill />
                   {card.Status}
                 </span>
               </h2>
-              <p className=" text-xs  text-[#BBBBBB]">{card.updatedInfo}</p>
+              <p className="text-xs text-[#BBBBBB]">{card.updatedInfo}</p>
             </div>
 
-            <div className=" flex gap-2 px-5">
-              <button className=" flex items-center gap-1 text-[#404040]">
-                {" "}
+            <div className="flex gap-2 px-5">
+              <button className="flex items-center gap-1 text-[#404040]">
                 <MdEdit />
-                edit
+                {t('edit')}
               </button>{" "}
               <button className="flex items-center gap-1 text-[#FF111199]">
-                <MdDelete /> Delete
+                <MdDelete /> {t('delete')}
               </button>
             </div>
           </div>

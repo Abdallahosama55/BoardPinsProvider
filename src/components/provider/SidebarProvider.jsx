@@ -151,7 +151,7 @@ const SidebarProvider = ({ handleIsopen }) => {
       icon: biddingprojectIcon,
       text: "menu.biddingProjects",
       dropdown: "biddingProject",
-      path: "/bidding-project/offer",
+      path: "/bidding-project",
       subItems: [
         {
           id: "discover",

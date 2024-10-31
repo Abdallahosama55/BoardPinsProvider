@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import  Filter  from '../../../assets/icons/vertical-slider-square--adjustment-adjust-controls-fader-vertical-settings-slider-square.svg';
 import list from '../../../assets/icons/listleft.svg'
+import { useTranslation } from 'react-i18next';
 function SelectProductionsGroup() {
   const [selected, setSelected] = useState('ALL');
-
+const{t}=useTranslation()
   const getButtonClasses = (buttonName) => {
     return selected === buttonName
       ? 'px-5 rounded-3xl bg-[#6161FF] text-white py-2'
@@ -17,19 +18,19 @@ function SelectProductionsGroup() {
           className={getButtonClasses('ALL')}
           onClick={() => setSelected('ALL')}
         >
-          All
+          {t('all')}
         </button>
         <button
           className={getButtonClasses('Pending')}
           onClick={() => setSelected('Pending')}
         >
-          Pending
+         {t("header_connect.pending")}
         </button>
         <button
           className={getButtonClasses('Declined')}
           onClick={() => setSelected('Declined')}
         >
-          Declined
+          {t('declined')}
         </button>
       </div>
 
@@ -39,13 +40,13 @@ function SelectProductionsGroup() {
  className=' flex items-center gap-2'
     >
     <img src={Filter}/>
-    Filter
+    {t('filter')}
     </button>
     <button
   className=' flex items-center gap-2'
     >
     <img src={list}/>
-    Sort
+    {t('sort')}
     </button>
       
       </div>

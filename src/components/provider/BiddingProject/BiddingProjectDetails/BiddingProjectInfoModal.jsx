@@ -105,9 +105,9 @@ function BiddingProjectInfoModal({ OpenModalEdit  ,handleCloseModalEdit}) {
                       <Field
                         type={field.type}
                         name={field.name}
-                        className="flex-1 block w-full outline-0 px-4 py-3 rounded-l-md border-[1px] border-r-[0px] sm:text-sm border-[#707275]"
+                        className="flex-1 block w-full outline-0 px-4 py-3 rounded-s-md border-[1px] border-e-[0px] sm:text-sm border-[#707275]"
                       />
-                      <span className="inline-flex items-center px-3 rounded-r-md border border-[#707275] bg-gray-50 text-gray-500 sm:text-sm">
+                      <span className="inline-flex items-center px-3 rounded-e-md border border-[#707275] bg-gray-50 text-gray-500 sm:text-sm">
                         {field.unit}
                       </span>
                     </div>
