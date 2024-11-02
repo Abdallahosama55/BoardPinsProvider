@@ -35,53 +35,34 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // Set body direction and font family based on the language
     document.body.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
     document.body.style.fontFamily = i18n.language === 'ar' ? 'Cairo, sans-serif' : 'Poppins, sans-serif';
   }, [i18n.language]);
 
   return (
-    <nav
-      className={`bg-[#F5F6FA] lg:mx-24 p-4 ${i18n.language === 'ar' ? 'font-cairo' : 'font-poppins'}`}
-    >
+    <nav className={`bg-[#F5F6FA] lg:mx-24 p-4 ${i18n.language === 'ar' ? 'font-cairo' : 'font-poppins'}`}>
       <div className="mx-auto flex items-center">
         <div className="flex flex-grow gap-12 items-center">
           <Link to="/" className="text-[#8E8E8E] text-xl font-bold cursor-pointer">
             <img src={logo} className="w-[200px]" alt="Logo" />
           </Link>
           <div className="hidden md:flex gap-6">
-            <NavLink
-              to="/"
-              className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
-            >
+            <NavLink to="/" className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}>
               {t('home')}
             </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
-            >
+            <NavLink to="/about" className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}>
               {t('about')}
             </NavLink>
-            <HashLink
-              to="/home#howUsage"
-              className="text-[#8E8E8E] hover:text-[#6161FF]"
-              scroll={smoothScroll}
-            >
+            <HashLink to="/home#howUsage" className="text-[#8E8E8E] hover:text-[#6161FF]" scroll={smoothScroll}>
               {t('howItWorks')}
             </HashLink>
           </div>
         </div>
         <div className="hidden md:flex gap-6 items-center">
-          <NavLink
-            to="/pricing"
-            className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
-          >
+          <NavLink to="/pricing" className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}>
             {t('pricing')}
           </NavLink>
-          <NavLink
-            to="/login"
-            className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}
-          >
+          <NavLink to="/login" className={({ isActive }) => isActive ? 'text-[#6161FF]' : 'text-[#8E8E8E]'}>
             <button onClick={handleLoginClick} className="text-[#6161FF]">
               {t('loginn')}
             </button>
@@ -91,71 +72,39 @@ const Navbar = () => {
               {t('getStarted')}
             </button>
           </NavLink>
-          {/* Language Toggle Button */}
           <button onClick={toggleLanguage} className="text-[#6161FF]">
             {i18n.language === 'en' ? 'AR' : 'EN'}
           </button>
         </div>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="text-gray-800 hover:text-[#8E8E8E] focus:outline-none">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </button>
         </div>
       </div>
       {isOpen && (
         <div className="md:hidden py-6">
-          <NavLink
-            to="/"
-            className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
-          >
+          <NavLink to="/" className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'} onClick={() => setIsOpen(false)}>
             {t('home')}
           </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
-          >
+          <NavLink to="/about" className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'} onClick={() => setIsOpen(false)}>
             {t('about')}
           </NavLink>
-          <NavLink
-            to="/pricing"
-            className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
-          >
+          <NavLink to="/pricing" className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'} onClick={() => setIsOpen(false)}>
             {t('pricing')}
           </NavLink>
-          <HashLink
-            to="/home#howUsage"
-            className="text-gray-300 hover:text-[#6161FF] px-2 py-1"
-            scroll={smoothScroll}
-          >
+          <HashLink to="/home#howUsage" className="text-gray-300 hover:text-[#6161FF] px-2 py-1" scroll={smoothScroll} onClick={() => setIsOpen(false)}>
             {t('howItWorks')}
           </HashLink>
-          <NavLink
-            to="/login"
-            className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'}
-          >
+          <NavLink to="/login" className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF]' : 'block px-2 py-1 text-gray-300 hover:text-[#6161FF]'} onClick={() => setIsOpen(false)}>
             {t('loginn')}
           </NavLink>
-          <NavLink
-            to="/signup"
-            className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF] hover:text-white' : 'block px-2 py-1 text-gray-300 hover:text-white'}
-          >
+          <NavLink to="/signup" className={({ isActive }) => isActive ? 'block px-2 py-1 text-[#6161FF] hover:text-white' : 'block px-2 py-1 text-gray-300 hover:text-white'} onClick={() => setIsOpen(false)}>
             {t('getStarted')}
           </NavLink>
-          {/* Language Toggle Button */}
-          <button onClick={toggleLanguage} className="text-[#6161FF] px-2 py-1">
+          <button onClick={() => { toggleLanguage(); setIsOpen(false); }} className="text-[#6161FF] px-2 py-1">
             {i18n.language === 'en' ? 'AR' : 'EN'}
           </button>
         </div>

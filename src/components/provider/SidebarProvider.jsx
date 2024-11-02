@@ -246,13 +246,19 @@ const SidebarProvider = ({ handleIsopen }) => {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   const handleItemClick = (id) => {
-    setSelectedItem(id)
-    setIsOpen(false)
+    const clickedItem = menuItems.find(item => item.id === id);
+    setSelectedItem(id);
+  
+    // Close the sidebar if the clicked item has subitems
+    if (clickedItem && !clickedItem.subItems) {
+      setIsOpen(false);
+    }
   };
 
   const handleSubItemClick = (itemId, subItemId) => {
     setSelectedItem(itemId);
     setSelectedSubItem(subItemId);
+    
     setIsOpen(false)
   };
 
