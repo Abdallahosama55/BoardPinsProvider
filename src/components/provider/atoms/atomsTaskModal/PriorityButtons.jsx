@@ -8,7 +8,7 @@ function PriorityButtons({ priority, setPriority }) {
       <div>
         <h1 className=" text-gray-500 font-bold">| {t('priority')}</h1>
 
-        <div className="flex items-center py-5 gap-3">
+        <div className="flex flex-wrap items-center py-5 gap-3">
           <button
             type="button"
             className={`rounded-3xl text-sm border border-[#00000059] px-7 py-1 ${
@@ -24,7 +24,7 @@ function PriorityButtons({ priority, setPriority }) {
             type="button"
             className={`rounded-3xl text-sm border border-[#00000059] px-3 py-1 ${
               priority === "medium"
-                ? "bg-blue-200 text-blue-500"
+                ? "bg-blue-200 text-[#6161FF]"
                 : "bg-gray-200 text-gray-500"
             }`}
             onClick={() => setPriority("medium")}

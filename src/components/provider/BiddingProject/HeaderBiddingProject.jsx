@@ -50,10 +50,10 @@ function HeaderBiddingProject({ toggleSidebar ,title,Sort_by }) {
           <div>
           {" "}
           <button
-            className="lg:hidden mb-4 p-2 bg-blue-500 text-white rounded"
+            className="lg:hidden mb-4 p-2 bg-primary text-white rounded"
             onClick={toggleSidebar}
           >
-            Open Sidebar
+            Show Fillter
           </button>
         </div>
         </div>

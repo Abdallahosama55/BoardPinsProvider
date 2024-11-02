@@ -52,7 +52,7 @@ const NewTaskModal = ({ isOpen, onClose }) => {
   };
 const {t}=useTranslation()
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title={t("newTask")} className={"h-[60vh]   overflow-y-auto bg-white max-w-[80%]"}>
+    <Modal isOpen={isOpen} onClose={onClose} title={t("newTask")} className={"h-[60vh]   overflow-y-auto bg-white lg:max-w-[80%] max-w-[95%]"}>
       <div className="mt-4">
         <div className=" grid lg:grid-cols-3 grid-cols-1">
           <div className=" col-span-2 ">

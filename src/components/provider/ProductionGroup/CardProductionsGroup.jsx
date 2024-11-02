@@ -17,9 +17,9 @@ function CardProductionsGroup() {
         <Link
           to={`/production-group/${index}`}
           key={index}
-          className="grid lg:grid-cols-2 grid-cols-1 gap-1 lg:gap-0"
+          className="lg:grid  lg:grid-cols-2  gap-4 lg:gap-0"
         >
-          <div className="py-5 px-3 bg-[#F5F6FA] rounded-xl flex flex-col gap-5">
+          <div className="py-5 px-3 bg-[#F5F6FA] rounded-xl  flex-wrap lg:flex-col lg:flex hidden">
             <div className="flex gap-1 ">
               <div className="flex justify-center items-center rounded-full w-[40px] h-[40px] bg-[#6161FF1F] text-primary">
                 <FaCheck />

@@ -63,7 +63,7 @@ function CommonComparison() {
       <HeaderCommonComparison Showbutton={true} />
 
       <main>
-        <div className="grid grid-cols-3 gap-3 mt-12">
+        <div className="grid lg:grid-cols-3  grod-cols-1 gap-3 mt-12">
           {cardData?.map((card) => (
             <div className="card " key={card.id} >
               <h5 className="text-[#404040]">{card.title}</h5>

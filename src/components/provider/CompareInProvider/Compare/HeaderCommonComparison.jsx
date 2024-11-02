@@ -25,8 +25,8 @@ function HeaderCommonComparison({ Showbutton }) {
   return (
     <div>
       <header>
-        <div className="flex lg:flex-row flex-col gap-5 lg:justify-between justify-start items-center ">
-          <h1 className="text-xl text-[#292D32] font-bold text-start lg:w-auto w-full">{t('common_comparison.title')}</h1>
+        <div className="flex lg:flex-row flex-col gap-5 lg:justify-between  justify-start items-center ">
+          <h1 className="text-xl text-[#292D32] font-bold text-start  lg:w-auto w-full">{t('common_comparison.title')}</h1>
 
           <div className="flex items-center gap-5 flex-wrap">
             {/* Category Buttons */}

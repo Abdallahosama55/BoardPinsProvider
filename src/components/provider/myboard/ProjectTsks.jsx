@@ -49,7 +49,7 @@ function ProjectTsks() {
       </div>
       <div className='grid grid-cols-12'>
         <div className='md:col-span-8 col-span-12'>
-          <div className='my-5 gap-1 flex'>
+          <div className='my-5 gap-1 flex flex-wrap justify-center'>
             <button
               onClick={() => handleButtonClick('ALL')}
               className={`text-[9px] md:text-[14px] py-1 px-5 rounded-2xl ${getButtonClass('ALL')}`}

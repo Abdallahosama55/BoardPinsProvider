@@ -49,14 +49,17 @@ function Table() {
   };
 
   return (
-    <div className='shadow-custom rounded-xl p-5 py-1'>
-      <div className='my-5 flex items-center relative'>
-        <img src={rounded} className='bg-[#D9D9D9] w-[40px] p-2 rounded-[10%] m-2' />
+    <div className=' rounded-xl p-5 py-1'>
+      <div className='my-5 flex  items-center relative'>
+    <div className=' flex items-start'>
+    <img src={rounded} className='bg-[#D9D9D9] w-[40px] p-2 rounded-[10%] m-2' />
         <div>
           <h5>{t('personal_list')}</h5> {/* Use translation key */}
           <p>{t('lorem_ipsum')}</p> {/* Use translation key */}
         </div>
-        <div className='absolute md:gap-4 start-[85%] flex items-center justify-center gap-2'>
+
+    </div>
+        <div className=' md:gap-4 start-[85%] flex items-center justify-center gap-2'>
           <button>
             <img src={rounded} className='w-[20px]' />
           </button>
@@ -85,12 +88,12 @@ function Table() {
           </div>
         </div>
       </div>
-      <div className='flex w-full justify-end gap-3 mb-5'>
+      <div className='flex flex-wrap w-full justify-end gap-3 mb-5'>
         <CustomSelectButton options={options} onSelect={handleSelect} defaultText={t('assigned_to_me')} />
         <CustomSelectButton options={options} onSelect={handleSelect} defaultText={t('sort')} />
       </div>
 
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+      <table className=" text-sm overflow-x-auto relative w-full text-left rtl:text-right text-gray-500">
         <thead className="text-xs text-[#6A6A65] bg-[#F5F6FA] dark:text-gray-400">
           <tr>
             <th scope="col" className="p-4">

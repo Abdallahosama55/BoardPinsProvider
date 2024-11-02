@@ -42,7 +42,7 @@ const TaskModalForm = ({
               )}
             </div>
             <SubtaskSection t={t} /> {/* Pass t as a prop */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <FormField
                 id="dueDate"
                 name="dueDate"

@@ -74,7 +74,7 @@ const SidebardBiddingProject = ({
   return (
     <div className={getClassNames()}>
       <IoClose
-        className="cursor-pointer bg-primary lg:hidden md:hidden text-white rounded-3xl absolute right-5 top-3 text-xl"
+        className="cursor-pointer bg-primary lg:hidden md:hidden text-white rounded-3xl absolute end-5 top-3 text-xl"
         onClick={toggleSidebar}
       />
 

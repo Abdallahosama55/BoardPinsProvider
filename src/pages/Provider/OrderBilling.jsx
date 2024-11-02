@@ -35,7 +35,7 @@ const OrderSummaryComponent = () => (
 const PlanCard = ({ discount, price }) => (
   <div className="p-5 rounded-3xl border border-primary relative">
     {discount && (
-      <div className="bg-primary text-white rounded-full absolute p-2 py-3 top-[-12px] right-[-12px]">
+      <div className="bg-primary text-white rounded-full absolute p-2 py-3 top-[-12px] end-[-12px]">
         {discount}
       </div>
     )}

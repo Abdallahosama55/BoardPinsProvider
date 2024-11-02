@@ -58,7 +58,7 @@ function CardsSettingDocuments() {
                 <PiDotsThreeOutlineFill />
               </button>
               {dropdownOpen === index && (
-                <div className="absolute right-0 mt-5 w-32 bg-white rounded-md  shadow-custom z-10">
+                <div className="absolute end-0 mt-5 w-32 bg-white rounded-md  shadow-custom z-10">
                   <ul className="py-1">
                     <li className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
                       Action 1

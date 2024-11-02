@@ -26,9 +26,9 @@ const OverviewCard = ({ title, items }) => (
 const PerformanceOverview = ({ title, dataPerformanceOverview }) => (
   <div className="mt-5 shadow-custom rounded-lg p-4 mb-3">
     <h3 className="font-bold text-lg">{title}</h3>
-    <div className="grid items-center justify-center grid-cols-12 sm:grid-cols-12 lg:grid-cols-12 gap-2 py-5 gap-4">
-      <div className='lg:col-span-3 col-span-2 h-full flex items-center justify-center bg-gray-100 rounded-xl'>
-        <div className='lg:col-span-9 col-span-7'>
+    <div className="grid grid-cols-12 justify-center items-center   sm:grid-cols-12 lg:grid-cols-12  py-5 gap-4">
+      <div className='lg:col-span-3 col-span-12 h-full flex items-center  justify-center bg-gray-100 rounded-xl'>
+        <div className=''>
           <h2 className='font-bold text-2xl text-center'>4.5</h2>
           <div>
             <Rating name="half-rating-read" sx={{ fontSize: 14 }} defaultValue={4.5} precision={0.5} readOnly />
@@ -36,7 +36,7 @@ const PerformanceOverview = ({ title, dataPerformanceOverview }) => (
         </div>
       </div>
 
-      <div className='col-span-9 items-center justify-center rounded-xl'>
+      <div className='lg:col-span-7 col-span-12 items-center justify-center rounded-xl'>
         {dataPerformanceOverview?.map((item, index) => (
           <div key={index} className='flex gap-2 items-center'>
             <span className='text-gray-500 text-sm'>{item.rating}</span>
@@ -91,7 +91,7 @@ const AnalyticsChart = ({Merchants,Projects}) => {
   };
 
   return (
-    <div className="shadow-custom p-4 rounded-lg">
+    <div className="shadow-custom lg:p-4 p-2 rounded-lg">
       <div className="flex items-center gap-4 py-3">
         {/* Merchants Button */}
         <button
@@ -125,11 +125,11 @@ const {t}=useTranslation()
       <div className="lg:flex gap-4 sm:items-center">
         <h3 className="font-bold flex-grow py-3 text-md text-lg ">{header}</h3>
         <button className="text-[#6161FF] mb-2 sm:mb-0 sm:ml-4 lg:w-auto w-full">{t('edit')}</button>
-        <div className=' justify-center flex gap-1'>
-          <button className="bg-[#6161FF] font-[500] lg:text-sm  px-4 text-[12px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
+        <div className=' justify-center lg:flex-row flex gap-1'>
+          <button className="bg-[#6161FF] font-[500] lg:text-sm  px-2 text-[10px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
            {t('+_add_annual_target')}
           </button>
-          <button className="bg-[#6161FF] font-[500] lg:text-sm  px-4 text-[12px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
+          <button className="bg-[#6161FF] font-[500] lg:text-sm  px-2 text-[10px] rounded-lg lg:px-3 py-2 text-white mb-2 sm:mb-0 sm:ml-4">
           {t('+_add_monthly_target')}
           </button>
         </div>
@@ -144,7 +144,7 @@ const {t}=useTranslation()
         {/* Annual Target Button */}
         <button className="text-[#6161FF] rounded-lg px-7 py-2">
           
-          {t('Annual')}
+          {t('annual')}
         </button>
       </div>
       <div className=' mx-5 mt-5  progressbar'>
@@ -189,8 +189,8 @@ function AnalyticsDashboard() {
 const value_MonthlyTargetandRevenues=45
 const {t}=useTranslation()
   return (
-    <div className="p-4">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+    <div className="p-0">
+      <div className="grid  grid-cols-1 lg:grid-cols-12 gap-4">
         <div className="lg:col-span-6 col-span-12">
           <OverviewCard title={t('merchants_overview')} items={merchantItems} />
           <ProjectCard items={projectItems} title={t('projects_overview')}/>

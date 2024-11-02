@@ -18,7 +18,7 @@ const CustomSelectButton = ({ options, onSelect, defaultText }) => {
   return (
     <div className="relative inline-block text-left">
       <button 
-        className="flex relative items-center border-[1px] border-[#E8E8E8] bg-[#FAFAFA] rounded-lg lg:min-w-[120px] min-w-[150px]  text-center py-2"
+        className="flex relative items-center border-[1px] border-[#E8E8E8] bg-[#FAFAFA] rounded-lg lg:min-w-[120px] min-w-[80px]  text-center py-2"
         onClick={handleButtonClick}
       >
       <div className=' text-center  text-[12px] px-4 md:px-2'>
@@ -31,7 +31,7 @@ const CustomSelectButton = ({ options, onSelect, defaultText }) => {
       
       </button>
       {isOpen && (
-        <div className="absolute mt-2 w-full rounded-md bg-white ring-1 ring-black ring-opacity-5">
+        <div className="absolute mt-2  rounded-md bg-white ring-1 ring-black ring-opacity-5">
           <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
             {options?.map((option, index) => (
               <button

@@ -4,8 +4,12 @@ import del from '../../../assets/icons/delete.svg';
 import right from '../../../assets/icons/right.svg';
 import rec from '../../../assets/icons/rec.png';
 import { useTranslation } from 'react-i18next';
+import { BiLeftArrow } from 'react-icons/bi';
+import { IoReturnUpBack } from 'react-icons/io5';
+import { IoMdArrowRoundBack } from 'react-icons/io';
+import { HiMiniArrowLongLeft } from 'react-icons/hi2';
 
-const NotificationList = () => {
+const NotificationList = ({setShowNotification}) => {
   const { t } = useTranslation(); // Use the 'common' namespace
   const [selected, setSelected] = useState('All');
 
@@ -52,7 +56,8 @@ const NotificationList = () => {
   };
 
   return (
-    <div className='p-4 relative max-w-[450px] text-start'>
+    <div className='p-4 relative max-w-[450px]  text-start'>
+      <HiMiniArrowLongLeft size={35} onClick={()=>{setShowNotification(false)}} className=' text-primary lg:hidden absolute end-5'/>
       <img src={rec} className='absolute top-[-10px] end-1 w-[30px]' alt="Decoration" />
       <h1 className='font-semibold py-4 text-dark text-start  '>{t('notifications')}</h1>
       <div className='border-b-[1px] border-[#1E1E1E80]  pb-5 flex gap-3   font-medium text-[16px]'>

@@ -20,7 +20,7 @@ function MerchantsConnect() {
 
   return (
     <div className='shadow-custom rounded-xl p-5 py-1'>
-      <header className='py-5 items-center gap-2 flex relative'>
+      <header className='py-5 items-start gap-2 flex relative'>
         <img src={iconTask} className="w-[45px] p-3 h-[45px] bg-[#D9D9D9] rounded-xl" alt="Task Icon" />
         <div>
           <h3 className="font-[400] text-[22px]">{t('merchants.title')}</h3>

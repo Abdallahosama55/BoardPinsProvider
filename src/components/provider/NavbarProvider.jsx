@@ -45,16 +45,16 @@ const NavbarProvider = ({ handleIsopen }) => {
 
         <div className="gap-2 md:py-4 py-2 px-3 flex items-center">
           <button
-            className="flex relative border-[#292D32] border-r-[2px] px-3 justify-center"
+            className="flex relative outline-0 border-[#292D32] border-r-[2px] px-3 justify-center"
             onClick={() => setShowNotification(!showNotification)}
           >
             <IoNotificationsOutline size={28} color="#292D32" />
             <div
-            className={` min-w-[400px] top-12 z-50 text-dark bg-white rounded-xl shadow-custom z-999 md:end-[9%] end-0 absolute transition-all duration-300 ease-in-out ${
+            className={` lg:min-w-[400px] lg:w-[400px] lg:top-12 z-50 text-dark bg-white fixed top-0 min-w-full lg:h-auto h-full end-0   rounded-xl shadow-custom z-999 md:end-[9%]  lg:absolute transition-all duration-300 ease-in-out ${
               showNotification ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
             }`}
           >
-            <NotificationList />
+            <NotificationList  setShowNotification={setShowNotification}/>
           </div>
           </button>
          

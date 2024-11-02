@@ -31,7 +31,7 @@ function Recents() {
 
   return (
     <div className='shadow-custom rounded-xl p-5 py-1'>
-      <div className='my-5 flex items-center'>
+      <div className='my-5 flex items-start'>
         <img src={pin} className='bg-[#D9D9D9] p-2 rounded-[10%] m-2' alt='Pin' />
         <div>
           <h5>{t('recents.title')}</h5>

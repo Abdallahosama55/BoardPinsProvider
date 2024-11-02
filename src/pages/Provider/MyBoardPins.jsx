@@ -28,7 +28,7 @@ function MyBoardPins() {
         <ManageCardSideBar isOpenMangeCard={isSidebarOpen} toggleSidebar={toggleSidebar} />
         <TaskModal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
         
-        <div className='flex-grow px-12'>
+        <div className='flex-grow px-6 lg:px-12'>
           <h5 className='text-[#1E1E1E] font-[600] text-[30px]'>{t('welcome', { name: user.first_name })}</h5>
           <p className='text-[#1E1E1E] font-[500]  text-[20px] '>{t('create_prompt')}</p>
         </div>
@@ -50,35 +50,35 @@ function MyBoardPins() {
       </div>
 
       <div className='py-5 md:mx-5 grid grid-cols-12 gap-5'>
-        <div className='relative rounded-xl md:col-span-6 col-span-12 px-5'>
+        <div className='relative rounded-xl md:col-span-6 col-span-12 lg:px-5'>
           <InprogressProject />
         </div>
 
-        <div className='rounded-xl shadow-custom md:col-span-6 col-span-12 px-5'>
-          <div className="relative overflow-x-auto sm:rounded-lg">
+        <div className='rounded-xl shadow-custom md:col-span-6 col-span-12 lg:px-5'>
+          <div className="relative   overflow-x-auto sm:rounded-lg">
             <Table />
           </div>
         </div>
 
-        <div className='w-full rounded-xl col-span-12 px-5'>
+        <div className='w-full rounded-xl col-span-12 lg:px-5'>
           <ProjectTsks />
         </div>
 
-        <div className='h-full rounded-xl md:col-span-6 col-span-12 px-5'>
+        <div className='h-full rounded-xl md:col-span-6 col-span-12 lg:px-5'>
           <div className='h-full relative'>
             <Recents />
           </div>
         </div>
 
-        <div className='h-full relative rounded-xl md:col-span-6 col-span-12 px-5'>
+        <div className='h-full relative rounded-xl md:col-span-6 col-span-12 lg:px-5'>
           <Reminder />
         </div>
 
-        <div className='w-full rounded-xl col-span-12 px-5'>
+        <div className='w-full rounded-xl col-span-12 lg:px-5'>
           <MerchantsConnect />
         </div>
 
-        <div className='w-full rounded-xl col-span-12 px-5'>
+        <div className='w-full rounded-xl col-span-12 lg:px-5'>
           <ProductionGroups />
         </div>
       </div>

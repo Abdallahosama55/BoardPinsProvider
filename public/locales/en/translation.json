@@ -112,6 +112,7 @@
   },
   "search_placeholder": "What are you looking for?",
   "chat": "Chat",
+"Chat_history":"Chat history",
   "Upgrade": "Upgrade",
   "notifications": "Notifications",
   "delete_all": "Delete all",

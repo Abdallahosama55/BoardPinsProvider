@@ -32,6 +32,7 @@ import {
 import { FiSearch } from "react-icons/fi";
 import { useGetAllWorkspacesMutation } from "../../services/WorkspacesServices";
 import { useTranslation } from "react-i18next";
+import { IoClose, IoCloseCircle } from "react-icons/io5";
 
 const SidebarProvider = ({ handleIsopen }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -244,11 +245,15 @@ const SidebarProvider = ({ handleIsopen }) => {
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
-  const handleItemClick = (id) => setSelectedItem(id);
+  const handleItemClick = (id) => {
+    setSelectedItem(id)
+    setIsOpen(false)
+  };
 
   const handleSubItemClick = (itemId, subItemId) => {
     setSelectedItem(itemId);
     setSelectedSubItem(subItemId);
+    setIsOpen(false)
   };
 
   const toggleDropdown = (dropdown) => {
@@ -263,17 +268,17 @@ const SidebarProvider = ({ handleIsopen }) => {
 
   return (
     <>
-      <button
+     <button
         onClick={toggleSidebar}
         className={`fixed ${isOpen ? "top-[1%]" : "top-[3%]"} ${
-          isOpen ? "start-[48%]" : "start-[5%]"
+          isOpen ? "hidden" : "start-[5%]"
         } p-2 rounded-lg z-50 md:hidden bg-white`}
       >
-        {isOpen ? <IoMdExit /> : <MenuIcon color="#000" />}
-      </button>
+        {isOpen ? "" : <MenuIcon color="#000" />}
+      </button> 
 
       <div
-        className={`fixed inset-x-0   px-4 h-full left-0 md:bg-transparent bg-white text-white w-72 transform ${
+        className={`fixed inset-x-0   px-4 h-full start-0 md:bg-transparent bg-white xl:shadow-none  shadow-custom text-white w-72 transform ${
           isOpen 
             ? "translate-x-0"
             : i18n.language === "ar" 
@@ -281,7 +286,14 @@ const SidebarProvider = ({ handleIsopen }) => {
             : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-40 md:static md:translate-x-0 py-4 top-0 md:py-0 md:h-full md:w-[17.5%]`}
       >
-        <div className="flex justify-between items-center w-full">
+
+<button
+        onClick={toggleSidebar}
+        className=" lg:hidden  text-start w-full text-primary start  flex justify-end"
+      >
+   <IoCloseCircle size={25}/>
+      </button>
+        <div className="flex justify-center items-center w-full">
           <Link to={"/myboard"}>
             <img src={Logo} className="w-[200px] pt-4" alt="Logo" />
           </Link>

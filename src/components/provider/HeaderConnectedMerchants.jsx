@@ -15,7 +15,7 @@ function HeaderConnectedMerchants() {
 
   return (
     <div className='lg:flex'>
-      <div className='flex-grow gap-3 lg:justify-start justify-center'>
+      <div className='  gap-3 flex flex-wrap lg:justify-start justify-center'>
         <button
           className={getButtonClasses('ALL')}
           onClick={() => setSelected('ALL')}
