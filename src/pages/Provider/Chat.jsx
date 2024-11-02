@@ -24,7 +24,7 @@ function Chat() {
             isSidebarOpen ? 'translate-x-0 h-full' : '-translate-x-full h-full'
           } lg:static lg:translate-x-0 lg:min-w-[300px] lg:col-span-1 col-span-3 flex flex-col gap-5 py-6 px-6 border-[1px] border-[#E8E8E8] shadow-sm rounded-3xl`}
         >
-          <Chatsidebar />
+          <Chatsidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
         </div>
 
         <div className='flex-grow py-3 px-3 lg:col-span-2 col-span-3 border-[1px] border-[#E8E8E8] shadow-sm rounded-3xl relative'>

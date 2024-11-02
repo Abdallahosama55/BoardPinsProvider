@@ -8,7 +8,7 @@ function Chatheader({toggleSidebar,isSidebarOpen}) {
     <img src={chat} className='  bg-[#E5E5FF] rounded-lg p-2'/>
     <h1 className=' text-dark font-bold text-2xl flex-grow'>{t('chat')}</h1>
     <button
-        className='lg:hidden mb-4 flex items-center p-2 bg-primary text-white    rounded-2xl'
+        className='lg:hidden mb-4 flex items-center p-2 bg-[#6161FF] text-white    rounded-xl'
         onClick={toggleSidebar}
       >
  {t("menu.Chat_history")}

@@ -4,8 +4,9 @@ import InputSearch from '../atoms/atomsChat/atomsChatSidebar/InputSearch';
 import ButtonaddChat from '../atoms/atomsChat/atomsChatSidebar/ButtonaddChat';
 import { useCreateConversationMutation } from '../../../services/ChatServices';
 import { useTranslation } from 'react-i18next'; // Import useTranslation
+import { IoCloseCircle } from 'react-icons/io5';
 
-function Chatsidebar() {
+function Chatsidebar({toggleSidebar}) {
   const { t } = useTranslation(); // Initialize translation function
   const [createConversation] = useCreateConversationMutation();
   const [conversationTitle, setConversationTitle] = useState('');
@@ -28,6 +29,11 @@ function Chatsidebar() {
 
   return (
     <div className='h-full flex flex-col gap-3'>
+      <div className=' w-full flex justify-end'>
+<IoCloseCircle  onClick={toggleSidebar} color='#6161FF' size={25} className=' lg:hidden' />
+
+
+      </div>
       <InputSearch  title={t('search_chat')} />
       <hr className='font-extrabold' />
       <ButtonaddChat onClick={handleAddChat} text={t('add_chat')} /> {/* Use translation here */}
