@@ -32,8 +32,7 @@ function Section5Home() {
     { title: 3, src: search },
     { title: 4, src: icon22 },
     { title: 5, src: icon33 },
-    { title: 6, src: icon44 },
-    { title: 7, src: icon55 },
+  
   ];
 
   const stepContents = {
@@ -42,57 +41,41 @@ function Section5Home() {
         step: 1,
         imgSrc: step1Img,
         iconSrc: step1Icon,
-        title: "Sign Up",
+        title: "Get Started – Sign Up & Sign In",
         description:
-          "Sign Up and Create Your Account. Start by signing up for a Board Pins account. Provide your basic information and create a secure login. Once registered, you'll gain access to our platform and its array of verified service providers.",
+          "Join our community with a quick sign-up! Already a member? Just sign in to access your dashboard.",
       },
       {
         step: 2,
         imgSrc: step2Img,
         iconSrc: step2Icon,
-        title: "Browse and Explore Service ",
+        title: "Build Your Profile – Showcase Your Business",
         description:
-          "Browse and Explore Service Categories through our searchengine Discover a wide range of service categories tailored specifically for e-commerce merchants. Explore options like legal, accounting, marketing, manufacturing, customer support, and more. Each category is filled with verified service providers ready to meet your business needs.",
+          "Tell us about your business! Fill out your profile with details about your services, expertise, upload your legal documents, and what makes you stand out. This profile is your digital storefront, so make it shine!",
       },
       {
         step: 3,
         imgSrc: step3Img,
         iconSrc: search,
-        title: "Conduct Search and Pin Results for Later",
+        title: "Submit for Review – Quality First!",
         description:
-          "Conduct Search and Pin Results for Later Utilize our powerful search engine to find service providers that match your specific requirements. As you browse through the search results, conveniently pin the most relevant ones to your personalized boards for easy access later. This allows you to create a curated collection of potential partners for future reference.",
+          "Hit submit, and our team will take it from there. Every profile goes through a fast 24-hour review to ensure we’re keeping standards high and consistent across the platform.",
       },
       {
         step: 4,
         imgSrc: step4Img,
-        iconSrc: icon22,
-        title: "Review Profiles",
+        iconSrc:icon44,
+        title: "Go Live – List Your Services",
         description:
-          "Take a closer look at the profiles of pinned service providers that caught your interest. Read through their descriptions, view their expertise, This helps you make informed decisions while selecting the right providers for your business.",
+          "Once approved, you’re in! Add your services with descriptions, pricing, and any extras to attract merchants looking for exactly what you offer.",
       },
       {
         step: 5,
         imgSrc: step5Img,
-        iconSrc: icon33,
-        title: "Pin and Engage",
-        description:
-          "Once you have identified potential service providers, initiate contact directly through the Board Pins platform. Connect with them to discuss your specific requirements, ask questions, and get a better understanding of how they can support your business goals. Establishing this direct connection enables you to build a strong working relationship.",
-      },
-      {
-        step: 6,
-        imgSrc: step6Img,
-        iconSrc: icon44,
-        title: "Enjoy Exclusive Discounts",
-        description:
-          "As a Board Pins member, you gain access to exclusive discounts and offers from our verified service providers. These special deals are designed specifically for e-commerce merchants, helping you save costs while accessing high-quality services. Take advantage of these discounts to optimize your budget and maximize your return on investment.",
-      },
-      {
-        step: 7,
-        imgSrc: step7Img,
         iconSrc: icon55,
-        title: "Grow and Succeed",
+        title: "Get Connected – Let Merchants Find You",
         description:
-          "With reliable and verified service providers by your side, focus on growing your e-commerce business with confidence. Leverage the expertise and support of our trusted partners to streamline operations, increase sales, and enhance customer satisfaction. Board Pins is here to empower you on your journey to e-commerce success . ",
+          "Your profile is now searchable! Merchants can discover and reach out to you directly, giving you new opportunities for growth and partnerships.",
       },
     ],
     ar: [
@@ -100,60 +83,45 @@ function Section5Home() {
         step: 1,
         imgSrc: step1Img,
         iconSrc: step1Icon,
-        title: "إنشاء حساب",
+        title: "ابدأ – التسجيل وتسجيل الدخول",
         description:
-          "سجل حسابك على منصة Board Pins. ابدأ بالتسجيل وتقديم معلوماتك الأساسية وإنشاء تسجيل دخول آمن. بمجرد التسجيل، ستحصل على إمكانية الوصول إلى منصتنا ومجموعة من مزودي الخدمات الموثوقين.",
+          "انضم إلى مجتمعنا بتسجيل سريع! هل أنت عضو بالفعل؟ فقط قم بتسجيل الدخول للوصول إلى لوحة التحكم الخاصة بك.",
       },
       {
         step: 2,
         imgSrc: step2Img,
         iconSrc: step2Icon,
-        title: "استعرض واكتشف الخدمات",
+        title: "أنشئ ملفك الشخصي – اعرض عملك",
         description:
-          "استعرض واكتشف فئات الخدمات من خلال محرك البحث لدينا. اكتشف مجموعة واسعة من فئات الخدمات المصممة خصيصًا للتجار في مجال التجارة الإلكترونية. استعرض الخيارات مثل الخدمات القانونية، المحاسبة، التسويق، التصنيع، دعم العملاء والمزيد. كل فئة مليئة بمزودي الخدمات الموثوقين لتلبية احتياجات عملك.",
+          "أخبرنا عن عملك! قم بملء ملفك الشخصي بتفاصيل حول خدماتك وخبراتك، وارفع مستنداتك القانونية وميز نفسك. هذا الملف هو واجهتك الرقمية، لذا اجعلها لامعة!",
       },
       {
         step: 3,
         imgSrc: step3Img,
         iconSrc: search,
-        title: "قم بإجراء البحث وثبت النتائج للاطلاع لاحقاً",
+        title: "أرسل للمراجعة – الجودة أولاً!",
         description:
-          "استخدم محرك البحث القوي لدينا للعثور على مزودي الخدمات الذين يتوافقون مع متطلباتك المحددة. أثناء استعراض النتائج، يمكنك تثبيت النتائج الأكثر صلة على لوحاتك الشخصية للوصول إليها بسهولة لاحقًا، مما يسمح لك بإنشاء مجموعة مختارة من الشركاء المحتملين.",
+          "اضغط على 'إرسال'، وفريقنا سيتولى الأمر. يمر كل ملف شخصي بمراجعة سريعة تستغرق 24 ساعة لضمان الحفاظ على معايير عالية ومتسقة عبر المنصة.",
       },
       {
         step: 4,
         imgSrc: step4Img,
-        iconSrc: icon22,
-        title: "مراجعة الملفات الشخصية",
+        iconSrc: icon44,
+        title: "الانطلاق – أضف خدماتك",
         description:
-          "اطلع عن كثب على الملفات الشخصية لمزودي الخدمات المثبتين الذين لفتوا انتباهك. اقرأ أوصافهم واستعرض خبراتهم. سيساعدك هذا في اتخاذ قرارات مستنيرة أثناء اختيار المزودين المناسبين لعملك.",
+          "بمجرد الموافقة، أصبحت في النظام! أضف خدماتك مع وصف، تسعير، وأي إضافات لجذب التجار الذين يبحثون عن ما تقدمه بالضبط.",
       },
       {
         step: 5,
         imgSrc: step5Img,
-        iconSrc: icon33,
-        title: "تثبيت والتواصل",
-        description:
-          "بمجرد تحديد مزودي الخدمات المحتملين، قم بالتواصل المباشر معهم عبر منصة Board Pins. تواصل معهم لمناقشة متطلباتك المحددة، واطرح الأسئلة، وتعرف على كيف يمكنهم دعم أهداف عملك. تتيح لك هذه العلاقة المباشرة بناء علاقة عمل قوية.",
-      },
-      {
-        step: 6,
-        imgSrc: step6Img,
-        iconSrc: icon44,
-        title: "استمتع بالخصومات الحصرية",
-        description:
-          "بصفتك عضوًا في Board Pins، ستحصل على خصومات وعروض حصرية من مزودي الخدمات الموثوقين لدينا. تم تصميم هذه العروض الخاصة خصيصًا للتجار في مجال التجارة الإلكترونية، مما يساعدك على توفير التكاليف أثناء الحصول على خدمات عالية الجودة. استفد من هذه الخصومات لتعظيم ميزانيتك وتحقيق أفضل عائد على استثمارك.",
-      },
-      {
-        step: 7,
-        imgSrc: step7Img,
         iconSrc: icon55,
-        title: "النمو والنجاح",
+        title: "احصل على التواصل – دع التجار يجدونك",
         description:
-          "مع وجود مزودي الخدمات الموثوقين إلى جانبك، ركز على نمو عملك في مجال التجارة الإلكترونية بثقة. استفد من خبرة ودعم شركائنا الموثوقين لتحسين العمليات وزيادة المبيعات وتعزيز رضا العملاء. Board Pins هنا لتمكينك في رحلتك نحو النجاح في التجارة الإلكترونية.",
+          "ملفك الشخصي الآن قابل للبحث! يمكن للتجار اكتشافك والتواصل معك مباشرةً، مما يتيح لك فرصاً جديدة للنمو والشراكات.",
       },
     ],
   };
+  
   const { i18n, t } = useTranslation(); // Access the i18n instance
   // Example of using the data based on the current language
   const currentLanguage = i18n.language ||'en'; // Get the current language from i18n
@@ -176,7 +144,7 @@ function Section5Home() {
       </p>
 
       <div className="w-full flex justify-center">
-        <div className="grid lg:grid-cols-7 grid-cols-4 mt-2 lg:gap-6 shadow-custom pt-3 text-[#0F1048] bg-[#FFFFFF01]">
+        <div className="grid lg:grid-cols-5 grid-cols-4 mt-2 lg:gap-6 shadow-custom pt-3 text-[#0F1048] bg-[#FFFFFF01]">
           {stepperItems?.map((step) => (
             <div
               key={step.title}
