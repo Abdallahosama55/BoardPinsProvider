@@ -1,4 +1,4 @@
-{
+{  "language":"English   ",
   "home": "الرئيسية",
   "about": "عنا ",
   "howItWorks": "كيفة الأستخدام",
@@ -38,6 +38,7 @@
     "invalidEmail": "تنسيق البريد الإلكتروني غير صالح",
     "passwordRequired": "كلمة المرور مطلوبة"
   },
+  
   "signup": {
     "title": "مرحبًا بك في Board Pins",
     "subTitle": "ابدأ الآن - إنه مجاني!",
@@ -76,6 +77,7 @@
     "sendLink": "أرسل لي الرابط",
     "loading": "جار التحميل..."
   },
+
   "menu": {
     "myBoardPins": "لوحتي",
     "dashboard": "لوحة التحكم",

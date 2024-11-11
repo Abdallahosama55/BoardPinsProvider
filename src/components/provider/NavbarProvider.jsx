@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { selectUser } from "../../redux/features/userSliceDate";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { TbPointFilled } from "react-icons/tb";
 
 const NavbarProvider = ({ handleIsopen }) => {
   const { t } = useTranslation(''); // Use the 'common' namespace
@@ -48,6 +49,8 @@ const NavbarProvider = ({ handleIsopen }) => {
             className="flex relative outline-0 border-[#292D32] border-r-[2px] px-3 justify-center"
             onClick={() => setShowNotification(!showNotification)}
           >
+             <TbPointFilled color="#D40078" className=" absolute left-6" />
+            {/* <span className="absolute left-7 top-[-10px] bg-[#6161FF] rounded-lg text-xs px-[5px] p-[3px]">5</span> */}
             <IoNotificationsOutline size={28} color="#292D32" />
             <div
             className={` lg:min-w-[400px] lg:w-[400px] lg:top-12 z-50 text-dark bg-white fixed top-0 min-w-full lg:h-auto h-full end-0   rounded-xl shadow-custom z-999 md:end-[9%]  lg:absolute transition-all duration-300 ease-in-out ${

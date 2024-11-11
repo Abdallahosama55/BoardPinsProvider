@@ -2,7 +2,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 
-export const baseUrl = `${import.meta.env.VITE_SSP_SERVICES_URL}:9003`;
+export const baseUrl = `${import.meta.env.VITE_SSP_SERVICES_URL}`;
 
 export const userSingleServicesProviderApi = createApi({
   reducerPath: 'userSingleServicesProviderApi',

@@ -42,11 +42,11 @@ const LayoutDashboard = () => {
   if (error) return <p>Error loading user data.</p>;
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#F5F6FA] relative">
+    <div className="flex h-screen   overflow-hidden bg-[#F5F6FA] relative">
       <Sidebar className="z-10" handleIsopen={() => setIsOpen(true)} />
       <div className="flex flex-col flex-1">
         <Invite isOpen={IsOpen} handleIsclose={() => setIsOpen(false)} />
-        {user.is_approvid ? "" : <DataWelcomeModal isOpen={true} handleIsclose={() => setIsOpenWelcome(false)} />}
+        {user.is_approvid ? "" : <DataWelcomeModal isOpen={true} handleIsclose={() => setIsOpenWelcome(true)} />}
         <Navbar className="z-20" />
         <div
           className="flex-1 h-full outline-0 rounded-2xl mx-6 bg-[#ffffff]  overflow-y-auto"

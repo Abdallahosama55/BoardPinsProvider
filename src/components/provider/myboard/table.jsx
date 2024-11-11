@@ -59,7 +59,7 @@ function Table() {
         </div>
 
     </div>
-        <div className=' md:gap-4 start-[85%] flex items-center justify-center gap-2'>
+        <div className=' flex-grow md:gap-4 start-[85%] flex items-center justify-end gap-2'>
           <button>
             <img src={rounded} className='w-[20px]' />
           </button>

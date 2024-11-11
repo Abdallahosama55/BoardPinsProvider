@@ -12,13 +12,13 @@ import { Link } from "react-router-dom";
 import { FaCheckSquare } from "react-icons/fa";
 const featuresList1 = {
   en: [
-    "Searching for verified service providers",
+    "In Progress-Projects",
     "Task management",
     "Requests & approvals",
     "Custom workflows",
   ],
   ar: [
-    "البحث عن مقدمي خدمات موثوقين",
+    "مشاريع قيد التنفيذ",
     "إدارة المهام",
     "الطلبات والموافقات",
     "سير العمل المخصص",
@@ -27,27 +27,27 @@ const featuresList1 = {
 
 const featuresList2 = {
   en: [
-    "Boost sales and conversions with your AI e-commerce consultant",
-    "Gain data-driven advice to optimize your ecommerce strategy",
-    "Unlock your ecommerce potential with the power of AI",
+    "Analytics and Reporting:Insights on project performance",
+    "Detailed reports on client interactions",
+    "Track key metrics for business growth",
   ],
   ar: [
-    "زيادة المبيعات والتحويلات مع مستشار التجارة الإلكترونية الخاص بك",
-    "احصل على نصائح قائمة على البيانات لتحسين استراتيجيتك",
-    "افتح إمكانات التجارة الإلكترونية الخاصة بك باستخدام الذكاء الاصطناعي",
+    "التحليلات والتقارير: رؤى حول أداء المشاريع",
+    "تقارير مفصلة عن تفاعلات العملاء",
+    "تتبع المؤشرات الرئيسية لنمو الأعمال",
   ],
 };
 
 const featuresList3 = {
   en: [
-    "Collaborate effortlessly: Your one-stop shop for managing e-commerce projects.",
+    "Create and organize projects",
     "Seamless teamwork for your business success",
     "Shared tools, simplified work management",
   ],
   ar: [
-    "تعاون بدون مجهود: مركز إدارة مشاريع التجارة الإلكترونية الخاص بك",
-    "عمل جماعي سلس لنجاح أعمالك",
-    "أدوات مشتركة، إدارة العمل بشكل مبسط",
+    "إنشاء وتنظيم المشاريع",
+    "تعاون سلس لنجاح عملك",
+    "أدوات مشتركة، إدارة عمل مبسطة",
   ],
 };
 
@@ -75,7 +75,10 @@ const SectionCard = ({
     <hr className="bg-grey-500 my-5" />
     <ul>
       {features?.map((feature, index) => (
-        <li key={index} className="grid grid-cols-12  items-start gap-2 p-1 text-dark">
+        <li
+          key={index}
+          className="grid grid-cols-12  items-start gap-2 p-1 text-dark"
+        >
           <FaCheck className="rounded-full col-span-1  mt-1  bg-[#1F1F20] text-white" />
           <span className=" col-span-11"> {feature}</span>
         </li>
@@ -117,14 +120,14 @@ function Section3Home() {
               <FaCheckSquare className="   w-[60px] " size={30} />
               <span className="text-primary font-[600]">
                 {currentLanguage === "ar"
-                  ? "عن طريق Board Pins. البحث عن مقدمي خدمات موثوقين"
-                  : "Board Pins. Searching for verified Service providers"}
+                  ? "Board Pins. صفحة رئيسة مخصصة"
+                  : "Board Pins. Customized Home page"}
               </span>
             </h1>
             <h2 className="text-dark font-[600] my-3">
               {currentLanguage === "ar"
-                ? "البحث عن مقدمي خدمات موثوقين"
-                : "Access to Verified Service Providers"}
+                ? "خصص صفحتك الرئيسية بناءً على اهتماماتك"
+                : "Customize your Home page based on your intersts"}
             </h2>
             <hr className="bg-grey-500 my-5" />
             <h3 className="text-dark text-lg p-4">
@@ -163,13 +166,13 @@ function Section3Home() {
             icon={analytics}
             title={
               currentLanguage === "ar"
-                ? "Board Pins. مساعد الذكاء الاصطناعي"
-                : "Board Pins. AI Assistant"
+                ? "Board Pins.  لوحة تحكم  "
+                : "Board Pins. Dashboard"
             }
             subtitle={
               currentLanguage === "ar"
-                ? "مستشار الأعمال بالذكاء الاصطناعي الخاص بك"
-                : "Your AI business consultant, ready to help you grow your e-commerce business."
+                ? "احصل على لمحة سريعة عن جميع المشاريع الجارية، والفرص الجديدة، وآخر الاتصالات."
+                : "Get a quick snapshot of all ongoing projects, new leads, and recent communications."
             }
             features={features2ToShow}
             buttonColor="bg-[#52CD8F]"
@@ -181,13 +184,13 @@ function Section3Home() {
             icon={Project_icon}
             title={
               currentLanguage === "ar"
-                ? "Board Pins. أداة إدارة المشاريع المشتركة"
+                ? "Board Pins. أداة لإدارة المشاريع المشتركة"
                 : "Board Pins. Shared Project management tool"
             }
             subtitle={
               currentLanguage === "ar"
-                ? "أتمتة دورات المبيعات الخاصة بك"
-                : "Automate your sales cycles to close more deals"
+                ? "تعاون بسلاسة مع العملاء باستخدام أدوات إدارة المشاريع لدينا."
+                : "Collaborate seamlessly with clients using our project management tools."
             }
             features={features3ToShow}
             buttonColor="bg-[#52CD8F]"

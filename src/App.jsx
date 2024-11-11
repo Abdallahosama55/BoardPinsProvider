@@ -37,14 +37,18 @@ import ProductionGroup from "./pages/Provider/ProductionGroup";
 import ProductionGroupDetails from "./pages/Provider/ProductionGroupDetails";
 import PrivateRoute from "./utils/PrivateRoute";
 import './gtm'; // Import the GTM initialization file
+import useMixpanel from "./useMixpanel";
 
 
 const App = () => {
   const accessToken = localStorage.getItem('accessToken');
 console.log("we have =====>",accessToken)
+
   return (
     <Router>
       <Routes>
+      useMixpanel(); // This will track page views
+
         <Route path="/" element={<LayoutAuth />}>
           <Route path="/recoverysuccess" element={<RecoverySuccess />} />
           <Route path="/verifymail/:id/:email?" element={<VerifyMail />} />

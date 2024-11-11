@@ -33,6 +33,7 @@ import { FiSearch } from "react-icons/fi";
 import { useGetAllWorkspacesMutation } from "../../services/WorkspacesServices";
 import { useTranslation } from "react-i18next";
 import { IoClose, IoCloseCircle } from "react-icons/io5";
+import { MdLanguage } from "react-icons/md";
 
 const SidebarProvider = ({ handleIsopen }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,6 +52,13 @@ const SidebarProvider = ({ handleIsopen }) => {
     Setting: false,
     connected:false,
   });
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'en' ? 'ar' : 'en');
+  };
+  useEffect(() => {
+    document.body.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    document.body.style.fontFamily = i18n.language === 'ar' ? 'Cairo, sans-serif' : 'Poppins, sans-serif';
+  }, [i18n.language]);
 
   const [getAllWorkspaces, { isLoading, isSuccess, isError, data }] = useGetAllWorkspacesMutation();
 
@@ -229,6 +237,7 @@ const SidebarProvider = ({ handleIsopen }) => {
       setSelectedItem(currentItem.id);
     }
 
+
     // Handle sub-items
     menuItems.forEach((item) => {
       if (item.subItems) {
@@ -252,7 +261,10 @@ const SidebarProvider = ({ handleIsopen }) => {
     // Close the sidebar if the clicked item has subitems
     if (clickedItem && !clickedItem.subItems) {
       setIsOpen(false);
+
     }
+ 
+
   };
 
   const handleSubItemClick = (itemId, subItemId) => {
@@ -260,6 +272,7 @@ const SidebarProvider = ({ handleIsopen }) => {
     setSelectedSubItem(subItemId);
     
     setIsOpen(false)
+   
   };
 
   const toggleDropdown = (dropdown) => {
@@ -271,6 +284,8 @@ const SidebarProvider = ({ handleIsopen }) => {
       return updatedDropdowns;
     });
   };
+
+
 
   return (
     <>
@@ -416,6 +431,15 @@ const SidebarProvider = ({ handleIsopen }) => {
               ) : (
                 ""
               )}
+                {item.id === 11 ? (
+                <button className=" text-dark hover:text-[#6262FF] border-[0px] font-bold  border-[#6262FF] rounded-lg w-full py-2 " onClick={toggleLanguage}>
+                  <Link to="/upgrade" className=" flex gap-3 ms-2 items-center"><MdLanguage size={25} color="gray" />{t('language')}</Link>
+                </button>
+              ) : (
+                ""
+              )}
+                 
+         
             </React.Fragment>
           ))}
         </ul>

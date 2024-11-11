@@ -100,7 +100,7 @@ const DataWelcomeModal = ({ isOpen }) => {
 
   return (
   <>
-     {isSuccess ?   <Modal isOpen={isOpen} className="lg:w-[920px] mx-5 overflow-y-auto max-h-[90vh] bg-white"><div className="h-full text-[#333333] font-poppins">
+     {!isSuccess ?   <Modal isOpen={isOpen} className="lg:w-[920px] mx-5 overflow-y-auto max-h-[90vh] bg-white"><div className="h-full text-[#333333] font-poppins">
        
        <HeaderDateWelcomeModal />
        <div className="grid lg:grid-cols-3 grid-cols-1 h-full">
